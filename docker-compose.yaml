@@ -10,6 +10,7 @@ services:
   #  volumes:
   #    - ./app.py:/website/app.py 
   db:
+    container_name: tsdc_db
     image: mysql:5.7
     restart: always
     platform: linux/amd64 
