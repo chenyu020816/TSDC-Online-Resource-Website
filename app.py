@@ -1,20 +1,34 @@
-from flask import Flask, jsonify, render_template, request, send_file
 from flask_cors import CORS
+from flask import Flask, send_from_directory, render_template, request, send_file
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='templates/build')
+
+# CORS
+CORS(app)
+
+# config
+app.config['CORS_HEADERS'] = 'Content-Type'
+app.config['PROPAGATE_EXCEPTIONS'] = True
+
 # app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql+pymysql://admin01:tsdc_web@db/tsdc_web' # docker app.py with database
 # app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql+pymysql://admin01:tsdc_web@localhost:8001/tsdc_web' # docker only database, app.py local
 app.config["SQLALCHEMY_DATABASE_URI"] = (
     "mysql+pymysql://admin:tsdc_web@host.docker.internal:8001/tsdc_web"
 )
+
 db = SQLAlchemy(app)
 
-
-@app.route("/")
-def index():
-    return render_template("index.html")
+# frontend pages route
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    if path != "" and os.path.exists(app.static_folder + '/' + path):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
 
 
 class User(db.Model):
@@ -47,5 +61,5 @@ def create_tables():
 
 
 if __name__ == "__main__":
-    create_tables()
+    # create_tables()
     app.run(host="0.0.0.0", port=8000, debug=True)
