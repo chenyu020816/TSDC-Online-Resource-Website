@@ -25,9 +25,9 @@ docker exec -it tsdc_db mysql -uadmin -ptsdc_web tsdc_web
 
 ## Create Website （Frontend）
 
-1. 進入前端資料夾
-
 yarn 官方下載：https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
+
+1. 進入前端資料夾
 
 ```sh
 cd templates
