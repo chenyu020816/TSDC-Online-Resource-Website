@@ -1,0 +1,22 @@
+version: '3'
+services:
+  #web:
+  #  container_name: flask_app
+  #  build: .
+  #  ports:
+  #    - "8000:8000"
+  #  depends_on:
+  #    - db
+  #  volumes:
+  #    - ./app.py:/website/app.py 
+  db:
+    image: mysql:5.7
+    restart: always
+    platform: linux/amd64 
+    ports:
+      - "8001:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: tsdc_web
+      MYSQL_DATABASE: tsdc_web
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: tsdc_web

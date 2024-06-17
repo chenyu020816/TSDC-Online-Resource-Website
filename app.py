@@ -1,0 +1,51 @@
+from flask import Flask, jsonify, render_template, request, send_file
+from flask_cors import CORS
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import inspect
+
+app = Flask(__name__)
+# app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql+pymysql://admin01:tsdc_web@db/tsdc_web' # docker app.py with database
+# app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql+pymysql://admin01:tsdc_web@localhost:8001/tsdc_web' # docker only database, app.py local
+app.config["SQLALCHEMY_DATABASE_URI"] = (
+    "mysql+pymysql://admin:tsdc_web@host.docker.internal:8001/tsdc_web"
+)
+db = SQLAlchemy(app)
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+class User(db.Model):
+    __tablename__ = "users"
+
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(120), nullable=False)
+    role = db.Column(db.String(80), nullable=False)
+
+    def __init__(self, username, password, role):
+        self.username = username
+        self.password = password
+        self.role = role
+
+    def __repr__(self):
+        return "<User %r>" % self.username
+
+
+def create_tables():
+    with app.app_context():
+        if not inspect(db.engine).has_table("users"):
+            db.create_all()
+            admin = User(username="admin", password="I3aIO0GapcxfT7WP", role="admin")
+            user01 = User(username="user01", password="T5Do9EAtQAqTtfR4O", role="user")
+
+            db.session.add(admin)
+            db.session.add(user01)
+            db.session.commit()
+
+
+if __name__ == "__main__":
+    create_tables()
+    app.run(host="0.0.0.0", port=8000, debug=True)
