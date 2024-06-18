@@ -1,24 +1,58 @@
-from flask import Flask, jsonify, render_template, request, send_file
+import os
+
+from flask import Flask, render_template, request, send_file, send_from_directory
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
 
 import utils.init_database as db_utils
+from crawler.crawler_coursera import crawl_coursera
+from crawler.crawler_hahow import crawl_hahow
+from crawler.crawler_ntu_ocw import crawl_ntu_ocw
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="templates/build")
+
+# CORS
+CORS(app)
+
+# config
+app.config["CORS_HEADERS"] = "Content-Type"
+app.config["PROPAGATE_EXCEPTIONS"] = True
+
 # app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql+pymysql://admin01:tsdc_web@db/tsdc_web' # docker app.py with database
-# app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql+pymysql://admin01:tsdc_web@localhost:8001/tsdc_web' # docker only database, app.py local
+# app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql+pymysql://admin01:tsdc_web@localhost:8001/tsdc_web'
 app.config["SQLALCHEMY_DATABASE_URI"] = (
     "mysql+pymysql://admin:tsdc_web@host.docker.internal:8001/tsdc_web"
 )
+
 db = SQLAlchemy(app)
 
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+# frontend pages route
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def serve(path):
+    if path != "" and os.path.exists(app.static_folder + "/" + path):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, "index.html")
+
+
+@app.post("/crawl_ntu_ocw")
+def crawlNtuOcw():
+    return crawl_ntu_ocw()
+
+
+@app.post("/crawl_coursera")
+def crawlCoursera():
+    return crawl_coursera()
+
+
+@app.post("/crawl_hahow")
+def crawlHahow():
+    return crawl_hahow()
 
 
 if __name__ == "__main__":
-    db_utils.init_tables()
+    # create_tables()
     app.run(host="0.0.0.0", port=8000, debug=True)

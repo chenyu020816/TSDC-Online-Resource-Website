@@ -5,6 +5,19 @@ from sqlalchemy import inspect
 from werkzeug.security import check_password_hash, generate_password_hash
 
 db = SQLAlchemy()
+table_names = [
+    "users",
+    "resources",
+    "keywords",
+    "posts",
+    "questions",
+    "user_resource_upload_history",
+    "resource_keyword",
+    "search_history",
+    "search_resource_history",
+    "rating_history",
+    "rating_question",
+]
 
 
 class User(db.Model):
@@ -197,13 +210,50 @@ class RatingQuestion(db.Model):
         return "<RatingQuestion %r>" % self.id
 
 
-def init_tables(app):
+def init_tables(app, table_classes=table_names):
     with app.app_context():
-        if not inspect(db.engine).has_table("users"):
-            db.create_all()
-            admin = User(username="admin", password="I3aIO0GapcxfT7WP", role="admin")
-            user01 = User(username="user01", password="T5Do9EAtQAqTtfR4O", role="user")
+        insp = inspect(db.engine)
+        for table_class in table_classes:
+            if not insp.has_table(table_class.__tablename__):
+                table_class.__table__.create(db.engine)
 
-            db.session.add(admin)
-            db.session.add(user01)
-            db.session.commit()
+        default_data = init_default_data()
+
+        for data in default_data:
+            db.session.add(data)
+        db.session.commit()
+
+
+def init_default_data():
+    admin01 = User(username="admin01", password="I3aIO0GapcxfT7WP", role="admin")
+    admin02 = User(username="admin02", password="I3aIO0GapcxfT7WP", role="admin")
+    user_test = User(username="user_test", password="T5Do9EAtQAqTtfR4O", role="user")
+    teacher_test = User(
+        username="teacher_test", password="T5Do9EAtQAqTtfR4O", role="teacher"
+    )
+    student_test = User(
+        username="student_test", password="T5Do9EAtQAqTtfR4O", role="student"
+    )
+
+    keyword_eng_datascience = Keyword(keyword_name="Data Science")
+    keyword_chi_datascience = Keyword(keyword_name="資料科學")
+
+    datas = [
+        admin01,
+        admin02,
+        user_test,
+        teacher_test,
+        student_test,
+        keyword_eng_datascience,
+        keyword_chi_datascience,
+    ]
+
+    return datas
+
+
+def test():
+    pass
+
+
+if __name__ == "__main__":
+    test()
