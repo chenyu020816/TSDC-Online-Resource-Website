@@ -1,0 +1,2177 @@
+{
+  "data": {
+    "courseData": {
+      "productCount": 914,
+      "products": [
+        {
+          "_id": "6155cda6d425f500065f5c96",
+          "status": "PUBLISHED",
+          "uniquename": "motionerbrucetaa",
+          "owner": {
+            "links": {
+              "website": "https://www.apple.com/tw/today/?cid=rmc-tw-partner-HHhub-taa-cfb21"
+            },
+            "_id": "5f7c1de062ad22eb607a1a00",
+            "username": "todayatapple",
+            "name": "Today at Apple",
+            "profileImageUrl": "https://images.api.hahow.in/images/5f9a9a0088865af2b343e999"
+          },
+          "tags": ["CLASSIC"],
+          "preOrderedPrice": 0,
+          "preOrderedPriceInMoneyPoint": 0,
+          "price": 0,
+          "priceInMoneyPoint": 0,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 10151,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 4.97,
+          "numRating": 546,
+          "bookmarkCount": 1334,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2021-11-10T04:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "動態設計思維，柏尹帶你培養品牌動畫鑑賞力",
+          "metaDescription": "在這次的課程中，柏尹會用最簡單好懂的方式，帶你了解如何品味動態設計。動態設計是一門專業技術，課程中會透過小遊戲，幫大家開啟「動態感」，並且深入感受動態中的情緒和表演，再呈現講師精彩的作品，示範動態設計師的獨門創作技巧。課程中也會示範用 Keynote，示範如何添加合適的動畫效果，帶你我體驗創作樂趣。\n",
+          "coverImage": {
+            "_id": "6164ea16aa24450007a881fd",
+            "url": "https://images.hahow.in/images/6164ea16aa24450007a881fd",
+            "height": 620,
+            "width": 999
+          },
+          "totalVideoLengthInSeconds": 1424,
+          "modules": ["6155cf06d425f500065f5f2d"],
+          "basePricingInfo": {
+            "price": 0,
+            "preOrderedPrice": 0,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2021-09-30T14:45:58.000Z",
+          "incubateTime": "2021-10-15T04:00:20.344Z",
+          "publishTime": "2021-11-10T04:09:15.489Z",
+          "proposalDueTime": "2021-11-10T04:00:00.000Z",
+          "hasBought": false,
+          "video": "6168fcd4a83ea5002b8c81b3",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": null,
+          "purchasePlan": {
+            "id": "6168fcd4a83ea5002b8c81b9",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 0,
+            "priceInMoneyPoint": 0,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "5e95c5b8845c8bf74c0102df",
+          "status": "PUBLISHED",
+          "uniquename": "ux3toryu",
+          "owner": {
+            "links": {
+              "website": "http://uxerlab.com/",
+              "googlePlus": "",
+              "facebook": "https://www.facebook.com/don.wen"
+            },
+            "_id": "596ffcad9274560700553fb9",
+            "username": "dongon",
+            "name": "UX‧三刀流 (温明輝)",
+            "profileImageUrl": "https://images.api.hahow.in/images/621dfef5a6b290000615ee43"
+          },
+          "tags": [],
+          "preOrderedPrice": 2200,
+          "preOrderedPriceInMoneyPoint": 2200,
+          "price": 3666,
+          "priceInMoneyPoint": 3666,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 1218,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 4.92,
+          "numRating": 71,
+          "bookmarkCount": 2168,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2021-04-06T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "UX‧三刀流產品體驗設計",
+          "metaDescription": "《UX ‧ 三刀流》是一個以「運算思維」為基礎而實踐 UX 設計的一種設計思維，學習者可以透過《用戶流》、《商業流》、《數據流》等三種能力的了解與練習，掌握 UX 工作的專業技術與思維，在動態的商業環境中以此三種能力中併行思考、取捨、決策與行動，以達到優化產品以提升使用者體驗的目標。",
+          "coverImage": {
+            "_id": "5ff53827af850a6bd28e5908",
+            "url": "https://images.hahow.in/images/5ff53827af850a6bd28e5908",
+            "height": 1111,
+            "width": 1791
+          },
+          "squareCoverImage": {
+            "_id": "5ff5423ebbb1d55daac00663",
+            "url": "https://images.hahow.in/images/5ff5423ebbb1d55daac00663",
+            "height": 1108,
+            "width": 1108
+          },
+          "totalVideoLengthInSeconds": 90538,
+          "modules": [
+            "5eacb30d086ce314b05f1b11",
+            "5eacb517086ce329045f1d2a",
+            "5eacb5d7086ce30b7f5f1e97",
+            "5eacb64e086ce34cf65f1fdf"
+          ],
+          "basePricingInfo": {
+            "price": 3666,
+            "preOrderedPrice": 2200,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2020-04-14T14:16:24.000Z",
+          "incubateTime": "2021-01-07T04:00:20.702Z",
+          "publishTime": "2021-05-14T04:00:46.712Z",
+          "proposalDueTime": "2021-02-05T16:00:00.000Z",
+          "hasBought": false,
+          "video": "5ff6875438a793002a935caf",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "thank55",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 85,
+              "discountedPrice": 3117,
+              "discountedPriceInBaseCurrency": 3117
+            }
+          },
+          "purchasePlan": {
+            "id": "65bb174ccc5be239340c4825",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 3666,
+            "priceInMoneyPoint": 3666,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "60f4f828cc9ccf00061d71f4",
+          "status": "PUBLISHED",
+          "uniquename": "adaracjoaillerie",
+          "owner": {
+            "links": {
+              "website": "https://adaracj.com/",
+              "facebook": "https://www.facebook.com/AdaraCJoaillerie",
+              "facebookPixel": "137306117711286",
+              "googleAnalytics4": "G-Q4LN95EWZS"
+            },
+            "_id": "60ebc8f1fa79d90007aec13b",
+            "username": "adarachao",
+            "name": "Adara Chao",
+            "profileImageUrl": "https://images.api.hahow.in/images/6114e5b89b05620006dfdd35"
+          },
+          "tags": [],
+          "preOrderedPrice": 2200,
+          "preOrderedPriceInMoneyPoint": 2200,
+          "price": 2600,
+          "priceInMoneyPoint": 2600,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 142,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 5,
+          "numRating": 5,
+          "bookmarkCount": 385,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2022-06-19T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "做自己的珠寶設計師：揮灑你獨有的創意",
+          "metaDescription": "把你的獨特想法設計成珠寶吧！課程中包含獨家新手包，逐步引導，教你認識媒材、創意發想、最後產出一張獨一無二的珠寶設計圖。讓你成為自己的珠寶設計師！",
+          "coverImage": {
+            "_id": "61e7e3d26d9e6f00066da4d3",
+            "url": "https://images.hahow.in/images/61e7e3d26d9e6f00066da4d3",
+            "height": 620,
+            "width": 999
+          },
+          "squareCoverImage": {
+            "_id": "61e7e57e6d9e6f00066e560b",
+            "url": "https://images.hahow.in/images/61e7e57e6d9e6f00066e560b",
+            "height": 800,
+            "width": 800
+          },
+          "totalVideoLengthInSeconds": 13080,
+          "modules": [
+            "60f54fabcc9ccf00061dc7c7",
+            "620f714e110cfa0006be31d1",
+            "60f671de5bb6200006d10712",
+            "60f673a0cd071800075aef70"
+          ],
+          "basePricingInfo": {
+            "price": 2600,
+            "preOrderedPrice": 2200,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2021-07-19T03:57:28.000Z",
+          "incubateTime": "2022-03-22T04:00:20.333Z",
+          "publishTime": "2022-06-20T04:00:20.085Z",
+          "proposalDueTime": "2022-04-20T16:00:00.000Z",
+          "hasBought": false,
+          "video": "623949d4501645002af82d07",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": null,
+          "purchasePlan": {
+            "id": "623949d4501645002af82d61",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 2600,
+            "priceInMoneyPoint": 2600,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "62982726db8742000658f3a3",
+          "status": "PUBLISHED",
+          "uniquename": "motioner-c18",
+          "owner": {
+            "links": {
+              "facebook": "https://www.facebook.com/motioner.tw",
+              "youtube": "https://www.youtube.com/channel/UCdMFMMfmLtg_tEDOg9sFtrw",
+              "website": "https://motioner.tw/"
+            },
+            "_id": "625fcb0d763ecd000648f941",
+            "name": "二棲知學 Motioner",
+            "profileImageUrl": "https://lh3.googleusercontent.com/a-/AOh14GgwUVJK_o0nPkdp1RkKPRYSnHKB0oqTGsurTqbrXQ=s96-c",
+            "username": "motioner"
+          },
+          "tags": ["COBRANDING"],
+          "preOrderedPrice": 2580,
+          "preOrderedPriceInMoneyPoint": 2580,
+          "price": 2580,
+          "priceInMoneyPoint": 2580,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 146,
+          "reviewing": false,
+          "isReject": true,
+          "averageRating": 5,
+          "numRating": 5,
+          "bookmarkCount": 502,
+          "campaign": {
+            "types": []
+          },
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "打造設計說服力｜讓作品變現的攻心提案術",
+          "metaDescription": "真正有效的提案，不只是把設計做得好看，更要把內容溝通清楚\n期待這門課上完，讓你將設計想法變現，成為獨當一面的專業設計師",
+          "coverImage": {
+            "_id": "6298277d3bb7a70007e064fb",
+            "url": "https://images.hahow.in/images/6298277d3bb7a70007e064fb",
+            "height": 562,
+            "width": 906
+          },
+          "totalVideoLengthInSeconds": 7605,
+          "modules": [
+            "62982787db87420006592058",
+            "6298279348f6b70007fe66c3",
+            "629827a93bb7a70007e07525",
+            "629827eadb87420006595062",
+            "6298280a4fcbbb0007bc5b68",
+            "6298283deff2c600075cf913"
+          ],
+          "basePricingInfo": {
+            "price": 2580,
+            "preOrderedPrice": 2580,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2022-06-02T02:57:42.146Z",
+          "publishTime": "2022-08-25T03:59:54.217Z",
+          "hasBought": false,
+          "video": "6306f3bac915b50007594aca",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": null,
+          "purchasePlan": {
+            "id": "6306f3bac915b50007594b38",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 2580,
+            "priceInMoneyPoint": 2580,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "59ae5da5cd5792070055b973",
+          "status": "PUBLISHED",
+          "uniquename": "database",
+          "owner": {
+            "links": {
+              "youtube": "https://www.youtube.com/@codegym_tech",
+              "website": "https://codegym.tech/?utm_source=hahow&utm_campaign=hahow-profile&utm_medium=web",
+              "facebook": "https://www.facebook.com/CodeGym.Technology/",
+              "googleAnalytics4": "G-X3FEWYVK4S",
+              "googleAnalytics4APISecretKey": "-E9WywjZQzeTKdkOYAt0uA",
+              "facebookPixel": ""
+            },
+            "_id": "56ef73344e3ef90900b8061c",
+            "name": "Code Gym",
+            "username": "ryantw",
+            "profileImageUrl": "https://images.hahow.in/images/662f3b750d300d8c0b59da94"
+          },
+          "tags": [],
+          "preOrderedPrice": 980,
+          "preOrderedPriceInMoneyPoint": 980,
+          "price": 2300,
+          "priceInMoneyPoint": 2300,
+          "successCriteria": {
+            "numSoldTickets": 50
+          },
+          "numSoldTickets": 1820,
+          "reviewing": false,
+          "isReject": false,
+          "assignment": "59ae5da5cd5792070055b974",
+          "averageRating": 4.94,
+          "numRating": 503,
+          "bookmarkCount": 2489,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2017-12-19T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "資料庫設計 - 有效的使用系統資料",
+          "metaDescription": "資料庫設計課程，從基礎到進階學習設計資料庫，掌握 SQL 語法，透過大量的企業案例分析，教你實際將資料庫設計應用於軟體系統的開發實例。",
+          "coverImage": {
+            "_id": "63105316250a4e0007efa1b9",
+            "url": "https://images.hahow.in/images/63105316250a4e0007efa1b9",
+            "height": 620,
+            "width": 999
+          },
+          "squareCoverImage": {
+            "_id": "6310547848e7600007b4c19f",
+            "url": "https://images.hahow.in/images/6310547848e7600007b4c19f",
+            "height": 900,
+            "width": 900
+          },
+          "totalVideoLengthInSeconds": 29490,
+          "modules": [
+            "616e1be90c21240006b09c8b",
+            "61f364ff23711e000609a507",
+            "61f3658323711e000609d4b8",
+            "61f365e923711e000609f9f8",
+            "61f3666d23711e00060a2b91",
+            "61f36715dd437d000711d5ef",
+            "61f3679223711e00060a942b",
+            "5c91835ced65c200740ef5a5",
+            "665172a183c143ca527e2fb4",
+            "61f367efdd437d00071230ce"
+          ],
+          "basePricingInfo": {
+            "price": 2300,
+            "preOrderedPrice": 980,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2017-09-05T08:17:41.000Z",
+          "incubateTime": "2017-09-21T04:00:44.428Z",
+          "publishTime": "2017-12-20T04:00:25.738Z",
+          "proposalDueTime": "2017-10-20T16:00:00.000Z",
+          "hasBought": false,
+          "video": "59c3396c4c36510700f92ea1",
+          "includedKnowledgeCollections": [
+            {
+              "_id": "65436c54318a37e26c58ecc9",
+              "title": "從 0 到 1 用程式語言管理資料",
+              "coverImage": {
+                "_id": "654369fa318a37e26c581520",
+                "url": "https://images.hahow.in/images/654369fa318a37e26c581520",
+                "height": 625,
+                "width": 1000
+              },
+              "previewDescription": "至 6/27 前限時優惠 8 折！"
+            }
+          ],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "thank55",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 85,
+              "discountedPrice": 1955,
+              "discountedPriceInBaseCurrency": 1955
+            }
+          },
+          "purchasePlan": {
+            "id": "5ff299e12a0eb00b2a2c7c32",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 2300,
+            "priceInMoneyPoint": 2300,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "63c51483f31bd23580fe5264",
+          "status": "PUBLISHED",
+          "uniquename": "canva-particoo",
+          "owner": {
+            "links": {
+              "website": "https://instagram.com/particoo.skills",
+              "facebook": "",
+              "youtube": ""
+            },
+            "_id": "635f49d9413a471bd6f2cac1",
+            "name": "Particoo 設計社群",
+            "profileImageUrl": "https://images.hahow.in/images/635f50354029fb03c50a0d2b"
+          },
+          "tags": ["POPULAR"],
+          "preOrderedPrice": 2080,
+          "preOrderedPriceInMoneyPoint": 2080,
+          "price": 2780,
+          "priceInMoneyPoint": 2780,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 1583,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 5,
+          "numRating": 34,
+          "bookmarkCount": 2258,
+          "campaign": {
+            "types": ["DIGITAL"],
+            "startDate": "2023-03-09T04:00:00.000Z",
+            "expireDate": "2023-04-07T16:00:00.000Z"
+          },
+          "estimatedCourseStartTime": "2023-06-07T04:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "Canva 入門到進階實戰｜零基礎做質感設計",
+          "metaDescription": "這是一堂適合設計新手到進階程度 Canva 實踐課程，會利用 Canva 的工具了解平面設計技巧、排版設計技巧、品牌設計技巧、修圖和濾鏡運用教學、基礎網頁設計、影片剪輯和動畫效果等。學生能用所學到等知識並透過 Canva 的工具製作出 11 份作品包括，海報設計、社群貼文設計、YouTube影片製作、Logo設計、Mockup 設計、Link-in-Bio網頁、電商設計、IG 限時動態、菜單設計等作品，可以在不同的媒體平台使用。",
+          "coverImage": {
+            "_id": "64092020292123acf9dee618",
+            "url": "https://images.hahow.in/images/64092020292123acf9dee618",
+            "height": 620,
+            "width": 999
+          },
+          "squareCoverImage": {
+            "_id": "63ff7dec4757f40cc822b867",
+            "url": "https://images.hahow.in/images/63ff7dec4757f40cc822b867",
+            "height": 1000,
+            "width": 1000
+          },
+          "totalVideoLengthInSeconds": 44154,
+          "modules": [
+            "63dbde3ca7cc903caa81d7df",
+            "63dc1d2da7cc906fcd8ac624",
+            "63dc1f73df871f4c08781b8b",
+            "63dc1f7154321b01709dcf61",
+            "63dc1f72e3155e7823306cb5",
+            "63dc2b85eada5d7bdf4da43b"
+          ],
+          "basePricingInfo": {
+            "price": 2780,
+            "preOrderedPrice": 2080,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2023-01-16T09:10:27.775Z",
+          "incubateTime": "2023-03-09T04:01:08.044Z",
+          "publishTime": "2023-06-07T04:02:09.106Z",
+          "proposalDueTime": "2023-04-07T16:00:00.000Z",
+          "hasBought": false,
+          "video": "64095a032921235dd5edd922",
+          "includedKnowledgeCollections": [
+            {
+              "_id": "65825b409c6637d3502a422c",
+              "title": "行銷初學者大禮包",
+              "coverImage": {
+                "_id": "658a7b9ba9cdaa6422779bf5",
+                "url": "https://images.hahow.in/images/658a7b9ba9cdaa6422779bf5",
+                "height": 320,
+                "width": 520
+              },
+              "previewDescription": "至 6/27 前限時優惠 75 折！"
+            },
+            {
+              "_id": "6630aacfda1b287f42d6d96c",
+              "title": "其他人也在學｜Canva 設計 x 省錢攝影",
+              "coverImage": {
+                "_id": "6630aa5c0d300d8c0bb788f9",
+                "url": "https://images.hahow.in/images/6630aa5c0d300d8c0bb788f9",
+                "height": 625,
+                "width": 1000
+              },
+              "previewDescription": "至 6/27 前限時優惠 8 折！"
+            }
+          ],
+          "bestDiscount": null,
+          "purchasePlan": {
+            "id": "64095a042921236e11edd93d",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 2780,
+            "priceInMoneyPoint": 2780,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "5ee4d65789dc7e4854909ba1",
+          "status": "PUBLISHED",
+          "uniquename": "uiux-figma",
+          "owner": {
+            "links": {
+              "facebook": "https://www.facebook.com/profile.php?id=1653507115",
+              "website": "https://linktr.ee/simonlin",
+              "youtube": "https://www.youtube.com/channel/UCxIPopoboh_rWkcnGOxiGgQ",
+              "googleAnalytics4": "G-GEW6EZBS7Y",
+              "googleAnalytics4APISecretKey": "Y91jMewjQzCnqOHa57o_Bw"
+            },
+            "_id": "57312cf7b2a279090045fc19",
+            "name": "Simon Lin",
+            "username": "simon7972",
+            "profileImageUrl": "https://images.hahow.in/images/6360d99b5058fc84be478682"
+          },
+          "tags": ["POPULAR"],
+          "preOrderedPrice": 2400,
+          "preOrderedPriceInMoneyPoint": 2400,
+          "price": 4280,
+          "priceInMoneyPoint": 4280,
+          "successCriteria": {
+            "numSoldTickets": 50
+          },
+          "numSoldTickets": 8319,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 4.99,
+          "numRating": 408,
+          "bookmarkCount": 6867,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2020-12-19T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "產品設計實戰：用Figma打造絕佳UI/UX",
+          "metaDescription": "你想要學習 UI/UX 設計嗎？想知道如何打造絕佳產品體驗嗎？一起來學習使用 Figma 這個火紅全球的介面設計工具，跟上全球設計趨勢，成為軟硬實力兼具的產品設計師吧！",
+          "coverImage": {
+            "_id": "65d49e8c3bdf6f58fe5dc8a1",
+            "url": "https://images.hahow.in/images/65d49e8c3bdf6f58fe5dc8a1",
+            "height": 620,
+            "width": 999
+          },
+          "squareCoverImage": {
+            "_id": "65d49e8f4f0eb316da62eaec",
+            "url": "https://images.hahow.in/images/65d49e8f4f0eb316da62eaec",
+            "height": 800,
+            "width": 800
+          },
+          "totalVideoLengthInSeconds": 54043,
+          "modules": [
+            "5ef218827e05eb4235a0d958",
+            "5ef218e6b93e46e7d68da950",
+            "5ef218ea7e05eb40bba0da85",
+            "5ef218eab93e4672ee8da952",
+            "5ef218eabe237d109d833c00",
+            "5f54d69c5964205a896cae31"
+          ],
+          "basePricingInfo": {
+            "price": 4280,
+            "preOrderedPrice": 2400,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2020-06-13T13:36:23.000Z",
+          "incubateTime": "2020-09-21T04:00:20.690Z",
+          "publishTime": "2020-12-20T04:00:10.267Z",
+          "proposalDueTime": "2020-10-20T16:00:00.000Z",
+          "hasBought": false,
+          "video": "5f6825542a7717002a30e41f",
+          "includedKnowledgeCollections": [
+            {
+              "_id": "66309be2e3b891182a8645bb",
+              "title": "數位行銷技能｜GA4 攻略 + 產品設計",
+              "coverImage": {
+                "_id": "66309b74e3b891182a8608e0",
+                "url": "https://images.hahow.in/images/66309b74e3b891182a8608e0",
+                "height": 625,
+                "width": 1000
+              },
+              "previewDescription": "至 6/27 前限時優惠 8 折！"
+            },
+            {
+              "_id": "6630a2dc0d300d8c0bb46695",
+              "title": "其他人也在學｜產品設計 x 動畫網頁程式",
+              "coverImage": {
+                "_id": "6630a2650d1fdd8ee44a3a2c",
+                "url": "https://images.hahow.in/images/6630a2650d1fdd8ee44a3a2c",
+                "height": 625,
+                "width": 1000
+              },
+              "previewDescription": "至 6/27 前限時優惠 8 折！"
+            },
+            {
+              "_id": "6668175a02064da6d7455046",
+              "title": "其他人也在學｜視覺設計 x Figma 產品設計",
+              "coverImage": {
+                "_id": "666816ee6b82b2641a2a7b05",
+                "url": "https://images.hahow.in/images/666816ee6b82b2641a2a7b05",
+                "height": 625,
+                "width": 1000
+              },
+              "previewDescription": "至 6/27 前限時優惠 8 折！"
+            }
+          ],
+          "bestDiscount": null,
+          "purchasePlan": {
+            "id": "621d9a4ea6b2900006ec17cd",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 4280,
+            "priceInMoneyPoint": 4280,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "595cd372bbc89b07008603a2",
+          "status": "PUBLISHED",
+          "uniquename": "123zbrush",
+          "owner": {
+            "links": {
+              "facebook": "https://www.facebook.com/%E8%97%9D%E6%9E%97%E4%BF%AE%E7%B7%B4%E6%8B%9C%E5%B8%AB%E5%A4%A7%E6%9C%83-695910400554283/"
+            },
+            "_id": "568a1d73e8ff9b20003cf8f3",
+            "name": "蔡曜隆",
+            "profileImageUrl": "https://images.api.hahow.in/images/5cf26b41ea2d0500209d2142",
+            "username": "yaolung1120"
+          },
+          "tags": [],
+          "preOrderedPrice": 1490,
+          "preOrderedPriceInMoneyPoint": 1490,
+          "price": 4190,
+          "priceInMoneyPoint": 4190,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 204,
+          "reviewing": false,
+          "isReject": false,
+          "assignment": "595cd372bbc89b07008603a3",
+          "averageRating": 5,
+          "numRating": 7,
+          "bookmarkCount": 815,
+          "campaign": {
+            "expireDate": "2019-08-16T16:00:00.000Z",
+            "types": ["PHYSICAL", "DIGITAL"],
+            "startDate": "2019-07-18T04:00:00.000Z"
+          },
+          "estimatedCourseStartTime": "2019-09-30T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "ZBrush - 設計師公仔入門課",
+          "metaDescription": "3D 是無中生有的具像化魔法，但設計師的進入門檻，不外乎介面複雜、英文難懂、技術太深、不知道從哪下手等。\n本課就從學 ZBrush 作為認識 3D 的第一步，結合 20 年動畫製作與教學經驗，透過全中文介面，從 3D 原理、軟體設計思維出發，解析工具步驟的邏輯，並透過大量專案練習，帶領大家跨出第一步。",
+          "coverImage": {
+            "_id": "5d2fd05cfe9fef0021fadc0d",
+            "url": "https://images.hahow.in/images/5d2fd05cfe9fef0021fadc0d"
+          },
+          "squareCoverImage": {
+            "_id": "665ff2e39e7844f7505a6369",
+            "url": "https://images.hahow.in/images/665ff2e39e7844f7505a6369",
+            "height": 800,
+            "width": 800
+          },
+          "totalVideoLengthInSeconds": 80295,
+          "modules": [
+            "5c91835ced65c200740efe84",
+            "5ce4c97f0032b60020e79e5c",
+            "5ce4c93e0032b60020e79e3e",
+            "5d18422fac23d80020ae39f8",
+            "5ce4c8f20032b60020e79e32",
+            "5ce4c85e0032b60020e79deb",
+            "5ce4c81a0032b60020e79dbe",
+            "5ce4c4cb0032b60020e79cdf",
+            "5ce4c4220032b60020e79ca2",
+            "5ce4b36a0032b60020e7971a",
+            "5ce4b3410032b60020e79709",
+            "5ce4aad10032b60020e7947a",
+            "5ce4aa620032b60020e7943a",
+            "5ce4a9e90032b60020e79422",
+            "5d202bdc0d5f3b0021dc96de",
+            "5ce4a98a0032b60020e793fb",
+            "5d490a223714d90022df736e",
+            "5da5c01891db2600211a42ef",
+            "5eb972f895e2ee15cd990f32"
+          ],
+          "basePricingInfo": {
+            "price": 4190,
+            "preOrderedPrice": 1490,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2017-07-05T11:54:26.000Z",
+          "incubateTime": "2019-07-18T04:00:20.279Z",
+          "publishTime": "2019-10-01T04:00:45.218Z",
+          "proposalDueTime": "2019-08-16T16:00:00.000Z",
+          "hasBought": false,
+          "video": "5d2feed4fe9fef0021fae66f",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "thank55",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 85,
+              "discountedPrice": 3562,
+              "discountedPriceInBaseCurrency": 3562
+            }
+          },
+          "purchasePlan": {
+            "id": "5d2feed4fe9fef0021fae672",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 4190,
+            "priceInMoneyPoint": 4190,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "592e5e5a2f29aa0700af943b",
+          "status": "PUBLISHED",
+          "uniquename": "onlinebid-ps",
+          "owner": {
+            "_id": "592e44c72f29aa0700af933d",
+            "profileImageUrl": "https://images.api.hahow.in/images/593ec970d0472a0700f25ebb",
+            "name": "五更",
+            "username": "naturestyle"
+          },
+          "tags": [],
+          "preOrderedPrice": 699,
+          "preOrderedPriceInMoneyPoint": 699,
+          "price": 1800,
+          "priceInMoneyPoint": 1800,
+          "successCriteria": {
+            "numSoldTickets": 50
+          },
+          "numSoldTickets": 747,
+          "reviewing": false,
+          "isReject": false,
+          "assignment": "592e5e5a2f29aa0700af943c",
+          "averageRating": 4.92,
+          "numRating": 48,
+          "bookmarkCount": 1973,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2017-10-14T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "設計 DIY - 網拍家的 PS 設計實戰",
+          "metaDescription": "網拍 banner 設計課程，教你如何設計吸引消費者目光與提升購買率的網站 banner。課程將從 Photoshop 基本操作開始，搭配實際案例分享，帶你學會網拍設計必備的 know-how 與秘訣，大幅提升公司產品業績與銷售量。",
+          "coverImage": {
+            "_id": "5a01bd2da77a2d001eeac192",
+            "url": "https://images.hahow.in/images/5a01bd2da77a2d001eeac192"
+          },
+          "totalVideoLengthInSeconds": 59153,
+          "modules": ["5c91835ced65c200740ef455"],
+          "basePricingInfo": {
+            "price": 1800,
+            "preOrderedPrice": 699,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2017-05-31T06:10:34.000Z",
+          "incubateTime": "2017-07-17T04:00:20.433Z",
+          "publishTime": "2017-10-16T03:46:22.329Z",
+          "proposalDueTime": "2017-08-15T16:00:00.000Z",
+          "hasBought": false,
+          "video": "59665e38ede9500700e66a77",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "thank55",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 85,
+              "discountedPrice": 1530,
+              "discountedPriceInBaseCurrency": 1530
+            }
+          },
+          "purchasePlan": {
+            "id": "596c3654ede9500700e6a302",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 1800,
+            "priceInMoneyPoint": 1800,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "5f5610dff24eac2c7cf2ea56",
+          "status": "PUBLISHED",
+          "uniquename": "transform",
+          "owner": {
+            "links": {
+              "facebook": "https://www.facebook.com/transform.design",
+              "behance": "https://www.behance.net/transformdesign",
+              "pinterest": "https://www.pinterest.com/transformdesign/_created/",
+              "website": "https://transform.tw/"
+            },
+            "_id": "5f560f88549b91506f1de94d",
+            "username": "transformdesign",
+            "name": "Leo Huang",
+            "profileImageUrl": "https://images.api.hahow.in/images/5fcdbff4928c09296171284d"
+          },
+          "tags": [],
+          "preOrderedPrice": 1800,
+          "preOrderedPriceInMoneyPoint": 1800,
+          "price": 2400,
+          "priceInMoneyPoint": 2400,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 473,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 4.82,
+          "numRating": 17,
+          "bookmarkCount": 1380,
+          "campaign": {
+            "types": ["PHYSICAL", "DIGITAL"],
+            "startDate": "2020-11-03T04:00:00.000Z",
+            "expireDate": "2020-12-02T16:00:00.000Z"
+          },
+          "estimatedCourseStartTime": "2021-01-31T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "品牌包裝設計學：從包裝建立最佳使用體驗",
+          "metaDescription": "包裝，並不單純只有保護商品的功能而已，更重要的是它擔任了「品牌溝通」的重要角色。\n\n好的包裝設計，能在很短的時間裡讓消費者知道，它是一個什麼樣的商品，來自於什麼樣的品牌。我們甚至可以透過一個好的「包裝體驗」帶給消費者愉悅的商品使用感受，進一步的提升對於品牌的「好感」及「信賴感！」",
+          "coverImage": {
+            "_id": "5fabb84919264309125e287c",
+            "url": "https://images.hahow.in/images/5fabb84919264309125e287c",
+            "height": 1240,
+            "width": 2000
+          },
+          "totalVideoLengthInSeconds": 13750,
+          "modules": [
+            "5f6998d53c052a8b0a0aed0f",
+            "5f699917aa8eda3b37d0ac3b",
+            "5f69992c94d223000ba1d551",
+            "5ffc1b1b1028b36e5e65479a"
+          ],
+          "basePricingInfo": {
+            "price": 2400,
+            "preOrderedPrice": 1800,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2020-09-07T10:52:15.000Z",
+          "incubateTime": "2020-11-03T04:00:20.029Z",
+          "publishTime": "2021-02-01T04:00:48.086Z",
+          "proposalDueTime": "2020-12-02T16:00:00.000Z",
+          "hasBought": false,
+          "video": "5fa0d5d4a82eee8777b75e03",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "thank55",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 85,
+              "discountedPrice": 2040,
+              "discountedPriceInBaseCurrency": 2040
+            }
+          },
+          "purchasePlan": {
+            "id": "5fa0d5d4a82eee5f7cb75e06",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 2400,
+            "priceInMoneyPoint": 2400,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "57976e0dd0c3030700419d8b",
+          "status": "PUBLISHED",
+          "uniquename": "mrl-nose-ai",
+          "owner": {
+            "links": {
+              "facebook": "https://www.facebook.com/pigss44/",
+              "website": "http://bbb753412.pixnet.net/blog"
+            },
+            "_id": "55eb1c12fa223d100058f82f",
+            "name": "Yu ",
+            "profileImageUrl": "https://images.api.hahow.in/images/628483b53158d80006371a37"
+          },
+          "tags": [],
+          "preOrderedPrice": 599,
+          "preOrderedPriceInMoneyPoint": 599,
+          "price": 1200,
+          "priceInMoneyPoint": 1200,
+          "successCriteria": {
+            "numSoldTickets": 50
+          },
+          "numSoldTickets": 930,
+          "reviewing": false,
+          "isReject": false,
+          "assignment": "57976e0dd0c3030700419d8c",
+          "averageRating": 4.89,
+          "numRating": 65,
+          "bookmarkCount": 3179,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2016-12-23T00:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "Illustrator 平面圖像設計",
+          "metaDescription": "Illustrator 平面設計入門課程，教你如何運用 Adobe Illustrator 軟體，設計平面或動態作品。課程將從 illustrator 的介面操作開始，教你以拉基本與進階的工具應用，並帶你理解色彩與配色應用，學習 illustrator 讓你的設計更加分！",
+          "coverImage": {
+            "_id": "5797a6c5d0c3030700419eae",
+            "url": "https://images.hahow.in/images/5797a6c5d0c3030700419eae"
+          },
+          "totalVideoLengthInSeconds": 25904,
+          "modules": [
+            "5c91835bed65c200740ef21d",
+            "5e5219e0c8bfb6002492e2d7",
+            "5e5219bcc8bfb6002492e2d0",
+            "5e521b83c8bfb6002492e316",
+            "5e521c41c8bfb6002492e358",
+            "5e521cd5c8bfb6002492e39c",
+            "5e521d2cc8bfb6002492e3c3",
+            "5e521d63c8bfb6002492e3ce",
+            "5e521b3bc8bfb6002492e307"
+          ],
+          "basePricingInfo": {
+            "price": 1200,
+            "preOrderedPrice": 599,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2016-07-26T14:05:01.000Z",
+          "incubateTime": "2016-09-24T04:18:15.381Z",
+          "publishTime": "2016-12-23T03:53:55.090Z",
+          "proposalDueTime": "2016-10-24T00:00:00.000Z",
+          "hasBought": false,
+          "video": "579b4d0dd0c303070041b367",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": null,
+          "purchasePlan": {
+            "id": "57e5fe87a69c240700068a1b",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 1200,
+            "priceInMoneyPoint": 1200,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "59fd188aa77a2d001eea9650",
+          "status": "PUBLISHED",
+          "uniquename": "uidesign",
+          "owner": {
+            "links": {
+              "facebook": null,
+              "pinterest": "https://www.pinterest.com/ellie53878/"
+            },
+            "_id": "59ef2edc4b1842001e21a49e",
+            "username": "ellie53878",
+            "name": "Ellie",
+            "profileImageUrl": "https://images.api.hahow.in/images/5a608ea76a444a0068d4ec9c"
+          },
+          "tags": [],
+          "preOrderedPrice": 990,
+          "preOrderedPriceInMoneyPoint": 990,
+          "price": 1990,
+          "priceInMoneyPoint": 1990,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 2468,
+          "reviewing": false,
+          "isReject": false,
+          "assignment": "59fd188aa77a2d001eea9651",
+          "averageRating": 4.58,
+          "numRating": 161,
+          "bookmarkCount": 4909,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2018-05-30T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "Adobe XD / PS  —  網頁設計 與 UI 教學",
+          "metaDescription": "Adobe XD 課程，學習 UI/UX 的原型設計開發。適用 Mac 和 Windows 系統，帶你從網頁繪製流程開始，掌握 Adobe XD 和 PS 的基礎與進階工具，並傳授 App 的開發觀念，最後透過實際專案真正帶你走過 UIUX 介面設計流程。",
+          "coverImage": {
+            "_id": "5a083498bc13ad001ed9955a",
+            "url": "https://images.hahow.in/images/5a083498bc13ad001ed9955a"
+          },
+          "totalVideoLengthInSeconds": 50082,
+          "modules": ["5c91835ced65c200740ef6fe"],
+          "basePricingInfo": {
+            "price": 1990,
+            "preOrderedPrice": 990,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2017-11-04T01:31:54.000Z",
+          "incubateTime": "2018-03-02T04:00:02.715Z",
+          "publishTime": "2018-05-30T04:03:51.890Z",
+          "proposalDueTime": "2018-03-31T16:00:00.000Z",
+          "hasBought": false,
+          "video": "5a98cc425d786f001e6259aa",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "thank55",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 85,
+              "discountedPrice": 1692,
+              "discountedPriceInBaseCurrency": 1692
+            }
+          },
+          "purchasePlan": {
+            "id": "5a98cc425d786f001e6259ad",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 1990,
+            "priceInMoneyPoint": 1990,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "58a00f865f188a07007fd709",
+          "status": "PUBLISHED",
+          "uniquename": "mgboomlearnae1",
+          "owner": {
+            "links": {
+              "website": "http://www.mgboom.com/",
+              "youtube": "https://www.youtube.com/channel/UC1f2PIN4qqhQEd1U7ZRvT3Q",
+              "facebook": "https://www.facebook.com/mgboomdesign/"
+            },
+            "_id": "57ccc02b61d9350700e7143b",
+            "username": "mgboomdesign",
+            "name": "mgboomdesign",
+            "profileImageUrl": "https://images.api.hahow.in/images/60cc461184c03e85b45c5300"
+          },
+          "tags": [],
+          "preOrderedPrice": 900,
+          "preOrderedPriceInMoneyPoint": 900,
+          "price": 1200,
+          "priceInMoneyPoint": 1200,
+          "successCriteria": {
+            "numSoldTickets": 100
+          },
+          "numSoldTickets": 3818,
+          "reviewing": false,
+          "isReject": false,
+          "assignment": "58a00f865f188a07007fd70a",
+          "averageRating": 4.96,
+          "numRating": 221,
+          "bookmarkCount": 5038,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2017-06-25T00:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "從 0 開始學 AE（上集）｜動態設計基礎",
+          "metaDescription": "這堂課將帶著 AE 初學者，學會掌握創作動態圖像的設計概念與流程。從影視理論開始學習，全面掌握 AE 的關鍵介面與功能操作，讓你/妳知道學會動畫一點也不難喔！",
+          "coverImage": {
+            "_id": "5a2a71c4a6501f001e2e9f09",
+            "url": "https://images.hahow.in/images/5a2a71c4a6501f001e2e9f09"
+          },
+          "squareCoverImage": {
+            "_id": "662216733069367376d57c02",
+            "url": "https://images.hahow.in/images/662216733069367376d57c02",
+            "height": 800,
+            "width": 800
+          },
+          "totalVideoLengthInSeconds": 24541,
+          "modules": [
+            "5c91835ced65c200740ef3be",
+            "5c91e6281a3ca10020057033",
+            "5c91e7cf1a3ca100200570b2",
+            "5c91e80d1a3ca100200570ce",
+            "5c91e8501a3ca100200570ee",
+            "5c91e89f1a3ca10020057105",
+            "5c91e9121a3ca1002005712d",
+            "5c91e96c1a3ca10020057148",
+            "5c91eae21a3ca100200571cf",
+            "6240130ce4d28e0007fb8d33"
+          ],
+          "basePricingInfo": {
+            "price": 1200,
+            "preOrderedPrice": 900,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2017-02-12T07:32:22.000Z",
+          "incubateTime": "2017-03-27T04:11:39.133Z",
+          "publishTime": "2017-06-25T04:00:05.137Z",
+          "proposalDueTime": "2017-04-26T00:00:00.000Z",
+          "hasBought": false,
+          "video": "5900023c048ab40700cc7a3b",
+          "includedKnowledgeCollections": [
+            {
+              "_id": "65432006ededea5029cd3f97",
+              "title": "成為動態設計達人全攻略",
+              "coverImage": {
+                "_id": "65431b9c415d897579204b99",
+                "url": "https://images.hahow.in/images/65431b9c415d897579204b99",
+                "height": 625,
+                "width": 1000
+              },
+              "previewDescription": "至 6/27 前限時優惠 8 折！"
+            }
+          ],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "thank55",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 85,
+              "discountedPrice": 1020,
+              "discountedPriceInBaseCurrency": 1020
+            }
+          },
+          "purchasePlan": {
+            "id": "58d890fb27ea7d07006023ae",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 1200,
+            "priceInMoneyPoint": 1200,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "5788984dd0c303070041573a",
+          "status": "PUBLISHED",
+          "uniquename": "designthinking",
+          "owner": {
+            "_id": "56d70783182fba0e00c6dbb6",
+            "profileImageUrl": "https://images.api.hahow.in/images/585a34f4ecdb8307001fd3e0",
+            "name": "Jarah"
+          },
+          "tags": [],
+          "preOrderedPrice": 980,
+          "preOrderedPriceInMoneyPoint": 980,
+          "price": 2400,
+          "priceInMoneyPoint": 2400,
+          "successCriteria": {
+            "numSoldTickets": 60
+          },
+          "numSoldTickets": 879,
+          "reviewing": false,
+          "isReject": false,
+          "assignment": "5788984dd0c303070041573b",
+          "averageRating": 4.94,
+          "numRating": 52,
+          "bookmarkCount": 2137,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2017-04-06T00:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "設計思考，頂尖企業都在學的創新流程！",
+          "metaDescription": "設計思考課程，教你運用不同思維來解決問題。課程將使用史丹佛大學的研究作為依據，帶你認識設計思考的流程與方法，並透過實作來加深印象，完整教你從創意發想到設計、從測試到應用的設計思考力。",
+          "coverImage": {
+            "_id": "586e59e7a8aae907000cdafe",
+            "url": "https://images.hahow.in/images/586e59e7a8aae907000cdafe"
+          },
+          "totalVideoLengthInSeconds": 25272,
+          "modules": ["5c91835bed65c200740ef203"],
+          "basePricingInfo": {
+            "price": 2400,
+            "preOrderedPrice": 980,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2016-07-15T08:01:17.000Z",
+          "incubateTime": "2017-01-06T04:03:28.833Z",
+          "publishTime": "2017-04-06T09:21:37.223Z",
+          "proposalDueTime": "2017-02-05T00:00:00.000Z",
+          "hasBought": false,
+          "video": "586e491da8aae907000cd9f6",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": null,
+          "purchasePlan": {
+            "id": "586f1710a8aae907000ce0ff",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 2400,
+            "priceInMoneyPoint": 2400,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "6266d9ba73750b0007007145",
+          "status": "PUBLISHED",
+          "uniquename": "motioner-c02",
+          "owner": {
+            "links": {
+              "facebook": "https://www.facebook.com/motioner.tw",
+              "youtube": "https://www.youtube.com/channel/UCdMFMMfmLtg_tEDOg9sFtrw",
+              "website": "https://motioner.tw/"
+            },
+            "_id": "625fcb0d763ecd000648f941",
+            "name": "二棲知學 Motioner",
+            "profileImageUrl": "https://lh3.googleusercontent.com/a-/AOh14GgwUVJK_o0nPkdp1RkKPRYSnHKB0oqTGsurTqbrXQ=s96-c",
+            "username": "motioner"
+          },
+          "tags": ["COBRANDING"],
+          "preOrderedPrice": 2500,
+          "preOrderedPriceInMoneyPoint": 2500,
+          "price": 2500,
+          "priceInMoneyPoint": 2500,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 209,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 5,
+          "numRating": 6,
+          "bookmarkCount": 695,
+          "campaign": {
+            "types": []
+          },
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "動態設計全方位！[設計篇] 設計竅門一次搞懂",
+          "metaDescription": "幫你不只實戰技巧大提升，更具備良好觀念懂得如何應用技巧，進而準確理解客戶需求，省去摸索和改稿的時間，讓你設計更有效率！",
+          "coverImage": {
+            "_id": "626bcbad6196310007a741b2",
+            "url": "https://images.hahow.in/images/626bcbad6196310007a741b2",
+            "height": 562,
+            "width": 906
+          },
+          "totalVideoLengthInSeconds": 13562,
+          "modules": [
+            "6267bc470339e600069aed5e",
+            "6267bc9346f58100064cb08f",
+            "6267bd127adb200007400780",
+            "6267bd7d0339e600069b5f5c",
+            "6267bdb246f58100064d1e60",
+            "6267be1246f58100064d4051",
+            "6267bee9abe55a000719600e",
+            "6267c08246f58100064e5ec7"
+          ],
+          "basePricingInfo": {
+            "price": 2500,
+            "preOrderedPrice": 2500,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2022-04-25T17:26:18.400Z",
+          "incubateTime": "2022-05-26T03:50:01.681Z",
+          "publishTime": "2022-05-26T04:04:31.735Z",
+          "hasBought": false,
+          "video": "628efc4f50859a0006fde2f0",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "thank55",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 85,
+              "discountedPrice": 2125,
+              "discountedPriceInBaseCurrency": 2125
+            }
+          },
+          "purchasePlan": {
+            "id": "628efc4f50859a0006fde36c",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 2500,
+            "priceInMoneyPoint": 2500,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "57c7d75c61d9350700e6d972",
+          "status": "PUBLISHED",
+          "uniquename": "coverdesign",
+          "owner": {
+            "links": {
+              "behance": "https://www.behance.net/geryrabbitstudio",
+              "website": ""
+            },
+            "_id": "57c7d71561d9350700e6d96d",
+            "username": "nancy1339",
+            "name": "Shana",
+            "profileImageUrl": "https://images.api.hahow.in/images/597584b2ea17a30700d3b4d6"
+          },
+          "tags": [],
+          "preOrderedPrice": 700,
+          "preOrderedPriceInMoneyPoint": 700,
+          "price": 2000,
+          "priceInMoneyPoint": 2000,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 489,
+          "reviewing": false,
+          "isReject": false,
+          "assignment": "57c7d75c61d9350700e6d973",
+          "averageRating": 4.82,
+          "numRating": 38,
+          "bookmarkCount": 2004,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2017-10-17T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "從0開始：從書籍封面學平面設計！",
+          "metaDescription": "書籍封面設計課程，適合想自製書籍、作品集封面的入門者。除了封面，課程將教你運用學習的技巧，延伸出其他平面設計作品，如：影片、期末報告、自傳、履歷封面等，你也能自己設計出有專業感的作品。",
+          "coverImage": {
+            "_id": "5e79b5cd9c4b140023a81486",
+            "url": "https://images.hahow.in/images/5e79b5cd9c4b140023a81486"
+          },
+          "totalVideoLengthInSeconds": 21442,
+          "modules": ["5c91835bed65c200740ef26d"],
+          "basePricingInfo": {
+            "price": 2000,
+            "preOrderedPrice": 700,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2016-09-01T07:23:08.000Z",
+          "incubateTime": "2017-07-20T04:00:21.221Z",
+          "publishTime": "2017-10-18T04:14:47.266Z",
+          "proposalDueTime": "2017-08-18T16:00:00.000Z",
+          "hasBought": false,
+          "video": "5968a775ede9500700e68877",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "thank55",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 85,
+              "discountedPrice": 1700,
+              "discountedPriceInBaseCurrency": 1700
+            }
+          },
+          "purchasePlan": {
+            "id": "5f96559195b5aa016085cfbb",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 2000,
+            "priceInMoneyPoint": 2000,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "5e7c50f431e8dd0029db3a65",
+          "status": "PUBLISHED",
+          "uniquename": "jeweldesign",
+          "owner": {
+            "_id": "5e01b2aa1b68d20020e1d0a5",
+            "name": "城邦微學習",
+            "username": "cite1elearning",
+            "profileImageUrl": "https://images.api.hahow.in/images/5e7c509431e8dd0029db3a1f"
+          },
+          "tags": [],
+          "preOrderedPrice": 1900,
+          "preOrderedPriceInMoneyPoint": 1900,
+          "price": 2600,
+          "priceInMoneyPoint": 2600,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 399,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 4.83,
+          "numRating": 12,
+          "bookmarkCount": 908,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2020-08-10T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "手繪珠寶設計入門：完成你的第一件珠寶設計",
+          "metaDescription": "珠寶設計課程，課程由臺灣珠寶藝術學院規劃，透過珠寶賞析瞭解設計原理，進而學習素描與水彩上色的設計圖繪製技巧，帶你完成屬於自己的珠寶設計圖。",
+          "coverImage": {
+            "_id": "5ec24607799dc4a304129367",
+            "url": "https://images.hahow.in/images/5ec24607799dc4a304129367"
+          },
+          "totalVideoLengthInSeconds": 9207,
+          "modules": [
+            "5eb167a3004a31838d210c97",
+            "5eb167bd004a31416e210cb8",
+            "5eb167b5004a313911210cb5",
+            "5eb3616568191120a1371121",
+            "5eb3616ab95abdd9776db581",
+            "5eb3618fb95abdaaf26db5d9",
+            "5eb3619bb7ee9bc3eebd7731"
+          ],
+          "basePricingInfo": {
+            "price": 2600,
+            "preOrderedPrice": 1900,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2020-03-26T06:51:32.000Z",
+          "incubateTime": "2020-05-13T04:00:20.316Z",
+          "publishTime": "2020-08-11T04:02:05.605Z",
+          "proposalDueTime": "2020-06-11T16:00:00.000Z",
+          "hasBought": false,
+          "video": "5ebb70d4f1318c002a356630",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "thank55",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 85,
+              "discountedPrice": 2210,
+              "discountedPriceInBaseCurrency": 2210
+            }
+          },
+          "purchasePlan": {
+            "id": "5ebb70d4f1318c002a356633",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 2600,
+            "priceInMoneyPoint": 2600,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "5d42554a2fb5020020621025",
+          "status": "PUBLISHED",
+          "uniquename": "logogogo",
+          "owner": {
+            "links": {
+              "website": "http://www.if-office.com/",
+              "facebook": "https://www.facebook.com/IFOFFICE/",
+              "facebookPixel": "164237103128038"
+            },
+            "_id": "5d42552e2fb5020020621010",
+            "name": "馮宇 X 圖文不符上課囉",
+            "username": "ifsimpleinfo",
+            "profileImageUrl": "https://images.api.hahow.in/images/5d7e486c45639e00212d00cf"
+          },
+          "tags": [],
+          "preOrderedPrice": 1800,
+          "preOrderedPriceInMoneyPoint": 1800,
+          "price": 2400,
+          "priceInMoneyPoint": 2400,
+          "successCriteria": {
+            "numSoldTickets": 100
+          },
+          "numSoldTickets": 1770,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 4.96,
+          "numRating": 89,
+          "bookmarkCount": 3428,
+          "campaign": {
+            "expireDate": "2019-10-05T16:00:00.000Z",
+            "types": ["PHYSICAL", "DIGITAL"],
+            "startDate": "2019-09-18T04:00:00.000Z"
+          },
+          "estimatedCourseStartTime": "2019-12-16T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "LOGO 必修課：發展品牌識別的第一步",
+          "metaDescription": "Logo 設計課，由 IF Office 的馮宇帶你掌握品牌識別第一步。從 logo 設計概念開始，帶你分析多個業界經典 logo 案例，接著教你剖析品牌價值，找到 logo 設計的靈感來源，最後會教你如何掌握 logo 設計案的執行重點與溝通方式，讓你輕鬆完成獨特的 logo 設計。",
+          "coverImage": {
+            "_id": "5d7ee80145639e00212d1561",
+            "url": "https://images.hahow.in/images/5d7ee80145639e00212d1561"
+          },
+          "totalVideoLengthInSeconds": 15754,
+          "modules": [
+            "5d77635145639e00212bd65e",
+            "5de7185146da740021ec290e",
+            "5de7183246da740021ec28fc"
+          ],
+          "basePricingInfo": {
+            "price": 2400,
+            "preOrderedPrice": 1800,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2019-08-01T02:58:18.000Z",
+          "incubateTime": "2019-09-18T04:00:20.593Z",
+          "publishTime": "2019-12-11T04:13:12.221Z",
+          "proposalDueTime": "2019-10-17T16:00:00.000Z",
+          "hasBought": false,
+          "video": "5d81abd445639e00212da5f5",
+          "includedKnowledgeCollections": [
+            {
+              "_id": "6554a1cadcd010723921dfaa",
+              "title": "Logo × 標準字｜專攻識別設計組合包！",
+              "coverImage": {
+                "_id": "6554a06ddcd010723921873c",
+                "url": "https://images.hahow.in/images/6554a06ddcd010723921873c",
+                "height": 1095,
+                "width": 1751
+              },
+              "previewDescription": "至 6/27 前限時優惠 8 折｜黃金講師組合：馮宇、曾國展Green！"
+            },
+            {
+              "_id": "655d631970d479c51d52eebf",
+              "title": "字體 × 標準字 × Logo｜字體愛好者組合包！",
+              "coverImage": {
+                "_id": "655d61bc70d479c51d526f8e",
+                "url": "https://images.hahow.in/images/655d61bc70d479c51d526f8e",
+                "height": 1095,
+                "width": 1751
+              },
+              "previewDescription": "至 6/27 前限時優惠 8 折｜頂級講師陣容：justfont、曾國展Green、馮宇！"
+            }
+          ],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "thank55",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 85,
+              "discountedPrice": 2040,
+              "discountedPriceInBaseCurrency": 2040
+            }
+          },
+          "purchasePlan": {
+            "id": "5d81abd445639e00212da5f8",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 2400,
+            "priceInMoneyPoint": 2400,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "5f5741645077a0553173c948",
+          "status": "PUBLISHED",
+          "uniquename": "photoshop2021",
+          "owner": {
+            "links": {
+              "facebook": "",
+              "youtube": "https://www.youtube.com/watch?v=vu_M1dIZF2o",
+              "website": "https://www.instagram.com/magicps520/",
+              "facebookPixel": "327560958295705",
+              "googleAnalytics4": "G-N743MZVQ8T",
+              "googleAnalytics4APISecretKey": "N5HrXh4xQeOrF91RLCRgtw"
+            },
+            "_id": "5e92d20f82c6701ba66cb210",
+            "username": "magicphotoshop",
+            "name": "Photoshop 魔力影像合成",
+            "profileImageUrl": "https://images.api.hahow.in/images/5efb205777070b46d22dd8b6"
+          },
+          "tags": [],
+          "preOrderedPrice": 1688,
+          "preOrderedPriceInMoneyPoint": 1688,
+          "price": 2860,
+          "priceInMoneyPoint": 2860,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 1698,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 4.83,
+          "numRating": 35,
+          "bookmarkCount": 1882,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2021-07-29T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "實用Photoshop - 打開視覺設計之門",
+          "metaDescription": "《實用 Photoshop - 打開視覺設計之門》，準備了兩大視覺設計基本相關技能並以實用的角度出發，讓你的視覺設計之路從開始就有穩固的基石，之後利用課程觀念再去延展，擴展屬於自己的視覺版圖。",
+          "coverImage": {
+            "_id": "601759233c71da4a2f8938e4",
+            "url": "https://images.hahow.in/images/601759233c71da4a2f8938e4",
+            "height": 620,
+            "width": 999
+          },
+          "squareCoverImage": {
+            "_id": "60175b7c910e49c7ee64efee",
+            "url": "https://images.hahow.in/images/60175b7c910e49c7ee64efee",
+            "height": 800,
+            "width": 800
+          },
+          "totalVideoLengthInSeconds": 17598,
+          "modules": [
+            "601618b7b3318f3c06441b16",
+            "60161903910e495cf7637f0a",
+            "60161947b51b5b2a43f92b05",
+            "604ca90ab5b4afce801e377f",
+            "604ca924b0ab47ad42d4cb83",
+            "604cab7fb0ab4727fdd4ceaf",
+            "601619cb910e490a46637f6c",
+            "604cac19b0ab478579d4ceea",
+            "60ca8b982ab2556799e5167e"
+          ],
+          "basePricingInfo": {
+            "price": 2860,
+            "preOrderedPrice": 1688,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2020-09-08T08:31:32.000Z",
+          "incubateTime": "2021-06-09T04:00:20.954Z",
+          "publishTime": "2021-07-30T04:01:54.782Z",
+          "proposalDueTime": "2021-07-09T16:00:00.000Z",
+          "hasBought": false,
+          "video": "60c03cd4d517d4002ab5dfc0",
+          "includedKnowledgeCollections": [
+            {
+              "_id": "66598e018cce2e60e285dd22",
+              "title": "攻頂 Photoshop",
+              "coverImage": {
+                "_id": "66599057dbe7dc7d03683dd7",
+                "url": "https://images.hahow.in/images/66599057dbe7dc7d03683dd7",
+                "height": 625,
+                "width": 1000
+              },
+              "previewDescription": ""
+            },
+            {
+              "_id": "6659978adbe7dc7d036b1aa9",
+              "title": "熱門應用 Photoshop",
+              "coverImage": {
+                "_id": "665996ad8cce2e60e2894029",
+                "url": "https://images.hahow.in/images/665996ad8cce2e60e2894029",
+                "height": 625,
+                "width": 1000
+              },
+              "previewDescription": ""
+            }
+          ],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "thank55",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 85,
+              "discountedPrice": 2431,
+              "discountedPriceInBaseCurrency": 2431
+            }
+          },
+          "purchasePlan": {
+            "id": "665fe2c7c41454583819204e",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 2860,
+            "priceInMoneyPoint": 2860,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "5f32453687e38eda69eda329",
+          "status": "PUBLISHED",
+          "uniquename": "mockup2022",
+          "owner": {
+            "links": {
+              "facebook": "https://www.facebook.com/DesignReturn/",
+              "behance": "https://www.behance.net/returndesign",
+              "website": "https://www.instagram.com/return.design/",
+              "googlePlus": "",
+              "pinterest": ""
+            },
+            "_id": "5c01cc53a45e4500200ed4ea",
+            "name": "回轉設計",
+            "profileImageUrl": "https://images.api.hahow.in/images/6289daad5527ad00070852d9",
+            "username": "returndesign2020"
+          },
+          "tags": [],
+          "preOrderedPrice": 1800,
+          "preOrderedPriceInMoneyPoint": 1800,
+          "price": 2400,
+          "priceInMoneyPoint": 2400,
+          "successCriteria": {
+            "numSoldTickets": 50
+          },
+          "numSoldTickets": 768,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 4.99,
+          "numRating": 78,
+          "bookmarkCount": 702,
+          "campaign": {
+            "types": ["DIGITAL"],
+            "startDate": "2022-06-22T04:00:00.000Z",
+            "expireDate": "2022-07-21T16:00:00.000Z"
+          },
+          "estimatedCourseStartTime": "2022-09-19T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "提案實務必備！抓住人心的 Mockup 合成術",
+          "metaDescription": "將設計稿件透過好的 Mockup，更加生動真實的呈現在眾人的面前，本課程不只是能帶大家製作擁有個人特色的 Mockup，更要教大家透過提案心法整理疏理自己的溝通策略，提高設計提案的成功率！",
+          "coverImage": {
+            "_id": "62aff322a2ff850007e109c1",
+            "url": "https://images.hahow.in/images/62aff322a2ff850007e109c1",
+            "height": 620,
+            "width": 999
+          },
+          "squareCoverImage": {
+            "_id": "62b1f538f7c2720007a79049",
+            "url": "https://images.hahow.in/images/62b1f538f7c2720007a79049",
+            "height": 1000,
+            "width": 1000
+          },
+          "totalVideoLengthInSeconds": 27928,
+          "modules": [
+            "62724e227150c800067d6072",
+            "62724e5b7150c800067d74fa",
+            "62afccc2eb951b00067e52b2",
+            "62724e5c55a4c90006205b42"
+          ],
+          "basePricingInfo": {
+            "price": 2400,
+            "preOrderedPrice": 1800,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2020-08-11T07:13:58.000Z",
+          "incubateTime": "2022-06-22T04:00:34.646Z",
+          "publishTime": "2022-09-20T04:00:33.818Z",
+          "proposalDueTime": "2022-07-21T16:00:00.000Z",
+          "hasBought": false,
+          "video": "62b293e2f7c2720007d93628",
+          "includedKnowledgeCollections": [
+            {
+              "_id": "65a8e01ada1f762663bce5dc",
+              "title": "Mockup 合成全攻略｜設計作品與提案實戰應用",
+              "coverImage": {
+                "_id": "65a8dfa615df0e76c3644dee",
+                "url": "https://images.hahow.in/images/65a8dfa615df0e76c3644dee",
+                "height": 625,
+                "width": 1000
+              },
+              "previewDescription": "至 6/27 前限時優惠 8 折！"
+            },
+            {
+              "_id": "66681f33cb219e3dd82a5ff6",
+              "title": "其他人也在學｜影像合成 x Mockup 合成",
+              "coverImage": {
+                "_id": "66681ec8cb219e3dd82a394b",
+                "url": "https://images.hahow.in/images/66681ec8cb219e3dd82a394b",
+                "height": 625,
+                "width": 1000
+              },
+              "previewDescription": "至 6/27 前限時優惠 8 折！"
+            }
+          ],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "thank55",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 85,
+              "discountedPrice": 2040,
+              "discountedPriceInBaseCurrency": 2040
+            }
+          },
+          "purchasePlan": {
+            "id": "62b293e2f7c2720007d93683",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 2400,
+            "priceInMoneyPoint": 2400,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "59b8a97dcd5792070055ef75",
+          "status": "PUBLISHED",
+          "uniquename": "crystal-cdesign",
+          "owner": {
+            "links": {
+              "facebook": "",
+              "behance": "",
+              "website": "https://www.instagram.com/crystaleatsyourbrain/"
+            },
+            "_id": "54e4b5fbc5c9c00900cd8d4c",
+            "profileImageUrl": "https://graph.facebook.com/889858551036109/picture",
+            "name": "水晶孔",
+            "username": "crystalkung"
+          },
+          "tags": [],
+          "preOrderedPrice": 880,
+          "preOrderedPriceInMoneyPoint": 880,
+          "price": 1280,
+          "priceInMoneyPoint": 1280,
+          "successCriteria": {
+            "numSoldTickets": 100
+          },
+          "numSoldTickets": 5962,
+          "reviewing": false,
+          "isReject": false,
+          "assignment": "59b8a97dcd5792070055ef76",
+          "averageRating": 4.97,
+          "numRating": 355,
+          "bookmarkCount": 5433,
+          "campaign": {
+            "types": []
+          },
+          "estimatedCourseStartTime": "2017-11-30T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "打動人心的創作秘密，畫出個性的角色設計",
+          "metaDescription": "動畫角色設計課程，學會畫出角色的靈魂與特色，從動畫角色的個性與情緒著墨，掌握不同的肢體動作與視覺比例，讓設計出的角色舉手投足都富有故事與影響力。",
+          "coverImage": {
+            "_id": "59b8aaa0cd5792070055ef79",
+            "url": "https://images.hahow.in/images/59b8aaa0cd5792070055ef79"
+          },
+          "totalVideoLengthInSeconds": 14998,
+          "modules": ["5c91835ced65c200740ef5ae"],
+          "basePricingInfo": {
+            "price": 1280,
+            "preOrderedPrice": 880,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2017-09-13T03:43:57.000Z",
+          "incubateTime": "2017-09-26T03:47:22.342Z",
+          "publishTime": "2017-11-30T15:51:59.118Z",
+          "proposalDueTime": "2017-10-25T16:00:00.000Z",
+          "hasBought": false,
+          "video": "59c9cdca01875f001e14a631",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": {
+            "type": "COUPON",
+            "info": {
+              "currencyCode": "TWD",
+              "code": "millionad88",
+              "discountType": "PERCENTAGE",
+              "discountedPercentage": 88,
+              "discountedPrice": 1088,
+              "discountedPriceInBaseCurrency": 1088
+            }
+          },
+          "purchasePlan": {
+            "id": "59c9cdca01875f001e14a634",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 1280,
+            "priceInMoneyPoint": 1280,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "629048d8b6b57c0006bc41ca",
+          "status": "PUBLISHED",
+          "uniquename": "aiae-step01",
+          "owner": {
+            "links": {
+              "behance": "",
+              "facebook": "",
+              "website": "https://www.instagram.com/jungwei.design/",
+              "youtube": ""
+            },
+            "_id": "628e4a0694b8230007b15b7d",
+            "name": "瑋瑋",
+            "username": "jungwei",
+            "profileImageUrl": "https://images.hahow.in/images/65eea5dba5e9aab29869a308"
+          },
+          "tags": [],
+          "preOrderedPrice": 1999,
+          "preOrderedPriceInMoneyPoint": 1999,
+          "price": 2688,
+          "priceInMoneyPoint": 2688,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 161,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 5,
+          "numRating": 5,
+          "bookmarkCount": 810,
+          "campaign": {
+            "types": ["DIGITAL"],
+            "startDate": "2022-09-28T04:00:00.000Z",
+            "expireDate": "2022-10-27T16:00:00.000Z"
+          },
+          "estimatedCourseStartTime": "2022-12-26T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "動畫設計從零開始！AI 與 AE 新手入門課",
+          "metaDescription": "這門課將成為您的 2D 動畫新手入門指南，專為初學者設計，用簡潔的說明帶您入門操作 AI 與 AE 兩大設計軟體，零基礎的您能在動畫製作路上邁進一大步。",
+          "coverImage": {
+            "_id": "630450ef04a8a800064596c4",
+            "url": "https://images.hahow.in/images/630450ef04a8a800064596c4",
+            "height": 620,
+            "width": 999
+          },
+          "squareCoverImage": {
+            "_id": "6302ff2083cc6000069ded9f",
+            "url": "https://images.hahow.in/images/6302ff2083cc6000069ded9f",
+            "height": 1000,
+            "width": 1000
+          },
+          "totalVideoLengthInSeconds": 35864,
+          "modules": [
+            "62904a64b6b57c0006bccfec",
+            "62904aaec9c4ce0006f73f18",
+            "62904af394ff400006d44aef",
+            "62904b2b94b82300076e1c9b"
+          ],
+          "basePricingInfo": {
+            "price": 2688,
+            "preOrderedPrice": 1999,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2022-05-27T03:43:20.492Z",
+          "incubateTime": "2022-09-28T04:00:07.557Z",
+          "publishTime": "2022-12-27T03:55:04.721Z",
+          "proposalDueTime": "2022-10-27T16:00:00.000Z",
+          "hasBought": false,
+          "video": "6333c6c73eb44f00061704c5",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": null,
+          "purchasePlan": {
+            "id": "6333c6c73eb44f00061704ff",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 2688,
+            "priceInMoneyPoint": 2688,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "6242be7d03381a0007fa6f94",
+          "status": "PUBLISHED",
+          "uniquename": "careerdesigner",
+          "owner": {
+            "_id": "61d5c9af6b34c90007a5b11d",
+            "username": "onlytalklecture",
+            "name": "onlytalklecture",
+            "profileImageUrl": "https://images.api.hahow.in/images/61ef6c643b1b230006225729"
+          },
+          "tags": ["COBRANDING"],
+          "preOrderedPrice": 499,
+          "preOrderedPriceInMoneyPoint": 499,
+          "price": 499,
+          "priceInMoneyPoint": 499,
+          "successCriteria": {
+            "numSoldTickets": 30
+          },
+          "numSoldTickets": 42,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 5,
+          "numRating": 5,
+          "bookmarkCount": 152,
+          "campaign": {
+            "types": []
+          },
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "【講座】平面設計師之路｜IF OFFICE 馮宇",
+          "metaDescription": "讓擁有 20 年品牌設計經歷的知名設計師馮宇，帶你認識平面設計師的工作內容與職涯發展，以及工作中的挑戰！",
+          "coverImage": {
+            "_id": "6242c226933a2100064ed07e",
+            "url": "https://images.hahow.in/images/6242c226933a2100064ed07e",
+            "height": 620,
+            "width": 999
+          },
+          "squareCoverImage": {
+            "_id": "6242c22faba8c30006fa83e4",
+            "url": "https://images.hahow.in/images/6242c22faba8c30006fa83e4",
+            "height": 1000,
+            "width": 1000
+          },
+          "totalVideoLengthInSeconds": 3263,
+          "modules": ["625cd736131ea20006a489ed"],
+          "basePricingInfo": {
+            "price": 499,
+            "preOrderedPrice": 499,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2022-03-29T08:08:29.231Z",
+          "publishTime": "2022-04-28T04:00:34.116Z",
+          "hasBought": false,
+          "video": "626a1162fc2f7900064cb03e",
+          "includedKnowledgeCollections": [],
+          "bestDiscount": null,
+          "purchasePlan": {
+            "id": "626a1162fc2f7900064cb073",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 499,
+            "priceInMoneyPoint": 499,
+            "isLimitedTimeOffer": false
+          }
+        },
+        {
+          "_id": "60939aa60390311a3a030a1e",
+          "status": "PUBLISHED",
+          "uniquename": "blockstudiowebdesign",
+          "owner": {
+            "links": {
+              "facebook": "https://www.facebook.com/blockstudiotw",
+              "website": "https://blockstudio.tw/",
+              "facebookPixel": "164237103128038"
+            },
+            "_id": "60939a8f89d06d84724fee36",
+            "username": "blocksimple",
+            "name": "版塊設計 x 圖文不符上課囉",
+            "profileImageUrl": "https://images.api.hahow.in/images/60acdc10f8d02e1437ffd7b2"
+          },
+          "tags": [],
+          "preOrderedPrice": 2400,
+          "preOrderedPriceInMoneyPoint": 2400,
+          "price": 3200,
+          "priceInMoneyPoint": 3200,
+          "successCriteria": {
+            "numSoldTickets": 100
+          },
+          "numSoldTickets": 1051,
+          "reviewing": false,
+          "isReject": false,
+          "averageRating": 4.84,
+          "numRating": 25,
+          "bookmarkCount": 1483,
+          "campaign": {
+            "types": ["DIGITAL"],
+            "startDate": "2021-05-27T04:00:00.000Z",
+            "expireDate": "2021-06-16T16:00:00.000Z"
+          },
+          "estimatedCourseStartTime": "2021-08-24T16:00:00.000Z",
+          "contentRating": {
+            "brief": "LEVEL_0",
+            "content": "LEVEL_0"
+          },
+          "title": "跟著版塊做網站：用動態特效點滿視覺創意",
+          "metaDescription": "版塊帶你跟上網站設計趨勢！從團隊核心價值「動態回推設計」出發，學會設計動態特效網站！",
+          "coverImage": {
+            "_id": "60adf0aa62e3c3f675788994",
+            "url": "https://images.hahow.in/images/60adf0aa62e3c3f675788994",
+            "height": 620,
+            "width": 999
+          },
+          "squareCoverImage": {
+            "_id": "60a4b7829003f134bcd04c09",
+            "url": "https://images.hahow.in/images/60a4b7829003f134bcd04c09",
+            "height": 801,
+            "width": 801
+          },
+          "totalVideoLengthInSeconds": 8032,
+          "modules": ["60a3d7a28f58427dd474d085"],
+          "basePricingInfo": {
+            "price": 3200,
+            "preOrderedPrice": 2400,
+            "currencyCode": "TWD"
+          },
+          "currencyCode": "TWD",
+          "createdAt": "2021-05-06T07:28:38.000Z",
+          "incubateTime": "2021-05-27T04:00:20.325Z",
+          "publishTime": "2021-08-25T04:01:35.765Z",
+          "proposalDueTime": "2021-06-25T16:00:00.000Z",
+          "hasBought": false,
+          "video": "60af195406c918002a2926fd",
+          "includedKnowledgeCollections": [
+            {
+              "_id": "65549cde60fdab5fdecde10b",
+              "title": "網頁設計師專屬！接案 × 動態特效組合包",
+              "coverImage": {
+                "_id": "6554946160fdab5fdeca9cde",
+                "url": "https://images.hahow.in/images/6554946160fdab5fdeca9cde",
+                "height": 1095,
+                "width": 1751
+              },
+              "previewDescription": "至 6/27 前限時優惠 8 折｜更多好案+更強動態=更頂尖的網頁設計師！"
+            }
+          ],
+          "bestDiscount": null,
+          "purchasePlan": {
+            "id": "60af195406c918002a292700",
+            "type": "COURSE_PUBLISHED",
+            "category": "COURSE",
+            "price": 3200,
+            "priceInMoneyPoint": 3200,
+            "isLimitedTimeOffer": false
+          }
+        }
+      ]
+    }
+  },
+  "_metadata": {
+    "page": 0,
+    "limit": 24,
+    "count": 914,
+    "facetCounts": {},
+    "misoId": "91682e5c-2d85-11ef-9d81-161c1609d4d1"
+  }
+}

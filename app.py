@@ -2,6 +2,9 @@ from flask_cors import CORS
 from flask import Flask, send_from_directory, render_template, request, send_file
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
+from crawler.crawler_ntu_ocw import crawl_ntu_ocw
+from crawler.crawler_coursera import crawl_coursera
+from crawler.crawler_hahow import crawl_hahow
 import os
 
 app = Flask(__name__, static_folder='templates/build')
@@ -59,6 +62,14 @@ def create_tables():
             db.session.add(user01)
             db.session.commit()
 
+@app.post('/crawl_ntu_ocw')
+def crawlNtuOcw(): return crawl_ntu_ocw()
+
+@app.post('/crawl_coursera')
+def crawlCoursera(): return crawl_coursera()
+
+@app.post('/crawl_hahow')
+def crawlHahow(): return crawl_hahow()
 
 if __name__ == "__main__":
     # create_tables()
