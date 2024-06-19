@@ -23,6 +23,7 @@ def crawl_ntu_ocw():
         elements = soup.select('#coursebox_all .coursebox')
         
         data = {
+            "domain": "台大開放式課程",
             "success": True,
             "page": url,
             "courses": []
@@ -50,6 +51,7 @@ def crawl_ntu_ocw():
                 data["courses"].append(new_course)
             except Exception as e:
                 error_message = {
+                    "domain": "台大開放式課程",
                     "sucess": False,
                     "page": url,
                     "message": f"An error occurred while processing an element: {e}"
@@ -61,6 +63,7 @@ def crawl_ntu_ocw():
         return jsonify(data)
     else:
         error_message = {
+            "domain": "台大開放式課程",
             "sucess": False,
             "page": url,
             "message": f"Failed to retrieve the data. Status code: {response.status_code}"

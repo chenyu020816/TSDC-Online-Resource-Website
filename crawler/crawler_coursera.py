@@ -2,8 +2,14 @@ from flask import jsonify, request
 from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode
 from fake_useragent import UserAgent
 from bs4 import BeautifulSoup
+from translate import Translator
 import requests
 import json
+
+def translate_keyword(keyword):
+    translator = Translator(from_lang='zh', to_lang='en')
+    result = translator.translate(keyword)
+    return result
 
 def clean_url(url):
     parsed_url = urlparse(url)
@@ -23,7 +29,10 @@ def clean_url(url):
 def crawl_coursera():
     input_data = request.get_json()
     keyword = input_data['_keyword']
-    url = "https://www.coursera.org/search?query={}".format(keyword)
+    # 翻譯中文關鍵字
+    keyword_en = translate_keyword(keyword)
+
+    url = "https://www.coursera.org/search?query={}".format(keyword_en)
 
     ua = UserAgent()
     random_user_agent = ua.random
@@ -38,8 +47,9 @@ def crawl_coursera():
         elements = soup.select('ul.cds-9.css-5t8l4v.cds-10 li')
         
         data = {
+            "domain": "Coursera",
             "success": True,
-            "page": f"https://www.coursera.org/search?query={keyword}",
+            "page": f"https://www.coursera.org/search?query={keyword_en}",
             "courses": []
         }
         
@@ -71,8 +81,9 @@ def crawl_coursera():
                 data["courses"].append(new_course)
             except Exception as e:
                 error_message = {
+                    "domain": "Coursera",
                     "sucess": False,
-                    "page": f"https://hahow.in/search?query={keyword}",
+                    "page": f"https://hahow.in/search?query={keyword_en}",
                     "message": f"An error occurred while processing an element: {e}"
                 }
                 return jsonify(error_message)
@@ -82,8 +93,9 @@ def crawl_coursera():
         return jsonify(data)
     else:
         error_message = {
+            "domain": "Coursera",
             "sucess": False,
-            "page": f"https://hahow.in/search?query={keyword}",
+            "page": f"https://hahow.in/search?query={keyword_en}",
             "message": f"Failed to retrieve the data. Status code: {response.status_code}"
         }
         return jsonify(error_message)

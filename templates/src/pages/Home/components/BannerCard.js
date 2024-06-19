@@ -89,14 +89,9 @@ const UserTagHistoryCard = () => {
 
     return (
         <ThemeProvider theme={cardtheme}>
-            <Card sx={{ width: '100%', height: 520 }}>
+            <Card sx={{ width: '100%', height: 420 }}>
                 <CardContent>
-                    <Grid container style={{ height: 500 }}>
-                        {/* <Grid item>
-                            <Typography variant="h6" component="div" fontWeight="fontWeightBold">
-                                旅遊標籤
-                            </Typography>
-                        </Grid> */}
+                    <Grid container style={{ height: 400 }}>
                         <ReactFlow
                             nodes={nodes}
                             edges={edges}
@@ -128,8 +123,8 @@ const cardtheme = createTheme({
             styleOverrides: {
                 // Name of the slot
                 root: {
-                    borderRadius: "10px",
-                    boxShadow: "0px 0px 15px 0px rgba(0, 0, 0, 0.15)"
+                    borderRadius: "0px",
+                    boxShadow: "0px 0px 15px 0px rgba(0, 0, 0, 0)"
                 },
             },
         },

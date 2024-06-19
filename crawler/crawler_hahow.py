@@ -20,6 +20,7 @@ def crawl_hahow():
             course_data = json.loads(response.text)
             
             data = {
+                "domain": "Hahow",
                 "sucess": True,
                 "page": f"https://hahow.in/search?query={keyword}",
                 "courses": []
@@ -38,6 +39,7 @@ def crawl_hahow():
                     data["courses"].append(new_course)
                 except KeyError as e:
                     error_message = {
+                        "domain": "Hahow",
                         "sucess": False,
                         "page": f"https://hahow.in/search?query={keyword}",
                         "message": f"Key error: {e} in course: {course['_id']}"
@@ -46,6 +48,7 @@ def crawl_hahow():
                     # print(json.dumps(error_message, ensure_ascii = False, indent = 4))
                 except Exception as e:
                     error_message = {
+                        "domain": "Hahow",
                         "sucess": False,
                         "page": f"https://hahow.in/search?query={keyword}",
                         "message": f"An error occurred: {e} in course: {course['_id']}"
@@ -57,6 +60,7 @@ def crawl_hahow():
             return jsonify(data)
         except json.JSONDecodeError as e:
             error_message = {
+                "domain": "Hahow",
                 "sucess": False,
                 "page": f"https://hahow.in/search?query={keyword}",
                 "message": f"Failed to parse JSON:, {e}"
@@ -65,6 +69,7 @@ def crawl_hahow():
             # print(json.dumps(error_message, ensure_ascii = False, indent = 4))
     else:
         error_message = {
+            "domain": "Hahow",
             "sucess": False,
             "page": f"https://hahow.in/search?query={keyword}",
             "message": f"Failed to retrieve the data. Status code: {response.status_code}"
