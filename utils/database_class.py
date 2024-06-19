@@ -13,12 +13,14 @@ class User(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
     role = db.Column(db.String(80), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
-    def __init__(self, username, password, role):
+    def __init__(self, username, email, password, role):
         self.username = username
+        self.email = email
         self.password_hash = generate_password_hash(password)
         self.role = role
 
@@ -261,7 +263,7 @@ def init_default_data(file_path="./database-default-data.yaml"):
     users = data.get("users", [])
     keywords = data.get("keywords", [])
 
-    user_objects = [User(username=user[0], password=user[1], role=user[2]) for user in users]
+    user_objects = [User(username=user[0], email = user[1], password=user[2], role=user[3]) for user in users]
     keyword_objects = [Keyword(keyword_name_eng=keyword[0], keyword_name_chi=keyword[1]) for keyword in keywords]
 
     datas = [user_objects, keyword_objects]

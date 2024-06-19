@@ -1,9 +1,9 @@
 users:
-  - ["admin01", "I3aIO0GapcxfT7WP", "admin"]
-  - ["admin02", "IpJ9CH6BVkFy6T4", "admin"]
-  - ["user_test", "T5Do9EAtQAqTtfR4O", "user"]
-  - ["teacher_test", "f9emWS3Qa9NmVKQ", "teacher"]
-  - ["student_test", "ZFCS0RrpaVW3kHx", "student"]
+  - ["admin01", "admin01@", "I3aIO0GapcxfT7WP", "admin"]
+  - ["admin02", "admin02@", "IpJ9CH6BVkFy6T4", "admin"]
+  - ["user_test", "user_test@", "T5Do9EAtQAqTtfR4O", "user"]
+  - ["teacher_test", "teacher_test@", "f9emWS3Qa9NmVKQ", "teacher"]
+  - ["student_test", "student_test@", "ZFCS0RrpaVW3kHx", "student"]
 
 keywords:
   - ["Data Science", "資料科學"]
