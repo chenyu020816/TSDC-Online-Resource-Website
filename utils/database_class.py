@@ -1,3 +1,4 @@
+import yaml
 from datetime import datetime
 
 from flask_sqlalchemy import SQLAlchemy
@@ -66,12 +67,16 @@ class Keyword(db.Model):
     __tablename__ = "keywords"
 
     id = db.Column(db.Integer, primary_key=True)
-    keyword_name = db.Column(
+    keyword_name_eng = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
+    )
+    keyword_name_chi = db.Column(
         db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
     )
 
-    def __init__(self, keyword_name):
-        self.keyword_name = keyword_name
+    def __init__(self, keyword_name_eng, keyword_name_chi):
+        self.keyword_name_eng = keyword_name_eng
+        self.keyword_name_chi = keyword_name_chi
 
     def __repr__(self):
         return "<Keyword %r>" % self.keyword_name
@@ -244,36 +249,23 @@ def init_tables(app, table_classes=tables):
                 db.session.commit()
 
 
-def init_default_data():
-    admin01 = User(username="admin01", password="I3aIO0GapcxfT7WP", role="admin")
-    admin02 = User(username="admin02", password="IpJ9CH6BVkFy6T4", role="admin")
-    user_test = User(username="user_test", password="T5Do9EAtQAqTtfR4O", role="user")
-    teacher_test = User(
-        username="teacher_test", password="f9emWS3Qa9NmVKQ", role="teacher"
-    )
-    student_test = User(
-        username="student_test", password="ZFCS0RrpaVW3kHx", role="student"
-    )
+def read_default_data(file_path):
+    with open(file_path, 'r') as file:
+        data = yaml.safe_load(file)
+    return data
 
-    keyword_eng_datascience = Keyword(keyword_name="Data Science")
-    keyword_chi_datascience = Keyword(keyword_name="資料科學")
 
-    datas = [
-        admin01,
-        admin02,
-        user_test,
-        teacher_test,
-        student_test,
-        keyword_eng_datascience,
-        keyword_chi_datascience,
-    ]
+def init_default_data(file_path="./database-default-data.yaml"):
+    data = read_default_data(file_path=file_path)
+
+    users = data.get("users", [])
+    keywords = data.get("keywords", [])
+
+    user_objects = [User(username=user[0], password=user[1], role=user[2]) for user in users]
+    keyword_objects = [Keyword(keyword_name_eng=keyword[0], keyword_name_chi=keyword[1]) for keyword in keywords]
+
+    datas = [user_objects, keyword_objects]
 
     return datas
 
 
-def test():
-    pass
-
-
-if __name__ == "__main__":
-    test()

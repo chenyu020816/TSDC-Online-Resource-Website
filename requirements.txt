@@ -3,3 +3,5 @@ flask_cors
 jsonify
 pymysql
 Flask-SQLAlchemy
+pyyaml
+fake_useragent
