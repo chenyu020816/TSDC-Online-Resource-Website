@@ -396,5 +396,3 @@ def update_resource_data(
             print(f"Failed to update resource '{resource} status ': {e}")
             return -2
         return resource.id
-
-
