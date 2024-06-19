@@ -468,6 +468,11 @@ def search_post_by_title(post_title: str) -> dict:
 
 
 def is_all_english(s: str) -> bool:
+    """
+    check whether s is all english
+    :param s:
+    :return: True if is all english, False otherwise
+    """
     return s.isalpha() and s.isascii() and s.islower()
 
 
