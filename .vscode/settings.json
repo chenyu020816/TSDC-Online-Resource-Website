@@ -1,0 +1,24 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "cSpell.words": [
+    "bignumber",
+    "defi",
+    "reduxjs",
+    "Sepolia",
+    "stakable",
+    "Stakabler",
+    "STETH",
+    "Swipeable",
+    "typechain",
+    "unstake",
+    "unstaked"
+  ]
+  /*   "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "python.formatting.autopep8Args": ["--max-line-length", "9999"]
+  },
+  "python.formatting.provider": "autopep8" */
+}

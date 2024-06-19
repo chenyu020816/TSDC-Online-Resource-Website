@@ -2,16 +2,16 @@ import React from 'react';
 import { css } from '@emotion/css/macro';
 
 const Background = () => {
-    return (
-        <div className={style()}>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    )
+        return (
+                <div className={style()}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                </div>
+        )
 }
 
 export default Background
@@ -38,7 +38,7 @@ span{
     animation-iteration-count: infinite;  
 
     &:nth-child(1) {
-        color: #f9e8a9;
+        color: #a4b2f5;
         top: 34%;
         left: 70%;
         animation-duration: 32s;
@@ -48,7 +48,7 @@ span{
     }
 
     &:nth-child(2) {
-        color: #ffa82e;
+        color: #3161c7;
         top: 42%;
         left: 79%;
         animation-duration: 39s;
@@ -58,7 +58,7 @@ span{
     }
 
     &:nth-child(3) {
-        color: #f9e8a9;
+        color: #5276c4;
         top: 56%;
         left: 10%;
         animation-duration: 67s;
@@ -68,7 +68,7 @@ span{
     }
 
     &:nth-child(4) {
-        color: #f9e8a9;
+        color: #92b1f3;
         top: 40%;
         left: 7%;
         animation-duration: 37s;
@@ -78,7 +78,7 @@ span{
     }
 
     &:nth-child(5) {
-        color: #f9e8a9;
+        color: #627baf;
         top: 50%;
         left: 62%;
         animation-duration: 48s;

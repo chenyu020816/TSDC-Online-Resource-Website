@@ -1,9 +1,11 @@
-import os
-
-from flask import Flask, render_template, request, send_file, send_from_directory
 from flask_cors import CORS
+from flask import Flask, send_from_directory, render_template, request, send_file
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
+from crawler.crawler_ntu_ocw import crawl_ntu_ocw
+from crawler.crawler_coursera import crawl_coursera
+from crawler.crawler_hahow import crawl_hahow
+import os
 
 import utils.database_class as db_cls
 from crawler.crawler_coursera import crawl_coursera
@@ -63,4 +65,5 @@ if __name__ == "__main__":
             db_cls.init_tables(app)
             print(login_user("test0", "test"))
             print(login_user("test0efijefsef", "test1"))
+    # create_tables()
     app.run(host="0.0.0.0", port=8000, debug=True)

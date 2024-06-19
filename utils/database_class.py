@@ -73,7 +73,7 @@ class Keyword(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     keyword_name_eng = db.Column(
-        db.String(255, unique=True, collation="utf8mb4_unicode_ci"), nullable=False
+        db.String(255, collation="utf8mb4_unicode_ci"), nullable=False , unique=True
     )
     keyword_name_chi = db.Column(
         db.String(255, collation="utf8mb4_unicode_ci"), nullable=False

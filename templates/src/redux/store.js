@@ -1,18 +1,18 @@
 import { createStore, combineReducers } from "redux";
 import { selectedReducer } from "redux/reducers/selectedReducers";
-import { spotsReducer } from "redux/reducers/spotsReducers";
-import { tagsReducer } from 'redux/reducers/tagsReducers';
+import { CourseReducer } from "redux/reducers/CourseReducers";
+import { KeywordReducer } from 'redux/reducers/KeywordReducers';
 import { googleMapReducer } from 'redux/reducers/googleMapReducers';
 import { planInfoReducer } from 'redux/reducers/planInfoReducers';
 import { planTagsReducer } from 'redux/reducers/planTagsReducers';
 
 const reducer = combineReducers({
-    planInfo: planInfoReducer,
-    selectedItem: selectedReducer,
-    spots: spotsReducer,
-    tags: tagsReducer,
-    planTags: planTagsReducer,
-    googleMap: googleMapReducer
+    keyword: KeywordReducer,
+    course: CourseReducer,
+    //planInfo: planInfoReducer,
+    //selectedItem: selectedReducer,
+    //planTags: planTagsReducer,
+    //googleMap: googleMapReducer
 });
 
 const store = createStore(reducer);
