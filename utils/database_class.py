@@ -35,7 +35,9 @@ class Resource(db.Model):
     __tablename__ = "resources"
 
     id = db.Column(db.Integer, primary_key=True)
-    resource_name = db.Column(db.String(255), unique=True, nullable=False)
+    resource_name = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), unique=True, nullable=False
+    )
     url = db.Column(db.String(255), nullable=False)
     image_url = db.Column(db.String(255), nullable=False)
     source_platform = db.Column(db.String(255), nullable=False)
@@ -43,6 +45,7 @@ class Resource(db.Model):
     score = db.Column(db.Float, nullable=False)
     num_of_purchases = db.Column(db.Integer, nullable=False)
     price = db.Column(db.Float, nullable=False)
+    status = db.Column(db.String(255), nullable=False)
 
     def __init__(
         self,
@@ -53,7 +56,8 @@ class Resource(db.Model):
         resource_type,
         score,
         num_of_purchases,
-        price=0,
+        price: float = 0.0,
+        status: str = "under_review",
     ):
         self.resource_name = resource_name
         self.url = url
@@ -63,6 +67,7 @@ class Resource(db.Model):
         self.score = score
         self.num_of_purchases = num_of_purchases
         self.price = price
+        self.status = status
 
     def __repr__(self):
         return "<Resource %r>" % self.resource_name
@@ -73,7 +78,7 @@ class Keyword(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     keyword_name_eng = db.Column(
-        db.String(255, unique=True, collation="utf8mb4_unicode_ci"), nullable=False
+        db.String(255, collation="utf8mb4_unicode_ci"), unique=True, nullable=False
     )
     keyword_name_chi = db.Column(
         db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
@@ -92,10 +97,14 @@ class Post(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    title = db.Column(db.String(255), unique=True, nullable=False)
-    body = db.Column(db.Text, nullable=False)
+    title = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), unique=True, nullable=False
+    )
+    body = db.Column(db.Text(collation="utf8mb4_unicode_ci"), nullable=False)
     status = db.Column(db.String(255), nullable=False)
     post_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
+
+    __table_args__ = (db.UniqueConstraint("body", name="uq_body", mysql_length=255),)
 
     def __init__(self, user_id, title, body, status="under_review"):
         self.user_id = user_id
@@ -111,7 +120,9 @@ class Question(db.Model):
     __tablename__ = "questions"
 
     id = db.Column(db.Integer, primary_key=True)
-    question_context = db.Column(db.Text, unique=True, nullable=False)
+    question_context = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), unique=True, nullable=False
+    )
 
     def __init__(self, question_context):
         self.question_context = question_context
@@ -128,10 +139,9 @@ class UserResourceUploadHistory(db.Model):
     resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
     upload_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
-    def __init__(self, user_id, resource_id, upload_at):
+    def __init__(self, user_id, resource_id):
         self.user_id = user_id
         self.resource_id = resource_id
-        self.upload_at = upload_at
 
     def __repr__(self):
         return "<UserResourceUploadHistory %r>" % self.id
@@ -172,13 +182,14 @@ class SearchHistory(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    search_context = db.Column(db.String(255), nullable=False)
+    search_context = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
+    )
     search_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
-    def __init__(self, user_id, search_context, search_at):
+    def __init__(self, user_id, search_context):
         self.user_id = user_id
         self.search_context = search_context
-        self.search_at = search_at
 
     def __repr__(self):
         return "<SearchHistory %r>" % self.id
@@ -210,11 +221,10 @@ class RatingHistory(db.Model):
     score = db.Column(db.Integer, nullable=False)
     rate_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
-    def __init__(self, user_id, resource_id, score, rate_at):
+    def __init__(self, user_id, resource_id, score):
         self.user_id = user_id
         self.resource_id = resource_id
         self.score = score
-        self.rate_at = rate_at
 
     def __repr__(self):
         return "<RatingHistory %r>" % self.id
@@ -239,7 +249,7 @@ class RatingQuestion(db.Model):
         return "<RatingQuestion %r>" % self.id
 
 
-tables = [
+TABLES = (
     User,
     Resource,
     Keyword,
@@ -251,10 +261,10 @@ tables = [
     SearchResourceHistory,
     RatingHistory,
     RatingQuestion,
-]
+)
 
 
-def init_tables(app, table_classes=tables):
+def init_tables(app, table_classes=TABLES):
     with app.app_context():
         insp = inspect(db.engine)
         for table_class in table_classes:
