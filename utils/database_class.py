@@ -104,7 +104,9 @@ class Post(db.Model):
     status = db.Column(db.String(255), nullable=False)
     post_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
-    __table_args__ = (db.UniqueConstraint("body", name="uq_body", mysql_length=255),)
+    __table_args__ = (
+        db.Index('uq_body', db.text('body(255)'), unique=True),
+    )
 
     def __init__(self, user_id, title, body, status="under_review"):
         self.user_id = user_id
