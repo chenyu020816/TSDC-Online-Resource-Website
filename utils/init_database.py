@@ -47,15 +47,21 @@ class Resource(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     resource_name = db.Column(db.String(255), nullable=False)
-    link = db.Column(db.String(255), nullable=False)
+    url = db.Column(db.String(255), nullable=False)
+    image_link = db.Column(db.String(255), nullable=False)
     source_platform = db.Column(db.String(255), nullable=False)
     type = db.Column(db.String(255), nullable=False)
+    score = db.Column(db.Float, nullable=False)
+    num_of_purchases = db.Column(db.Integer, nullable=False)
 
-    def __init__(self, resource_name, link, source_platform, type):
+    def __init__(self, resource_name, url, image_url, source_platform, type_, score, num_of_purchases):
         self.resource_name = resource_name
-        self.link = link
+        self.url = url
+        self.image_url = image_url
         self.source_platform = source_platform
-        self.type = type
+        self.type = type_
+        self.score = score
+        self.num_of_purchases = num_of_purchases
 
     def __repr__(self):
         return "<Resource %r>" % self.resource_name
