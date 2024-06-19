@@ -65,6 +65,6 @@ if __name__ == "__main__":
             db_cls.init_tables(app)
             user_id = create_user(db, "test0", "test", "test")
             print(login_user("test0", "test"))
-            print(login_user("test0efijefsef", "test1"))
-            print(search_user(user_id))
+            print(login_user("test0e", "test1"))
+            print(search_user_by_id(user_id))
     app.run(host="0.0.0.0", port=8000, debug=True)

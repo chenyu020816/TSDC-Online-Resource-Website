@@ -497,3 +497,4 @@ def add_resource_keyword(db, resource_id: int, keyword_name: str) -> int:
         print(f"Failed to add resource's keyword '{resource_keyword}': {e}")
         return -2
     return resource_keyword.id
+
