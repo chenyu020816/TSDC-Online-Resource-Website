@@ -1,6 +1,6 @@
-import yaml
 from datetime import datetime
 
+import yaml
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -35,13 +35,14 @@ class Resource(db.Model):
     __tablename__ = "resources"
 
     id = db.Column(db.Integer, primary_key=True)
-    resource_name = db.Column(db.String(255), nullable=False)
+    resource_name = db.Column(db.String(255), unique=True, nullable=False)
     url = db.Column(db.String(255), nullable=False)
-    image_link = db.Column(db.String(255), nullable=False)
+    image_url = db.Column(db.String(255), nullable=False)
     source_platform = db.Column(db.String(255), nullable=False)
     type = db.Column(db.String(255), nullable=False)
     score = db.Column(db.Float, nullable=False)
     num_of_purchases = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Float, nullable=False)
 
     def __init__(
         self,
@@ -49,17 +50,19 @@ class Resource(db.Model):
         url,
         image_url,
         source_platform,
-        type_,
+        resource_type,
         score,
         num_of_purchases,
+        price=0,
     ):
         self.resource_name = resource_name
         self.url = url
         self.image_url = image_url
         self.source_platform = source_platform
-        self.type = type_
+        self.type = resource_type
         self.score = score
         self.num_of_purchases = num_of_purchases
+        self.price = price
 
     def __repr__(self):
         return "<Resource %r>" % self.resource_name
@@ -70,7 +73,7 @@ class Keyword(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     keyword_name_eng = db.Column(
-        db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
+        db.String(255, unique=True, collation="utf8mb4_unicode_ci"), nullable=False
     )
     keyword_name_chi = db.Column(
         db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
@@ -89,7 +92,7 @@ class Post(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    title = db.Column(db.String(255), nullable=False)
+    title = db.Column(db.String(255), unique=True, nullable=False)
     body = db.Column(db.Text, nullable=False)
     status = db.Column(db.String(255), nullable=False)
     post_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
@@ -108,7 +111,7 @@ class Question(db.Model):
     __tablename__ = "questions"
 
     id = db.Column(db.Integer, primary_key=True)
-    question_context = db.Column(db.Text, nullable=False)
+    question_context = db.Column(db.Text, unique=True, nullable=False)
 
     def __init__(self, question_context):
         self.question_context = question_context
@@ -143,6 +146,21 @@ class ResourceKeyword(db.Model):
 
     def __init__(self, resource_id, keyword_id):
         self.resource_id = resource_id
+        self.keyword_id = keyword_id
+
+    def __repr__(self):
+        return "<ResourceKeyword %r>" % self.id
+
+
+class PostKeyword(db.Model):
+    __tablename__ = "post_keyword"
+
+    id = db.Column(db.Integer, primary_key=True)
+    post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
+    keyword_id = db.Column(db.Integer, db.ForeignKey("keywords.id"), nullable=False)
+
+    def __init__(self, post_id, keyword_id):
+        self.post_id = post_id
         self.keyword_id = keyword_id
 
     def __repr__(self):
@@ -252,7 +270,7 @@ def init_tables(app, table_classes=tables):
 
 
 def read_default_data(file_path):
-    with open(file_path, 'r') as file:
+    with open(file_path, "r") as file:
         data = yaml.safe_load(file)
     return data
 
@@ -263,10 +281,14 @@ def init_default_data(file_path="./database-default-data.yaml"):
     users = data.get("users", [])
     keywords = data.get("keywords", [])
 
-    user_objects = [User(username=user[0], email = user[1], password=user[2], role=user[3]) for user in users]
-    keyword_objects = [Keyword(keyword_name_eng=keyword[0], keyword_name_chi=keyword[1]) for keyword in keywords]
+    user_objects = [
+        User(username=user[0], email=user[1], password=user[2], role=user[3])
+        for user in users
+    ]
+    keyword_objects = [
+        Keyword(keyword_name_eng=keyword[0], keyword_name_chi=keyword[1])
+        for keyword in keywords
+    ]
 
     datas = [user_objects, keyword_objects]
     return datas
-
-
