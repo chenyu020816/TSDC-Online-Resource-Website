@@ -232,13 +232,13 @@ def init_tables(app, table_classes=table_names):
 
 def init_default_data():
     admin01 = User(username="admin01", password="I3aIO0GapcxfT7WP", role="admin")
-    admin02 = User(username="admin02", password="I3aIO0GapcxfT7WP", role="admin")
+    admin02 = User(username="admin02", password="IpJ9CH6BVkFy6T4", role="admin")
     user_test = User(username="user_test", password="T5Do9EAtQAqTtfR4O", role="user")
     teacher_test = User(
-        username="teacher_test", password="T5Do9EAtQAqTtfR4O", role="teacher"
+        username="teacher_test", password="f9emWS3Qa9NmVKQ", role="teacher"
     )
     student_test = User(
-        username="student_test", password="T5Do9EAtQAqTtfR4O", role="student"
+        username="student_test", password="ZFCS0RrpaVW3kHx", role="student"
     )
 
     keyword_eng_datascience = Keyword(keyword_name="Data Science")
