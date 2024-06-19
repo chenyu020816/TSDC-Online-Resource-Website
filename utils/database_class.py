@@ -132,6 +132,7 @@ class Question(db.Model):
     def __repr__(self):
         return "<Question %r>" % self.id
 
+
 class UserResourceUploadHistory(db.Model):
     __tablename__ = "user_resource_upload_history"
 
