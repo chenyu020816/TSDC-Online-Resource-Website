@@ -50,24 +50,6 @@ def login_user(username: str, password: str) -> int:
         return -2
 
 
-def search_user(user_id: int) -> dict:
-    """
-    Search user info
-    :param user_id: user's id
-    :return: {user_id, username, email, password, role}
-    """
-    user = db_cls.User.query.filter_by(id=user_id).first()
-
-    if not user:
-        return {"error": -1}  # user not found
-    return {
-        "user_id": user.id,
-        "username": user.username,
-        "email": user.email,
-        "role": user.role,
-    }
-
-
 def create_resource(
     db,
     resource_name: str,
@@ -266,3 +248,151 @@ def user_upload_resource(
     else:
         print(f"Failed to upload resource '{resource_name}'")
         return -1
+
+
+def search_user_by_id(user_id: int) -> dict:
+    """
+    Search user info
+    :param user_id: user's id
+    :return: {user_id, username, email, password, role} or {"error": -1} if user_id not exist
+    """
+    user = db_cls.User.query.filter_by(id=user_id).first()
+
+    if not user:
+        return {"error": -1}
+    return {
+        "user_id": user.id,
+        "username": user.username,
+        "email": user.email,
+        "role": user.role,
+    }
+
+
+def search_user_by_name(user_name: int) -> dict:
+    """
+    Search user info
+    :param user_name: user's name
+    :return: {user_id, username, email, password, role} or {"error": -1} if user_id not exist
+    """
+    user = db_cls.User.query.filter_by(username=user_name).first()
+
+    if not user:
+        return {"error": -1}
+    return {
+        "user_id": user.id,
+        "username": user.username,
+        "email": user.email,
+        "role": user.role,
+    }
+
+
+def search_resource_by_id(resource_id: int) -> dict:
+    """
+    Search resource by id
+    :param resource_id: resource's id
+    :return: {
+        resource_id, resource_name, url, image_url, source_platform,
+        resource_type, score, num_of_purchases, price, status
+    } or {"error": -1} if resource_id not exist
+    """
+    resource = db_cls.Resource.query.filter_by(id=resource_id).first()
+
+    if not resource:
+        return {"error": -1}
+    return {
+        "resource_id": resource.id,
+        "resource_name": resource.resource_name,
+        "url": resource.url,
+        "image_url": resource.image_url,
+        "source_platform": resource.source_platform,
+        "resource_type": resource.resource_type,
+        "score": resource.score,
+        "num_of_purchases": resource.num_of_purchases,
+        "price": resource.price,
+        "status": resource.status,
+    }
+
+
+def search_resource_by_name(resource_name: int) -> dict:
+    """
+    Search resource by name
+    :param resource_name: resource's name
+    :return: {
+        resource_id, resource_name, url, image_url, source_platform,
+        resource_type, score, num_of_purchases, price, status
+    } or {"error": -1} if resource not exist
+    """
+    resource = db_cls.Resource.query.filter_by(resource_name=resource_name).first()
+
+    if not resource:
+        return {"error": -1}
+    return {
+        "resource_id": resource.id,
+        "resource_name": resource.resource_name,
+        "url": resource.url,
+        "image_url": resource.image_url,
+        "source_platform": resource.source_platform,
+        "resource_type": resource.resource_type,
+        "score": resource.score,
+        "num_of_purchases": resource.num_of_purchases,
+        "price": resource.price,
+        "status": resource.status,
+    }
+
+
+def update_resource_data(
+    db,
+    resource_id: int,
+    new_url: str = None,
+    new_image_url: str = None,
+    new_source_platform: str = None,
+    new_resource_type: str = None,
+    new_score: float = None,
+    new_num_of_purchases: int = None,
+    new_price: float = None,
+    new_status: str = None,
+) -> int:
+    """
+    Update resource data
+    :param db:
+    :param resource_id: id of resource which to update
+    :param new_url: new url or None if stay the same
+    :param new_image_url: new_image_url or None if stay the same
+    :param new_source_platform: new_source_platform or None if stay the same
+    :param new_resource_type: new_resource_type or None if stay the same
+    :param new_score: new_score or None if stay the same
+    :param new_num_of_purchases: new_num_of_purchases or None if stay the same
+    :param new_price: new_price or None if stay the same
+    :param new_status: new_status or None if stay the same
+    :return: resource's id or -1 if resource exist or -2 if fail
+    """
+
+    resource = db_cls.Resource.query.filter_by(id=resource_id).first()
+
+    if not resource:
+        return -1
+    else:
+        if new_url:
+            resource.url = new_url
+        if new_image_url:
+            resource.image_url = new_image_url
+        if new_source_platform:
+            resource.source_platform = new_source_platform
+        if new_resource_type:
+            resource.resource_type = new_resource_type
+        if new_score:
+            resource.score = new_score
+        if new_num_of_purchases:
+            resource.num_of_purchases = new_num_of_purchases
+        if new_price:
+            resource.price = new_price
+        if new_status:
+            resource.status = new_status
+
+        try:
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            print(f"Failed to update resource '{resource} status ': {e}")
+            return -2
+        return resource.id
