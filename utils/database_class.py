@@ -111,14 +111,13 @@ class Question(db.Model):
     __tablename__ = "questions"
 
     id = db.Column(db.Integer, primary_key=True)
-    question_context = db.Column(db.Text, unique=True, nullable=False)
+    question_context = db.Column(db.String(255), unique=True, nullable=False)
 
     def __init__(self, question_context):
         self.question_context = question_context
 
     def __repr__(self):
         return "<Question %r>" % self.id
-
 
 class UserResourceUploadHistory(db.Model):
     __tablename__ = "user_resource_upload_history"
@@ -270,7 +269,7 @@ def init_tables(app, table_classes=tables):
 
 
 def read_default_data(file_path):
-    with open(file_path, "r") as file:
+    with open(file_path, "r", encoding='utf-8') as file:
         data = yaml.safe_load(file)
     return data
 
