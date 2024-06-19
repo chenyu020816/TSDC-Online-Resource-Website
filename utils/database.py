@@ -2,7 +2,7 @@ import utils.database_class as db_cls
 
 
 def create_user(
-        db, username: str, email: str, password: str, role: str = "user"
+    db, username: str, email: str, password: str, role: str = "user"
 ) -> int:
     """
     Create a new user
@@ -52,16 +52,16 @@ def login_user(username: str, password: str) -> int:
 
 
 def create_resource(
-        db,
-        resource_name: str,
-        url: str,
-        image_url: str,
-        source_platform: str,
-        resource_type: str,
-        score: float,
-        num_of_purchases: int,
-        price: float = 0.0,
-        status: str = "under_review",
+    db,
+    resource_name: str,
+    url: str,
+    image_url: str,
+    source_platform: str,
+    resource_type: str,
+    score: float,
+    num_of_purchases: int,
+    price: float = 0.0,
+    status: str = "under_review",
 ) -> int:
     """
     Create a resource
@@ -163,7 +163,7 @@ def create_question(db, question_context: str) -> int:
 
 
 def create_post(
-        db, user_id: int, title: str, body: str, status: str = "under_review"
+    db, user_id: int, title: str, body: str, status: str = "under_review"
 ) -> int:
     """
     Create a post
@@ -193,18 +193,18 @@ def create_post(
 
 
 def user_upload_resource(
-        db,
-        user_id: int,
-        keywords: list[str],
-        resource_name: str,
-        url: str,
-        image_url: str,
-        source_platform: str,
-        resource_type: str,
-        score: float,
-        num_of_purchases: int,
-        price: float = 0.0,
-        status: str = "under_review",
+    db,
+    user_id: int,
+    keywords: list[str],
+    resource_name: str,
+    url: str,
+    image_url: str,
+    source_platform: str,
+    resource_type: str,
+    score: float,
+    num_of_purchases: int,
+    price: float = 0.0,
+    status: str = "under_review",
 ) -> int:
     """
     Upload resource from user
@@ -349,17 +349,17 @@ def search_resource_by_name(resource_name: int) -> dict:
 
 
 def update_resource(
-        db,
-        user_id: int,
-        resource_id: int,
-        new_url: str = None,
-        new_image_url: str = None,
-        new_source_platform: str = None,
-        new_resource_type: str = None,
-        new_score: float = None,
-        new_num_of_purchases: int = None,
-        new_price: float = None,
-        new_status: str = None,
+    db,
+    user_id: int,
+    resource_id: int,
+    new_url: str = None,
+    new_image_url: str = None,
+    new_source_platform: str = None,
+    new_resource_type: str = None,
+    new_score: float = None,
+    new_num_of_purchases: int = None,
+    new_price: float = None,
+    new_status: str = None,
 ) -> int:
     """
     Update resource data
@@ -385,35 +385,61 @@ def update_resource(
         if new_url:
             old_value = resource.url
             resource.url = new_url
-            add_resource_update_history(db, user_id, resource_id, "url", old_value, new_url)
+            add_resource_update_history(
+                db, user_id, resource_id, "url", old_value, new_url
+            )
         if new_image_url:
             old_value = resource.image_url
             resource.image_url = new_image_url
-            add_resource_update_history(db, user_id, resource_id, "image_url", old_value, new_image_url)
+            add_resource_update_history(
+                db, user_id, resource_id, "image_url", old_value, new_image_url
+            )
         if new_source_platform:
             old_value = resource.source_platform
             resource.source_platform = new_source_platform
-            add_resource_update_history(db, user_id, resource_id, "source_platform", old_value, new_source_platform)
+            add_resource_update_history(
+                db,
+                user_id,
+                resource_id,
+                "source_platform",
+                old_value,
+                new_source_platform,
+            )
         if new_resource_type:
             old_value = resource.resource_type
             resource.resource_type = new_resource_type
-            add_resource_update_history(db, user_id, resource_id, "resource_type", old_value, new_resource_type)
+            add_resource_update_history(
+                db, user_id, resource_id, "resource_type", old_value, new_resource_type
+            )
         if new_score:
             old_value = resource.score
             resource.score = new_score
-            add_resource_update_history(db, user_id, resource_id, "score", old_value, new_score)
+            add_resource_update_history(
+                db, user_id, resource_id, "score", old_value, new_score
+            )
         if new_num_of_purchases:
             old_value = resource.num_of_purchases
             resource.num_of_purchases = new_num_of_purchases
-            add_resource_update_history(db, user_id, resource_id, "num_of_purchases", old_value, new_num_of_purchases)
+            add_resource_update_history(
+                db,
+                user_id,
+                resource_id,
+                "num_of_purchases",
+                old_value,
+                new_num_of_purchases,
+            )
         if new_price:
             old_value = resource.price
             resource.price = new_price
-            add_resource_update_history(db, user_id, resource_id, "price", old_value, new_price)
+            add_resource_update_history(
+                db, user_id, resource_id, "price", old_value, new_price
+            )
         if new_status:
             old_value = resource.status
             resource.status = new_status
-            add_resource_update_history(db, user_id, resource_id, "status", old_value, new_status)
+            add_resource_update_history(
+                db, user_id, resource_id, "status", old_value, new_status
+            )
 
         try:
             db.session.commit()
@@ -424,13 +450,20 @@ def update_resource(
         return resource.id
 
 
-def add_resource_update_history(db, user_id: int, resource_id: int, property_name: str, old_value: str, new_value: str) -> int:
+def add_resource_update_history(
+    db,
+    user_id: int,
+    resource_id: int,
+    property_name: str,
+    old_value: str,
+    new_value: str,
+) -> int:
     resource_update_history = db_cls.ResourceUpdateHistory(
         user_id=user_id,
         resource_id=resource_id,
         property_name=property_name,
         old_value=old_value,
-        new_value=new_value
+        new_value=new_value,
     )
 
     db.session.add(resource_update_history)
@@ -439,7 +472,9 @@ def add_resource_update_history(db, user_id: int, resource_id: int, property_nam
         db.session.commit()
     except Exception as e:
         db.session.rollback()
-        print(f"Failed to add resource update history '{resource_update_history}' status : {e}")
+        print(
+            f"Failed to add resource update history '{resource_update_history}' status : {e}"
+        )
         return -1
     return resource_update_history.id
 
@@ -451,7 +486,7 @@ def search_keyword_by_id(keyword_id: int) -> dict:
     return {
         "keyword_id": keyword.id,
         "keyword_name_eng": keyword.keyword_name_eng,
-        "keyword_name_chi": keyword.keyword_name_chi
+        "keyword_name_chi": keyword.keyword_name_chi,
     }
 
 
@@ -469,25 +504,25 @@ def search_keyword_by_name_eng(keyword_name_eng: str) -> dict:
     return {
         "keyword_id": keyword.id,
         "keyword_name_eng": keyword.keyword_name_eng,
-        "keyword_name_chi": keyword.keyword_name_chi
+        "keyword_name_chi": keyword.keyword_name_chi,
     }
 
 
 def search_keyword_by_name_chi(keyword_name_chi: str) -> dict:
     """
-   Search keyword by chinese name
-   :param keyword_name_chi" chinese name of keyword
-   :return:  {
-       keyword_id, keyword_name_eng, keyword_name_chi
-   } or {"error": -1} if keyword not exist
-   """
+    Search keyword by chinese name
+    :param keyword_name_chi" chinese name of keyword
+    :return:  {
+        keyword_id, keyword_name_eng, keyword_name_chi
+    } or {"error": -1} if keyword not exist
+    """
     keyword = db_cls.Keyword.query.filter_by(name=keyword_name_chi).first()
     if not keyword:
         return {"error": -1}
     return {
         "keyword_id": keyword.id,
         "keyword_name_eng": keyword.keyword_name_eng,
-        "keyword_name_chi": keyword.keyword_name_chi
+        "keyword_name_chi": keyword.keyword_name_chi,
     }
 
 
@@ -511,18 +546,18 @@ def search_post_by_id(post_id: int) -> dict:
                 "title": post.title,
                 "body": post.body,
                 "user_name": author_name,
-                "status": post.status
+                "status": post.status,
             }
 
 
 def search_post_by_title(post_title: str) -> dict:
     """
-       Search post by title
-       :param post_title: post's title
-       :return: {
-           post_id, title, body, user_name, status
-       } or {"error": -1} if post not exist
-       """
+    Search post by title
+    :param post_title: post's title
+    :return: {
+        post_id, title, body, user_name, status
+    } or {"error": -1} if post not exist
+    """
     post = db_cls.Post.query.filter_by(title=post_title).first()
     if not post:
         return {"error": -1}
@@ -535,7 +570,7 @@ def search_post_by_title(post_title: str) -> dict:
                 "title": post.title,
                 "body": post.body,
                 "user_name": author_name,
-                "status": post.status
+                "status": post.status,
             }
 
 
@@ -566,7 +601,9 @@ def add_resource_keyword(db, resource_id: int, keyword_name: str) -> int:
     else:
         return -3  # if keyword not exist in database
 
-    exist_resource_keyword = db_cls.Resource.query.filter_by(resource_id=resource_id, keyword_id=keyword_id).first()
+    exist_resource_keyword = db_cls.Resource.query.filter_by(
+        resource_id=resource_id, keyword_id=keyword_id
+    ).first()
     if exist_resource_keyword:
         return -1
 
@@ -583,13 +620,15 @@ def add_resource_keyword(db, resource_id: int, keyword_name: str) -> int:
     return resource_keyword.id
 
 
-def update_post_history(db, user_id: int, post_id: int, property_name: str, old_value: str, new_value: str) -> int:
+def update_post_history(
+    db, user_id: int, post_id: int, property_name: str, old_value: str, new_value: str
+) -> int:
     post_update_history = db_cls.PostUpdateHistory(
         user_id=user_id,
         post_id=post_id,
         property_name=property_name,
         old_value=old_value,
-        new_value=new_value
+        new_value=new_value,
     )
 
     db.session.add(post_update_history)
@@ -603,12 +642,11 @@ def update_post_history(db, user_id: int, post_id: int, property_name: str, old_
     return post_update_history.id
 
 
-def update_post_body_history(db, user_id: int, post_id: int, old_body: str, new_body: str) -> int:
+def update_post_body_history(
+    db, user_id: int, post_id: int, old_body: str, new_body: str
+) -> int:
     post_body_update_history = db_cls.PostBodyUpdateHistory(
-        user_id=user_id,
-        post_id=post_id,
-        old_body=old_body,
-        new_body=new_body
+        user_id=user_id, post_id=post_id, old_body=old_body, new_body=new_body
     )
 
     db.session.add(post_body_update_history)
@@ -622,7 +660,14 @@ def update_post_body_history(db, user_id: int, post_id: int, old_body: str, new_
     return post_body_update_history.id
 
 
-def user_update_post(db, user_id: int, post_id: int, new_title: str = None, new_body: str = None, new_status: str = None) -> int:
+def user_update_post(
+    db,
+    user_id: int,
+    post_id: int,
+    new_title: str = None,
+    new_body: str = None,
+    new_status: str = None,
+) -> int:
     post = db_cls.Post.query.filter_by(id=post_id).first()
 
     if not post:
@@ -648,4 +693,3 @@ def user_update_post(db, user_id: int, post_id: int, new_title: str = None, new_
             print(f"Failed to update post '{post} status ': {e}")
             return -2
         return post.id
-
