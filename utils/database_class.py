@@ -5,19 +5,6 @@ from sqlalchemy import inspect
 from werkzeug.security import check_password_hash, generate_password_hash
 
 db = SQLAlchemy()
-table_names = [
-    "users",
-    "resources",
-    "keywords",
-    "posts",
-    "questions",
-    "user_resource_upload_history",
-    "resource_keyword",
-    "search_history",
-    "search_resource_history",
-    "rating_history",
-    "rating_question",
-]
 
 
 class User(db.Model):
@@ -25,15 +12,14 @@ class User(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
-    password_hash = db.Column(db.String(128), nullable=False)
+    password_hash = db.Column(db.String(255), nullable=False)
     role = db.Column(db.String(80), nullable=False)
-    created_at = db.Column(db.DateTime, nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
-    def __init__(self, username, password, role, created_at):
+    def __init__(self, username, password, role):
         self.username = username
         self.password_hash = generate_password_hash(password)
         self.role = role
-        self.created_at = created_at
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
@@ -54,7 +40,16 @@ class Resource(db.Model):
     score = db.Column(db.Float, nullable=False)
     num_of_purchases = db.Column(db.Integer, nullable=False)
 
-    def __init__(self, resource_name, url, image_url, source_platform, type_, score, num_of_purchases):
+    def __init__(
+        self,
+        resource_name,
+        url,
+        image_url,
+        source_platform,
+        type_,
+        score,
+        num_of_purchases,
+    ):
         self.resource_name = resource_name
         self.url = url
         self.image_url = image_url
@@ -71,7 +66,9 @@ class Keyword(db.Model):
     __tablename__ = "keywords"
 
     id = db.Column(db.Integer, primary_key=True)
-    keyword_name = db.Column(db.String(255), nullable=False)
+    keyword_name = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
+    )
 
     def __init__(self, keyword_name):
         self.keyword_name = keyword_name
@@ -87,13 +84,14 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     title = db.Column(db.String(255), nullable=False)
     body = db.Column(db.Text, nullable=False)
-    created_at = db.Column(db.DateTime, nullable=False)
+    status = db.Column(db.String(255), nullable=False)
+    post_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
-    def __init__(self, user_id, title, body, created_at):
+    def __init__(self, user_id, title, body, status="under_review"):
         self.user_id = user_id
         self.title = title
         self.body = body
-        self.created_at = created_at
+        self.status = status
 
     def __repr__(self):
         return "<Post %r>" % self.title
@@ -118,7 +116,7 @@ class UserResourceUploadHistory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
-    upload_at = db.Column(db.DateTime, nullable=False)
+    upload_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
     def __init__(self, user_id, resource_id, upload_at):
         self.user_id = user_id
@@ -150,7 +148,7 @@ class SearchHistory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     search_context = db.Column(db.String(255), nullable=False)
-    search_at = db.Column(db.DateTime, nullable=False)
+    search_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
     def __init__(self, user_id, search_context, search_at):
         self.user_id = user_id
@@ -185,7 +183,7 @@ class RatingHistory(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
     score = db.Column(db.Integer, nullable=False)
-    rate_at = db.Column(db.DateTime, nullable=False)
+    rate_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
     def __init__(self, user_id, resource_id, score, rate_at):
         self.user_id = user_id
@@ -216,18 +214,34 @@ class RatingQuestion(db.Model):
         return "<RatingQuestion %r>" % self.id
 
 
-def init_tables(app, table_classes=table_names):
+tables = [
+    User,
+    Resource,
+    Keyword,
+    Post,
+    Question,
+    UserResourceUploadHistory,
+    ResourceKeyword,
+    SearchHistory,
+    SearchResourceHistory,
+    RatingHistory,
+    RatingQuestion,
+]
+
+
+def init_tables(app, table_classes=tables):
     with app.app_context():
         insp = inspect(db.engine)
         for table_class in table_classes:
             if not insp.has_table(table_class.__tablename__):
                 table_class.__table__.create(db.engine)
 
-        default_data = init_default_data()
+            if isinstance(table_class, User):
+                default_data = init_default_data()
 
-        for data in default_data:
-            db.session.add(data)
-        db.session.commit()
+                for data in default_data:
+                    db.session.add(data)
+                db.session.commit()
 
 
 def init_default_data():
