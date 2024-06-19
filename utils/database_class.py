@@ -105,7 +105,7 @@ class Post(db.Model):
     post_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
     __table_args__ = (
-        db.Index('uq_body', db.text('body(255)'), unique=True),
+        db.Index('uq_body', db.text('body(255)')),
     )
 
     def __init__(self, user_id, title, body, status="under_review"):
@@ -249,6 +249,75 @@ class RatingQuestion(db.Model):
 
     def __repr__(self):
         return "<RatingQuestion %r>" % self.id
+
+
+class ResourceUpdateHistory(db.Model):
+    __tablename__ = "resource_update_history"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
+    property_name = db.Column(db.String(255), nullable=False)
+    old_value = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), nullable=False)
+    new_value = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), nullable=False)
+    update_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
+
+    def __init__(self, user_id, resource_id, property_name, old_value, new_value):
+        self.user_id = user_id
+        self.resource_id = resource_id
+        self.property_name = property_name
+        self.old_value = old_value
+        self.new_value = new_value
+
+    def __repr__(self):
+        return "<ResourceUpdateHistory %r>" % self.id
+
+
+class PostUpdateHistory(db.Model):
+    __tablename__ = "post_update_history"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
+    property_name = db.Column(db.String(255), nullable=False)
+    old_value = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), nullable=False)
+    new_value = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), nullable=False)
+    update_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
+
+    def __init__(self, user_id, post_id, property_name, old_value, new_value):
+        self.user_id = user_id
+        self.post_id = post_id
+        self.property_name = property_name
+        self.old_value = old_value
+        self.new_value = new_value
+
+    def __repr__(self):
+        return "<PostUpdateHistory %r>" % self.id
+
+
+class PostBodyUpdateHistory(db.Model):
+    __tablename__ = "post_body_update_history"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
+    old_body = db.Column(db.Text(collation="utf8mb4_unicode_ci"), nullable=False)
+    new_body = db.Column(db.Text(collation="utf8mb4_unicode_ci"), nullable=False)
+    update_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
+
+    __table_args__ = (
+        db.Index('uq_old_body', db.text('old_body(255)')),
+        db.Index('uq_new_body', db.text('new_body(255)')),
+    )
+
+    def __init__(self, user_id, post_id, old_body, new_body):
+        self.user_id = user_id
+        self.post_id = post_id
+        self.old_body = old_body
+        self.new_body = new_body
+
+    def __repr__(self):
+        return "<PostBodyUpdateHistory %r>" % self.id
 
 
 TABLES = (
