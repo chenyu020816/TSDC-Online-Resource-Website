@@ -241,12 +241,12 @@ def init_tables(app, table_classes=tables):
             if not insp.has_table(table_class.__tablename__):
                 table_class.__table__.create(db.engine)
 
-            if isinstance(table_class, User):
-                default_data = init_default_data()
+        default_data = init_default_data()
 
-                for data in default_data:
-                    db.session.add(data)
-                db.session.commit()
+        for table in default_data:
+            for data in table:
+                db.session.add(data)
+        db.session.commit()
 
 
 def read_default_data(file_path):
@@ -265,7 +265,6 @@ def init_default_data(file_path="./database-default-data.yaml"):
     keyword_objects = [Keyword(keyword_name_eng=keyword[0], keyword_name_chi=keyword[1]) for keyword in keywords]
 
     datas = [user_objects, keyword_objects]
-
     return datas
 
 
