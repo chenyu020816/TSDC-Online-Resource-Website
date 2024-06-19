@@ -2,7 +2,7 @@ import utils.database_class as db_cls
 
 
 def create_user(
-    db, username: str, email: str, password: str, role: str = "user"
+        db, username: str, email: str, password: str, role: str = "user"
 ) -> int:
     """
     Create a new user
@@ -13,7 +13,6 @@ def create_user(
     :param role: user's role ["admin", "user", "teacher", "student"]
     :return: user's id or -1 if username exist or -2 if email exist or -3 if fail
     """
-    user = db_cls.User(username=username, email=email, password=password, role=role)
     existing_user = db_cls.User.query.filter_by(username=username).first()
     existing_email = db_cls.User.query.filter_by(email=email).first()
     if existing_user:
@@ -22,6 +21,8 @@ def create_user(
     if existing_email:
         print(f"Email '{email}' already exists.")
         return -2
+
+    user = db_cls.User(username=username, email=email, password=password, role=role)
 
     db.session.add(user)
     try:
@@ -51,16 +52,16 @@ def login_user(username: str, password: str) -> int:
 
 
 def create_resource(
-    db,
-    resource_name: str,
-    url: str,
-    image_url: str,
-    source_platform: str,
-    resource_type: str,
-    score: float,
-    num_of_purchases: int,
-    price: float = 0.0,
-    status: str = "under_review",
+        db,
+        resource_name: str,
+        url: str,
+        image_url: str,
+        source_platform: str,
+        resource_type: str,
+        score: float,
+        num_of_purchases: int,
+        price: float = 0.0,
+        status: str = "under_review",
 ) -> int:
     """
     Create a resource
@@ -76,6 +77,13 @@ def create_resource(
     :param status: status of resource, ["under_review", "publish", "delete""]
     :return: id of created resource or -1 if resource exist or -2 if fail
     """
+    existing_resource = db_cls.Resource.query.filter_by(
+        resource_name=resource_name
+    ).first()
+    if existing_resource:
+        print(f"Resource '{resource_name}' already exists.")
+        return -1
+
     resource = db_cls.Resource(
         resource_name=resource_name,
         url=url,
@@ -87,12 +95,6 @@ def create_resource(
         price=price,
         status=status,
     )
-    existing_resource = db_cls.Resource.query.filter_by(
-        resource_name=resource_name
-    ).first()
-    if existing_resource:
-        print(f"Resource '{resource_name}' already exists.")
-        return -1
 
     db.session.add(resource)
 
@@ -113,14 +115,14 @@ def create_keyword(db, keyword_eng: str, keyword_chi: str) -> int:
     :param keyword_chi: chinese keyword name
     :return keyword id or -1 if keyword exist or -2 if fail
     """
-    keyword = db_cls.Keyword(keyword_name_eng=keyword_eng, keyword_name_chi=keyword_chi)
-
     existing_keyword = db_cls.Keyword.query.filter_by(
         keyword_name_eng=keyword_eng
     ).first()
     if existing_keyword:
-        print(f"Keyword '{keyword}' already exists.")
+        print(f"Keyword '{keyword_eng}' already exists.")
         return -1
+
+    keyword = db_cls.Keyword(keyword_name_eng=keyword_eng, keyword_name_chi=keyword_chi)
 
     db.session.add(keyword)
 
@@ -140,14 +142,14 @@ def create_question(db, question_context: str) -> int:
     :param question_context: question context
     :return: question id or -1 if question exist or -2 if fail
     """
-    question = db_cls.Question(question_context=question_context)
-
     existing_question = db_cls.Question.query.filter_by(
         question_context=question_context
     ).first()
     if existing_question:
         print(f"Question '{question_context}' already exists.")
         return -1
+
+    question = db_cls.Question(question_context=question_context)
 
     db.session.add(question)
 
@@ -161,7 +163,7 @@ def create_question(db, question_context: str) -> int:
 
 
 def create_post(
-    db, user_id: int, title: str, body: str, status: str = "under_review"
+        db, user_id: int, title: str, body: str, status: str = "under_review"
 ) -> int:
     """
     Create a post
@@ -172,12 +174,12 @@ def create_post(
     :param status: status of post ["under_review", "publish", "delete"]
     :return: post id or -1 if post exist or -2 if fail
     """
-    post = db_cls.Post(user_id=user_id, title=title, body=body, status=status)
-
     existing_post = db_cls.Post.query.filter_by(title=title).first()
     if existing_post:
         print(f"Post '{title}' already exists.")
         return -1
+
+    post = db_cls.Post(user_id=user_id, title=title, body=body, status=status)
 
     db.session.add(post)
 
@@ -191,17 +193,17 @@ def create_post(
 
 
 def user_upload_resource(
-    db,
-    user_id: int,
-    resource_name: str,
-    url: str,
-    image_url: str,
-    source_platform: str,
-    resource_type: str,
-    score: float,
-    num_of_purchases: int,
-    price: float = 0.0,
-    status: str = "under_review",
+        db,
+        user_id: int,
+        resource_name: str,
+        url: str,
+        image_url: str,
+        source_platform: str,
+        resource_type: str,
+        score: float,
+        num_of_purchases: int,
+        price: float = 0.0,
+        status: str = "under_review",
 ) -> int:
     """
     Upload resource from user
@@ -341,16 +343,16 @@ def search_resource_by_name(resource_name: int) -> dict:
 
 
 def update_resource_data(
-    db,
-    resource_id: int,
-    new_url: str = None,
-    new_image_url: str = None,
-    new_source_platform: str = None,
-    new_resource_type: str = None,
-    new_score: float = None,
-    new_num_of_purchases: int = None,
-    new_price: float = None,
-    new_status: str = None,
+        db,
+        resource_id: int,
+        new_url: str = None,
+        new_image_url: str = None,
+        new_source_platform: str = None,
+        new_resource_type: str = None,
+        new_score: float = None,
+        new_num_of_purchases: int = None,
+        new_price: float = None,
+        new_status: str = None,
 ) -> int:
     """
     Update resource data
@@ -398,3 +400,100 @@ def update_resource_data(
         return resource.id
 
 
+def search_keyword_by_id(keyword_id: int) -> dict:
+    keyword = db_cls.Keyword.query.filter_by(id=keyword_id).first()
+    if not keyword:
+        return {"error": -1}
+    return {
+        "keyword_id": keyword.id,
+        "keyword_name_eng": keyword.keyword_name_eng,
+        "keyword_name_chi": keyword.keyword_name_chi
+    }
+
+
+def search_keyword_by_name_eng(keyword_name_eng: str) -> dict:
+    keyword = db_cls.Keyword.query.filter_by(name=keyword_name_eng).first()
+    if not keyword:
+        return {"error": -1}
+    return {
+        "keyword_id": keyword.id,
+        "keyword_name_eng": keyword.keyword_name_eng,
+        "keyword_name_chi": keyword.keyword_name_chi
+    }
+
+
+def search_keyword_by_name_chi(keyword_name_chi: str) -> dict:
+    keyword = db_cls.Keyword.query.filter_by(name=keyword_name_chi).first()
+    if not keyword:
+        return {"error": -1}
+    return {
+        "keyword_id": keyword.id,
+        "keyword_name_eng": keyword.keyword_name_eng,
+        "keyword_name_chi": keyword.keyword_name_chi
+    }
+
+
+def search_post_by_id(post_id: int) -> dict:
+    post = db_cls.Post.query.filter_by(id=post_id).first()
+    if not post:
+        return {"error": -1}
+    else:
+        author = search_user_by_id(post.user_id)
+        if "username" in author.keys():
+            author_name = author["username"]
+            return {
+                "post_id": post.id,
+                "title": post.title,
+                "body": post.body,
+                "user_name": author_name,
+                "status": post.status
+            }
+
+
+def search_post_by_title(post_title: str) -> dict:
+    post = db_cls.Post.query.filter_by(title=post_title).first()
+    if not post:
+        return {"error": -1}
+    else:
+        author = search_user_by_id(post.user_id)
+        if "username" in author.keys():
+            author_name = author["username"]
+            return {
+                "post_id": post.id,
+                "title": post.title,
+                "body": post.body,
+                "user_name": author_name,
+                "status": post.status
+            }
+
+
+def is_all_english(s: str) -> bool:
+    return s.isalpha() and s.isascii() and s.islower()
+
+
+def add_resource_keyword(db, resource_id: int, keyword_name: str) -> int:
+    if is_all_english(keyword_name):
+        keyword = search_keyword_by_name_eng(keyword_name)
+    else:
+        keyword = search_keyword_by_name_chi(keyword_name)
+
+    if "keyword_id" in keyword.keys():
+        keyword_id = keyword["keyword_id"]
+    else:
+        return -3
+
+    exist_resource_keyword = db_cls.Resource.query.filter_by(resource_id=resource_id, keyword_id=keyword_id).first()
+    if exist_resource_keyword:
+        return -1
+
+    resource_keyword = db_cls.ResourceKeyword(resource_id, keyword_id)
+
+    db.session.add(resource_keyword)
+
+    try:
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        print(f"Failed to add resource's keyword '{resource_keyword}': {e}")
+        return -2
+    return resource_keyword.id
