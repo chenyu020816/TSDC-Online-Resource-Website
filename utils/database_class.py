@@ -92,7 +92,7 @@ class Keyword(db.Model):
         self.keyword_name_chi = keyword_name_chi
 
     def __repr__(self):
-        return "<Keyword %r>" % self.keyword_name
+        return "<Keyword %r>" % self.keyword_name_eng
 
 
 class Post(db.Model):
@@ -134,6 +134,21 @@ class Question(db.Model):
 
     def __repr__(self):
         return "<Question %r>" % self.id
+
+
+class PostImages(db.Model):
+    __tablename__ = "posts_images"
+
+    id = db.Column(db.Integer, primary_key=True)
+    post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
+    image_path = db.Column(db.String(255), nullable=False)
+
+    def __init__(self, post_id, image_path):
+        self.post_id = post_id
+        self.image_path = image_path
+
+    def __repr__(self):
+        return "<PostImages %r>" % self.image_path
 
 
 class UserResourceUploadHistory(db.Model):
@@ -335,6 +350,9 @@ TABLES = (
     SearchResourceHistory,
     RatingHistory,
     RatingQuestion,
+    ResourceUpdateHistory,
+    PostUpdateHistory,
+    PostBodyUpdateHistory,
 )
 
 
@@ -346,10 +364,17 @@ def init_tables(app, table_classes=TABLES):
                 table_class.__table__.create(db.engine)
 
         default_data = init_default_data()
-
+        print("Complete table creation")
         for table in default_data:
             for data in table:
                 db.session.add(data)
+        db.session.commit()
+
+        user_id = 1
+        title = "Sample Post Title"
+        body = "This is the body of the sample post."
+        post = Post(user_id=user_id, title=title, body=body)
+        db.session.add(post)
         db.session.commit()
 
 
@@ -373,12 +398,7 @@ def init_default_data(file_path="./database-default-data.yaml"):
         Keyword(keyword_name_eng=keyword[0], keyword_name_chi=keyword[1])
         for keyword in keywords
     ]
-    user_id = 1
-    title = "Sample Post Title"
-    body = "This is the body of the sample post."
 
-    post_objects = [
-        Post(user_id=user_id, title=title, body=body)
-    ]
-    datas = [user_objects, keyword_objects, post_objects]
+
+    datas = [user_objects, keyword_objects]
     return datas
