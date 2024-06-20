@@ -3,5 +3,10 @@ flask_cors
 jsonify
 pymysql
 Flask-SQLAlchemy
-pyyaml
+pyyaml~=6.0.1
 fake_useragent
+SQLAlchemy~=2.0.30
+Werkzeug~=3.0.3
+translate~=3.6.1
+requests~=2.32.3
+beautifulsoup4~=4.12.3
