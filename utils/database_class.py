@@ -42,7 +42,8 @@ class Resource(db.Model):
     image_url = db.Column(db.String(255), nullable=False)
     source_platform = db.Column(db.String(255), nullable=False)
     type = db.Column(db.String(255), nullable=False)
-    score = db.Column(db.Float, nullable=False)
+    public_score = db.Column(db.Float, nullable=False)
+    user_score = db.Column(db.Float, nullable=False)
     num_of_purchases = db.Column(db.Integer, nullable=False)
     price = db.Column(db.Float, nullable=False)
     status = db.Column(db.String(255), nullable=False)
@@ -54,7 +55,8 @@ class Resource(db.Model):
         image_url,
         source_platform,
         resource_type,
-        score,
+        public_score,
+        user_score,
         num_of_purchases,
         price: float = 0.0,
         status: str = "under_review",
@@ -64,7 +66,8 @@ class Resource(db.Model):
         self.image_url = image_url
         self.source_platform = source_platform
         self.type = resource_type
-        self.score = score
+        self.public_score = public_score
+        self.user_score = user_score
         self.num_of_purchases = num_of_purchases
         self.price = price
         self.status = status
@@ -370,6 +373,12 @@ def init_default_data(file_path="./database-default-data.yaml"):
         Keyword(keyword_name_eng=keyword[0], keyword_name_chi=keyword[1])
         for keyword in keywords
     ]
+    user_id = 1
+    title = "Sample Post Title"
+    body = "This is the body of the sample post."
 
-    datas = [user_objects, keyword_objects]
+    post_objects = [
+        Post(user_id=user_id, title=title, body=body)
+    ]
+    datas = [user_objects, keyword_objects, post_objects]
     return datas

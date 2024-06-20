@@ -58,8 +58,9 @@ def create_resource(
     image_url: str,
     source_platform: str,
     resource_type: str,
-    score: float,
-    num_of_purchases: int,
+    public_score: float = 0.0,
+    user_score: float= 0.0,
+    num_of_purchases: int = 0,
     price: float = 0.0,
     status: str = "under_review",
 ) -> int:
@@ -71,7 +72,8 @@ def create_resource(
     :param image_url: url of image
     :param source_platform: platform of resource, ["YouTube", "Udemy", ...]
     :param resource_type: type of resource, ["video", "open course", "pay course", "book", ...]
-    :param score: score of resource
+    :param public_score: public score of resource
+    :param user_score: user score of resource
     :param num_of_purchases: number of purchases
     :param price: price of resource
     :param status: status of resource, ["under_review", "publish", "delete""]
@@ -90,7 +92,8 @@ def create_resource(
         image_url=image_url,
         source_platform=source_platform,
         resource_type=resource_type,
-        score=score,
+        public_score=public_score,
+        user_score=user_score,
         num_of_purchases=num_of_purchases,
         price=price,
         status=status,
@@ -248,7 +251,7 @@ def search_resource_by_id(resource_id: int) -> dict:
         "image_url": resource.image_url,
         "source_platform": resource.source_platform,
         "resource_type": resource.resource_type,
-        "score": resource.score,
+        "score": resource.public_score,
         "num_of_purchases": resource.num_of_purchases,
         "price": resource.price,
         "status": resource.status,
@@ -275,7 +278,7 @@ def search_resource_by_name(resource_name: int) -> dict:
         "image_url": resource.image_url,
         "source_platform": resource.source_platform,
         "resource_type": resource.resource_type,
-        "score": resource.score,
+        "score": resource.public_score,
         "num_of_purchases": resource.num_of_purchases,
         "price": resource.price,
         "status": resource.status,
@@ -583,7 +586,8 @@ def user_update_resource(
     new_image_url: str = None,
     new_source_platform: str = None,
     new_resource_type: str = None,
-    new_score: float = None,
+    new_public_score: float = None,
+    new_user_score: float = None,
     new_num_of_purchases: int = None,
     new_price: float = None,
     new_status: str = None,
@@ -597,7 +601,8 @@ def user_update_resource(
     :param new_image_url: new_image_url or None if stay the same
     :param new_source_platform: new_source_platform or None if stay the same
     :param new_resource_type: new_resource_type or None if stay the same
-    :param new_score: new_score or None if stay the same
+    :param new_public_score: new_public_score or None if stay the same
+    :param new_user_score: new_user_score or None if stay the same
     :param new_num_of_purchases: new_num_of_purchases or None if stay the same
     :param new_price: new_price or None if stay the same
     :param new_status: new_status or None if stay the same
@@ -638,11 +643,17 @@ def user_update_resource(
             add_resource_update_history(
                 db, user_id, resource_id, "resource_type", old_value, new_resource_type
             )
-        if new_score:
-            old_value = resource.score
-            resource.score = new_score
+        if new_public_score:
+            old_value = resource.public_score
+            resource.public_score = new_public_score
             add_resource_update_history(
-                db, user_id, resource_id, "score", old_value, new_score
+                db, user_id, resource_id, "public_score", old_value, new_public_score
+            )
+        if new_user_score:
+            old_value = resource.user_score
+            resource.user_score = new_user_score
+            add_resource_update_history(
+                db, user_id, resource_id, "user_score", old_value, new_user_score
             )
         if new_num_of_purchases:
             old_value = resource.num_of_purchases
@@ -686,8 +697,9 @@ def user_upload_resource(
     image_url: str,
     source_platform: str,
     resource_type: str,
-    score: float,
-    num_of_purchases: int,
+    public_score: float = 0.0,
+    user_score: float = 0.0,
+    num_of_purchases: int = 0,
     price: float = 0.0,
     status: str = "under_review",
 ) -> int:
@@ -701,7 +713,8 @@ def user_upload_resource(
     :param image_url: url of image
     :param source_platform: platform of resource, ["YouTube", "Udemy", ...]
     :param resource_type: type of resource, ["video", "open course", "pay course", "book", ...]
-    :param score: score of resource
+    :param public_score: public score of resource
+    :param user_score: user score of resource
     :param num_of_purchases: number of purchases
     :param price: price of resource
     :param status: status of resource, ["under_review", "publish", "delete""]
@@ -714,7 +727,8 @@ def user_upload_resource(
         image_url,
         source_platform,
         resource_type,
-        score,
+        public_score,
+        user_score,
         num_of_purchases,
         price,
         status,
