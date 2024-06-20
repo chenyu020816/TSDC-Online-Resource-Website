@@ -40,7 +40,7 @@ class Resource(db.Model):
     resource_name = db.Column(
         db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
     )
-    introduction = db.Column(db.Text(collation="utf8mb4_unicode_ci"), nullable=False)
+    introduction = db.Column(db.Text(collation="utf8mb4_unicode_ci"), nullable=True)
     url = db.Column(db.String(255), unique=True, nullable=False)
     image_url = db.Column(db.String(255), unique=True, nnullable=False)
     source_platform = db.Column(db.String(255), nullable=False)
@@ -69,7 +69,7 @@ class Resource(db.Model):
         status: str = "under_review",
     ):
         self.resource_name = resource_name
-        self.introduction = introduction
+        self.introduction = introduction if introduction != "" else None
         self.url = url
         self.image_url = image_url
         self.source_platform = source_platform
