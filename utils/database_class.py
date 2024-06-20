@@ -40,6 +40,7 @@ class Resource(db.Model):
     resource_name = db.Column(
         db.String(255, collation="utf8mb4_unicode_ci"), unique=True, nullable=False
     )
+    introduction = db.Column(db.Text(collation="utf8mb4_unicode_ci"), nullable=False)
     url = db.Column(db.String(255), nullable=False)
     image_url = db.Column(db.String(255), nullable=False)
     source_platform = db.Column(db.String(255), nullable=False)
@@ -49,10 +50,14 @@ class Resource(db.Model):
     num_of_purchases = db.Column(db.Integer, nullable=False)
     price = db.Column(db.Float, nullable=False)
     status = db.Column(db.String(255), nullable=False)
+    view_count = db.Column(db.Integer, nullable=False, default=0)
+
+    __table_args__ = (db.Index("uq_introduction", db.text("introduction(255)")),)
 
     def __init__(
         self,
         resource_name,
+        introduction,
         url,
         image_url,
         source_platform,
@@ -64,6 +69,7 @@ class Resource(db.Model):
         status: str = "under_review",
     ):
         self.resource_name = resource_name
+        self.introduction = introduction
         self.url = url
         self.image_url = image_url
         self.source_platform = source_platform
@@ -161,35 +167,39 @@ class UserResourceUploadHistory(db.Model):
     __tablename__ = "user_resource_upload_history"
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    uploaded_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
     upload_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
     def __init__(self, user_id, resource_id):
-        self.user_id = user_id
+        self.uploaded_by = user_id
         self.resource_id = resource_id
 
     def __repr__(self):
         return "<UserResourceUploadHistory %r>" % self.id
 
 
-class ResourceKeyword(db.Model):
-    __tablename__ = "resource_keyword"
+class ResourceKeywords(db.Model):
+    __tablename__ = "resource_keywords"
 
     id = db.Column(db.Integer, primary_key=True)
-    resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
-    keyword_id = db.Column(db.Integer, db.ForeignKey("keywords.id"), nullable=False)
+    resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), unique = True, nullable=False)
+    first_keyword_id = db.Column(db.Integer, db.ForeignKey("keywords.id"), nullable=False)
+    second_keyword_id = db.Column(db.Integer, db.ForeignKey("keywords.id"), nullable=False)
+    third_keyword_id = db.Column(db.Integer, db.ForeignKey("keywords.id"), nullable=False)
 
-    def __init__(self, resource_id, keyword_id):
+    def __init__(self, resource_id, first_keyword_id, second_keyword_id, third_keyword_id):
         self.resource_id = resource_id
-        self.keyword_id = keyword_id
+        self.first_keyword_id = first_keyword_id
+        self.second_keyword_id = second_keyword_id
+        self.third_keyword_id = third_keyword_id
 
     def __repr__(self):
         return "<ResourceKeyword %r>" % self.id
 
 
-class PostKeyword(db.Model):
-    __tablename__ = "post_keyword"
+class PostKeywords(db.Model):
+    __tablename__ = "post_keywords"
 
     id = db.Column(db.Integer, primary_key=True)
     post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
@@ -219,23 +229,6 @@ class SearchHistory(db.Model):
 
     def __repr__(self):
         return "<SearchHistory %r>" % self.id
-
-
-class SearchResourceHistory(db.Model):
-    __tablename__ = "search_resource_history"
-
-    id = db.Column(db.Integer, primary_key=True)
-    search_history_id = db.Column(
-        db.Integer, db.ForeignKey("search_history.id"), nullable=False
-    )
-    resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
-
-    def __init__(self, search_history_id, resource_id):
-        self.search_history_id = search_history_id
-        self.resource_id = resource_id
-
-    def __repr__(self):
-        return "<SearchResourceHistory %r>" % self.id
 
 
 class RatingHistory(db.Model):
@@ -279,7 +272,7 @@ class ResourceUpdateHistory(db.Model):
     __tablename__ = "resource_update_history"
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    updated_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
     property_name = db.Column(db.String(255), nullable=False)
     old_value = db.Column(
@@ -291,7 +284,7 @@ class ResourceUpdateHistory(db.Model):
     update_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
     def __init__(self, user_id, resource_id, property_name, old_value, new_value):
-        self.user_id = user_id
+        self.updated_by = user_id
         self.resource_id = resource_id
         self.property_name = property_name
         self.old_value = old_value
@@ -305,7 +298,7 @@ class PostUpdateHistory(db.Model):
     __tablename__ = "post_update_history"
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    updated_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
     property_name = db.Column(db.String(255), nullable=False)
     old_value = db.Column(
@@ -317,7 +310,7 @@ class PostUpdateHistory(db.Model):
     update_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
     def __init__(self, user_id, post_id, property_name, old_value, new_value):
-        self.user_id = user_id
+        self.updated_by = user_id
         self.post_id = post_id
         self.property_name = property_name
         self.old_value = old_value
@@ -331,7 +324,7 @@ class PostBodyUpdateHistory(db.Model):
     __tablename__ = "post_body_update_history"
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    updated_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
     old_body = db.Column(db.Text(collation="utf8mb4_unicode_ci"), nullable=False)
     new_body = db.Column(db.Text(collation="utf8mb4_unicode_ci"), nullable=False)
@@ -343,7 +336,7 @@ class PostBodyUpdateHistory(db.Model):
     )
 
     def __init__(self, user_id, post_id, old_body, new_body):
-        self.user_id = user_id
+        self.updated_by = user_id
         self.post_id = post_id
         self.old_body = old_body
         self.new_body = new_body
@@ -356,27 +349,67 @@ class UserUpdateHistory(db.Model):
     __tablename__ = "user_update_history"
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    updated_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     property_name = db.Column(db.String(255), nullable=False)
     old_value = db.Column(db.String(255), nullable=False)
     new_value = db.Column(db.String(255), nullable=False)
     update_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
     def __init__(self, user_id, property_name, old_value, new_value):
-        self.user_id = user_id
+        self.updated_by = user_id
         self.property_name = property_name
         self.old_value = old_value
         self.new_value = new_value
 
     def __repr__(self):
-        return "<UserUpdateHistory %r>" % self.user_id
+        return "<UserUpdateHistory %r>" % self.id
+
+
+class PostStatusUpdateHistory(db.Model):
+    __tablename__ = "post_status_update_history"
+
+    id = db.Column(db.Integer, primary_key=True)
+    updated_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
+    old_status = db.Column(db.String(255), nullable=False)
+    new_status = db.Column(db.String(255), nullable=False)
+    update_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
+
+    def __init__(self, user_id, post_id, old_status, new_status):
+        self.updated_by = user_id
+        self.post_id = post_id
+        self.old_status = old_status
+        self.new_status = new_status
+
+    def __repr__(self):
+        return "<PostStatusUpdateHistory %r>" % self.id
+
+
+class ResourceStatusUpdateHistory(db.Model):
+    __tablename__ = "resource_status_update_history"
+
+    id = db.Column(db.Integer, primary_key=True)
+    updated_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
+    old_status = db.Column(db.String(255), nullable=False)
+    new_status = db.Column(db.String(255), nullable=False)
+    update_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
+
+    def __init__(self, user_id, resource_id, old_status, new_status):
+        self.updated_by = user_id
+        self.resource_id = resource_id
+        self.old_status = old_status
+        self.new_status = new_status
+
+    def __repr__(self):
+        return "<ResourceStatusUpdateHistory %r>" % self.id
 
 
 class PostImageUpdateHistory(db.Model):
     __tablename__ = "post_image_update_history"
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    updated_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
     old_image_path = db.Column(
         db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
@@ -386,7 +419,7 @@ class PostImageUpdateHistory(db.Model):
     )
 
     def __init__(self, user_id, post_id, old_image_path, new_image_path):
-        self.user_id = user_id
+        self.updated_by = user_id
         self.post_id = post_id
         self.old_image_path = old_image_path
         self.new_image_path = new_image_path
@@ -395,15 +428,110 @@ class PostImageUpdateHistory(db.Model):
         return "<PostImageUpdateHistory %r>" % self.id
 
 
+class ResourceViewCount(db.Model):
+    __tablename__ = "resource_view_count"
+
+    id = db.Column(db.Integer, primary_key=True)
+    resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
+    count = db.Column(db.Integer, nullable=False)
+
+    def __init__(self, resource_id, count):
+        self.resource_id = resource_id
+        self.count = count
+
+    def __repr__(self):
+        return "<ResourceViewCount %r>" % self.id
+
+
+class UserSaveResources(db.Model):
+    __tablename__ = "user_save_resources"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
+    save_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
+
+    def __init__(self, user_id, resource_id):
+        self.user_id = user_id
+        self.resource_id = resource_id
+
+    def __repr__(self):
+        return "<UserSaveResource %r>" % self.id
+
+
+class SearchRoadmapFields(db.Model):
+    __tablename__ = "search_roadmap_fields"
+
+    id = db.Column(db.Integer, primary_key=True)
+    search_history_id = db.Column(db.Integer, db.ForeignKey("search_history.id"), nullable=False)
+    roadmap_field_name = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), nullable=False)
+
+    def __init__(self, search_history_id, roadmap_field_name):
+        self.search_history_id = search_history_id
+        self.roadmap_field_name = roadmap_field_name
+
+    def __repr__(self):
+        return "<SearchRoadMapFields %r>" % self.id
+
+
+class SearchResourceHistory(db.Model):
+    __tablename__ = "search_resource_history"
+
+    id = db.Column(db.Integer, primary_key=True)
+    search_roadmap_fields_id = db.Column(db.Integer, db.ForeignKey("search_roadmap_fields.id"), nullable=False)
+    resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
+
+    def __init__(self, search_roadmap_fields_id, resource_id):
+        self.search_roadmap_fields_id = search_roadmap_fields_id
+        self.resource_id = resource_id
+
+    def __repr__(self):
+        return "<SearchResourceHistory %r>" % self.id
+
+
+class RoadMapFieldKeywords(db.Model):
+    __tablename__ = "roadmap_field_keywords"
+
+    id = db.Column(db.Integer, primary_key=True)
+    search_roadmap_fields_id = db.Column(db.Integer, db.ForeignKey("search_roadmap_fields.id"), nullable=False)
+    keywords = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), nullable=False)
+
+    def __init__(self, search_roadmap_fields_id, keywords):
+        self.search_roadmap_fields_id = search_roadmap_fields_id
+        self.keywords = keywords
+
+    def __repr__(self):
+        return "<RoadMapFieldKeywords %r>" % self.id
+
+
+class UserResourceViewHistory(db.Model):
+    __tablename__ = "user_view_history"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    search_resource_id = db.Column(db.Integer, db.ForeignKey("search_resource_history.id"), nullable=False)
+    view_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
+
+    def __init__(self, user_id, search_resource_id):
+        self.user_id = user_id
+        self.search_resource_id = search_resource_id
+
+    def __repr__(self):
+        return "<UserResourceViewHistory %r>" % self.id
+
+
 TABLES = (
     User,
     Resource,
     Keyword,
     Post,
+    PostImages,
+    PostKeywords,
     Question,
     UserResourceUploadHistory,
-    ResourceKeyword,
+    ResourceKeywords,
     SearchHistory,
+    SearchRoadmapFields,
     SearchResourceHistory,
     RatingHistory,
     RatingQuestion,
@@ -412,6 +540,11 @@ TABLES = (
     PostBodyUpdateHistory,
     UserUpdateHistory,
     PostImageUpdateHistory,
+    ResourceStatusUpdateHistory,
+    RoadMapFieldKeywords,
+    UserSaveResources,
+    # ResourceViewCount,
+    UserResourceViewHistory
 )
 
 
@@ -450,7 +583,13 @@ def init_default_data(file_path="./database-default-data.yaml"):
     keywords = data.get("keywords", [])
 
     user_objects = [
-        User(username=user[0], email=user[1], password=user[2], role=user[3])
+        User(
+            username=user[0],
+            email=user[1],
+            photo_path=f"{user[1]}.png",
+            password=user[2],
+            role=user[3],
+        )
         for user in users
     ]
     keyword_objects = [

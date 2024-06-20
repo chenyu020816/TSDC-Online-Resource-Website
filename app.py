@@ -11,7 +11,7 @@ import utils.database_class as db_cls
 from crawler.crawler_coursera import crawl_coursera
 from crawler.crawler_hahow import crawl_hahow
 from crawler.crawler_ntu_ocw import crawl_ntu_ocw
-from utils.database import *
+from utils.database_api import *
 from utils.database_class import db
 
 app = Flask(__name__, static_folder="templates/build")

@@ -6,6 +6,7 @@ users:  # ["User's Name", "User's Email", "Users' Password", "User's Role"]
   - ["student_test", "student_test@", "ZFCS0RrpaVW3kHx", "student"]
 
 keywords:  # ["Keyword English", "Keyword Chinese"]
+  - ["Undefined", "Undefined"]
   - ["Data Science", "資料科學"]
   - ["Python", "Python"]
   - ["R", "R"]
@@ -64,3 +65,6 @@ keywords:  # ["Keyword English", "Keyword Chinese"]
   - ["Data Wrangling", "資料整理"]
   - ["Statistical Inference", "統計推論"]
   - ["Causal Inference", "因果推論"]
+
+Resources:
+  - []
