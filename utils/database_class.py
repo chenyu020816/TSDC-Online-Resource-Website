@@ -14,13 +14,15 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
+    photo_path = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
     role = db.Column(db.String(80), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
-    def __init__(self, username, email, password, role):
+    def __init__(self, username, email, photo_path, password, role):
         self.username = username
         self.email = email
+        self.photo_path = photo_path
         self.password_hash = generate_password_hash(password)
         self.role = role
 
@@ -133,7 +135,7 @@ class Question(db.Model):
         self.question_context = question_context
 
     def __repr__(self):
-        return "<Question %r>" % self.id
+        return "<Question %r>" % self.question_context
 
 
 class PostImages(db.Model):
@@ -141,14 +143,16 @@ class PostImages(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
+    image_name = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), unique=True, nullable=False)
     image_path = db.Column(db.String(255), nullable=False)
 
-    def __init__(self, post_id, image_path):
+    def __init__(self, post_id, image_name, image_path):
         self.post_id = post_id
+        self.image_name = image_name
         self.image_path = image_path
 
     def __repr__(self):
-        return "<PostImages %r>" % self.image_path
+        return "<PostImages %r>" % self.image_name
 
 
 class UserResourceUploadHistory(db.Model):

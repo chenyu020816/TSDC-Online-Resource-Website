@@ -2,13 +2,14 @@ import utils.database_class as db_cls
 
 
 def create_user(
-    db, username: str, email: str, password: str, role: str = "user"
+    db, username: str, email: str, photo_path: str, password: str, role: str = "user"
 ) -> int:
     """
     Create a new user
     :param db:
     :param username: user's name
     :param email: user's email
+    :param photo_path: user's photo path'
     :param password: user's password
     :param role: user's role ["admin", "user", "teacher", "student"]
     :return: user's id or -1 if username exist or -2 if email exist or -3 if fail
@@ -22,7 +23,7 @@ def create_user(
         print(f"Email '{email}' already exists.")
         return -2
 
-    user = db_cls.User(username=username, email=email, password=password, role=role)
+    user = db_cls.User(username=username, email=email, photo_path=photo_path, password=password, role=role)
 
     db.session.add(user)
     try:
@@ -199,7 +200,7 @@ def search_user_by_id(user_id: int) -> dict:
     """
     Search user info
     :param user_id: user's id
-    :return: {user_id, username, email, password, role} or {"error": -1} if user_id not exist
+    :return: {user_id, username, email, photo_path, role} or {"error": -1} if user_id not exist
     """
     user = db_cls.User.query.filter_by(id=user_id).first()
 
@@ -209,6 +210,7 @@ def search_user_by_id(user_id: int) -> dict:
         "user_id": user.id,
         "username": user.username,
         "email": user.email,
+        "photo_path": user.photo_path,
         "role": user.role,
     }
 
@@ -217,7 +219,7 @@ def search_user_by_name(user_name: int) -> dict:
     """
     Search user info
     :param user_name: user's name
-    :return: {user_id, username, email, password, role} or {"error": -1} if user_id not exist
+    :return: {user_id, username, email, photo_path, role} or {"error": -1} if user_id not exist
     """
     user = db_cls.User.query.filter_by(username=user_name).first()
 
@@ -227,6 +229,7 @@ def search_user_by_name(user_name: int) -> dict:
         "user_id": user.id,
         "username": user.username,
         "email": user.email,
+        "photo_path": user.photo_path,
         "role": user.role,
     }
 
