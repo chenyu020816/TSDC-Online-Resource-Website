@@ -109,9 +109,7 @@ class Post(db.Model):
     status = db.Column(db.String(255), nullable=False)
     post_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
-    __table_args__ = (
-        db.Index('uq_body', db.text('body(255)')),
-    )
+    __table_args__ = (db.Index("uq_body", db.text("body(255)")),)
 
     def __init__(self, user_id, title, body, status="under_review"):
         self.user_id = user_id
@@ -143,8 +141,12 @@ class PostImages(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
-    image_name = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), unique=True, nullable=False)
-    image_path = db.Column(db.String(255), nullable=False)
+    image_name = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), unique=True, nullable=False
+    )
+    image_path = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), unique=True, nullable=False
+    )
 
     def __init__(self, post_id, image_name, image_path):
         self.post_id = post_id
@@ -280,8 +282,12 @@ class ResourceUpdateHistory(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
     property_name = db.Column(db.String(255), nullable=False)
-    old_value = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), nullable=False)
-    new_value = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), nullable=False)
+    old_value = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
+    )
+    new_value = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
+    )
     update_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
     def __init__(self, user_id, resource_id, property_name, old_value, new_value):
@@ -302,8 +308,12 @@ class PostUpdateHistory(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
     property_name = db.Column(db.String(255), nullable=False)
-    old_value = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), nullable=False)
-    new_value = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), nullable=False)
+    old_value = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
+    )
+    new_value = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
+    )
     update_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
     def __init__(self, user_id, post_id, property_name, old_value, new_value):
@@ -328,8 +338,8 @@ class PostBodyUpdateHistory(db.Model):
     update_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
     __table_args__ = (
-        db.Index('uq_old_body', db.text('old_body(255)')),
-        db.Index('uq_new_body', db.text('new_body(255)')),
+        db.Index("uq_old_body", db.text("old_body(255)")),
+        db.Index("uq_new_body", db.text("new_body(255)")),
     )
 
     def __init__(self, user_id, post_id, old_body, new_body):
@@ -340,6 +350,49 @@ class PostBodyUpdateHistory(db.Model):
 
     def __repr__(self):
         return "<PostBodyUpdateHistory %r>" % self.id
+
+
+class UserUpdateHistory(db.Model):
+    __tablename__ = "user_update_history"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    property_name = db.Column(db.String(255), nullable=False)
+    old_value = db.Column(db.String(255), nullable=False)
+    new_value = db.Column(db.String(255), nullable=False)
+    update_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
+
+    def __init__(self, user_id, property_name, old_value, new_value):
+        self.user_id = user_id
+        self.property_name = property_name
+        self.old_value = old_value
+        self.new_value = new_value
+
+    def __repr__(self):
+        return "<UserUpdateHistory %r>" % self.user_id
+
+
+class PostImageUpdateHistory(db.Model):
+    __tablename__ = "post_image_update_history"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
+    old_image_path = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
+    )
+    new_image_path = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
+    )
+
+    def __init__(self, user_id, post_id, old_image_path, new_image_path):
+        self.user_id = user_id
+        self.post_id = post_id
+        self.old_image_path = old_image_path
+        self.new_image_path = new_image_path
+
+    def __repr__(self):
+        return "<PostImageUpdateHistory %r>" % self.id
 
 
 TABLES = (
@@ -357,6 +410,8 @@ TABLES = (
     ResourceUpdateHistory,
     PostUpdateHistory,
     PostBodyUpdateHistory,
+    UserUpdateHistory,
+    PostImageUpdateHistory,
 )
 
 
@@ -375,15 +430,15 @@ def init_tables(app, table_classes=TABLES):
         db.session.commit()
 
         user_id = 1
-        title = "Sample Post Title"
-        body = "This is the body of the sample post."
+        title = "測試文章Title"
+        body = "這是測試文章內容"
         post = Post(user_id=user_id, title=title, body=body)
         db.session.add(post)
         db.session.commit()
 
 
 def read_default_data(file_path):
-    with open(file_path, "r", encoding='utf-8') as file:
+    with open(file_path, "r", encoding="utf-8") as file:
         data = yaml.safe_load(file)
     return data
 
@@ -402,7 +457,6 @@ def init_default_data(file_path="./database-default-data.yaml"):
         Keyword(keyword_name_eng=keyword[0], keyword_name_chi=keyword[1])
         for keyword in keywords
     ]
-
 
     datas = [user_objects, keyword_objects]
     return datas

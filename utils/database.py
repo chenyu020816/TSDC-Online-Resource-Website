@@ -1,15 +1,17 @@
+import os
+import pathlib
+
 import utils.database_class as db_cls
 
 
 def create_user(
-    db, username: str, email: str, photo_path: str, password: str, role: str = "user"
+    db, username: str, email: str, password: str, role: str = "user"
 ) -> int:
     """
     Create a new user
     :param db:
     :param username: user's name
     :param email: user's email
-    :param photo_path: user's photo path'
     :param password: user's password
     :param role: user's role ["admin", "user", "teacher", "student"]
     :return: user's id or -1 if username exist or -2 if email exist or -3 if fail
@@ -22,8 +24,14 @@ def create_user(
     if existing_email:
         print(f"Email '{email}' already exists.")
         return -2
-
-    user = db_cls.User(username=username, email=email, photo_path=photo_path, password=password, role=role)
+    photo_path = os.path.join("./user_photos", "default.png")
+    user = db_cls.User(
+        username=username,
+        email=email,
+        photo_path=photo_path,
+        password=password,
+        role=role,
+    )
 
     db.session.add(user)
     try:
@@ -60,7 +68,7 @@ def create_resource(
     source_platform: str,
     resource_type: str,
     public_score: float = 0.0,
-    user_score: float= 0.0,
+    user_score: float = 0.0,
     num_of_purchases: int = 0,
     price: float = 0.0,
     status: str = "under_review",
@@ -290,12 +298,12 @@ def search_resource_by_name(resource_name: int) -> dict:
 
 def search_keyword_by_id(keyword_id: int) -> dict:
     """
-        Search keyword by id
-        :param keyword_id: id of keyword
-        :return:  {
-            keyword_id, keyword_name_eng, keyword_name_chi
-        } or {"error": -1} if keyword not exist
-        """
+    Search keyword by id
+    :param keyword_id: id of keyword
+    :return:  {
+        keyword_id, keyword_name_eng, keyword_name_chi
+    } or {"error": -1} if keyword not exist
+    """
     keyword = db_cls.Keyword.query.filter_by(id=keyword_id).first()
     if not keyword:
         return {"error": -1}
