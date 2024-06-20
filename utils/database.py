@@ -1,154 +1,6 @@
+import os
+
 import utils.database_class as db_cls
-
-
-def create_user(
-    db, username: str, email: str, password: str, role: str = "user"
-) -> int:
-    """
-    Create a new user
-    :param db:
-    :param username: user's name
-    :param email: user's email
-    :param password: user's password
-    :param role: user's role ["admin", "user", "teacher", "student"]
-    :return: user's id or -1 if username exist or -2 if email exist or -3 if fail
-    """
-    user = db_cls.User(username=username, email=email, password=password, role=role)
-    existing_user = db_cls.User.query.filter_by(username=username).first()
-    existing_email = db_cls.User.query.filter_by(email=email).first()
-    if existing_user:
-        print(f"User '{username}' already exists.")
-        return -1
-    if existing_email:
-        print(f"Email '{email}' already exists.")
-        return -2
-
-    db.session.add(user)
-    try:
-        db.session.commit()
-    except Exception as e:
-        db.session.rollback()
-        print(f"Failed to create user '{username}': {e}")
-        return -3
-    return user.id
-
-
-def login_user(username: str, password: str) -> int:
-    """
-    Login a user
-    :param username: username input
-    :param password: password input
-    :return: user's id or -1 if password incorrect or -2 if username not exist
-    """
-    user = db_cls.User.query.filter_by(username=username).first()
-    if user:
-        if user.check_password(password):
-            return user.id
-        else:
-            return -1
-    else:
-        return -2
-
-
-def search_user(user_id: int) -> dict:
-    """
-    Search user info
-    :param user_id: user's id
-    :return: {user_id, username, email, password, role}
-    """
-    user = db_cls.User.query.filter_by(id=user_id).first()
-
-    if not user:
-        return {"error": -1}  # user not found
-    return {
-        "user_id": user.id,
-        "username": user.username,
-        "email": user.email,
-        "role": user.role,
-    }
-
-
-def create_resource(
-    db,
-    resource_name: str,
-    url: str,
-    image_url: str,
-    source_platform: str,
-    resource_type: str,
-    score: float,
-    num_of_purchases: int,
-    price: float = 0.0,
-    status: str = "under_review",
-) -> int:
-    """
-    Create a resource
-    :param db:
-    :param resource_name: name of resource
-    :param url: url of resource
-    :param image_url: url of image
-    :param source_platform: platform of resource, ["YouTube", "Udemy", ...]
-    :param resource_type: type of resource, ["video", "open course", "pay course", "book", ...]
-    :param score: score of resource
-    :param num_of_purchases: number of purchases
-    :param price: price of resource
-    :param status: status of resource, ["under_review", "publish", "delete""]
-    :return: id of created resource or -1 if resource exist or -2 if fail
-    """
-    resource = db_cls.Resource(
-        resource_name=resource_name,
-        url=url,
-        image_url=image_url,
-        source_platform=source_platform,
-        resource_type=resource_type,
-        score=score,
-        num_of_purchases=num_of_purchases,
-        price=price,
-        status=status,
-    )
-    existing_resource = db_cls.Resource.query.filter_by(
-        resource_name=resource_name
-    ).first()
-    if existing_resource:
-        print(f"Resource '{resource_name}' already exists.")
-        return -1
-
-    db.session.add(resource)
-
-    try:
-        db.session.commit()
-    except Exception as e:
-        db.session.rollback()
-        print(f"Failed to create resource '{resource}': {e}")
-        return -2
-    return resource.id
-
-
-def create_keyword(db, keyword_eng: str, keyword_chi: str) -> int:
-    """
-    Create a keyword
-    :param db:
-    :param keyword_eng: english keyword name
-    :param keyword_chi: chinese keyword name
-    :return keyword id or -1 if keyword exist or -2 if fail
-    """
-    keyword = db_cls.Keyword(keyword_name_eng=keyword_eng, keyword_name_chi=keyword_chi)
-
-    existing_keyword = db_cls.Keyword.query.filter_by(
-        keyword_name_eng=keyword_eng
-    ).first()
-    if existing_keyword:
-        print(f"Keyword '{keyword}' already exists.")
-        return -1
-
-    db.session.add(keyword)
-
-    try:
-        db.session.commit()
-    except Exception as e:
-        db.session.rollback()
-        print(f"Failed to create keyword '{keyword}': {e}")
-        return -2
-    return keyword.id
 
 
 def create_question(db, question_context: str) -> int:
@@ -158,14 +10,14 @@ def create_question(db, question_context: str) -> int:
     :param question_context: question context
     :return: question id or -1 if question exist or -2 if fail
     """
-    question = db_cls.Question(question_context=question_context)
-
     existing_question = db_cls.Question.query.filter_by(
         question_context=question_context
     ).first()
     if existing_question:
         print(f"Question '{question_context}' already exists.")
         return -1
+
+    question = db_cls.Question(question_context=question_context)
 
     db.session.add(question)
 
@@ -178,91 +30,183 @@ def create_question(db, question_context: str) -> int:
     return question.id
 
 
-def create_post(
-    db, user_id: int, title: str, body: str, status: str = "under_review"
+def add_post_update_history(
+    db, user_id: int, post_id: int, property_name: str, old_value: str, new_value: str
 ) -> int:
     """
-    Create a post
+    Add post update history
     :param db:
-    :param user_id: id of publisher
-    :param title: title of post
-    :param body: context of post
-    :param status: status of post ["under_review", "publish", "delete"]
-    :return: post id or -1 if post exist or -2 if fail
+    :param user_id: id of user who update post
+    :param post_id: post's id
+    :param property_name: name of property which is updated
+    :param old_value: old value of property
+    :param new_value: new value of property
+    :return: post_update_history id or -1 if fail
     """
-    post = db_cls.Post(user_id=user_id, title=title, body=body, status=status)
+    post_update_history = db_cls.PostUpdateHistory(
+        user_id=user_id,
+        post_id=post_id,
+        property_name=property_name,
+        old_value=old_value,
+        new_value=new_value,
+    )
 
-    existing_post = db_cls.Post.query.filter_by(title=title).first()
-    if existing_post:
-        print(f"Post '{title}' already exists.")
-        return -1
-
-    db.session.add(post)
+    db.session.add(post_update_history)
 
     try:
         db.session.commit()
     except Exception as e:
         db.session.rollback()
-        print(f"Failed to create post '{post}': {e}")
-        return -2
-    return post.id
+        print(f"Failed to update post's history '{post_update_history}': {e}")
+        return -1
+    return post_update_history.id
 
 
-def user_upload_resource(
-    db,
-    user_id: int,
-    resource_name: str,
-    url: str,
-    image_url: str,
-    source_platform: str,
-    resource_type: str,
-    score: float,
-    num_of_purchases: int,
-    price: float = 0.0,
-    status: str = "under_review",
+def add_post_body_update_history(
+    db, user_id: int, post_id: int, old_body: str, new_body: str
 ) -> int:
     """
-    Upload resource from user
+    Add post body update history
     :param db:
-    :param user_id: id of uploader
-    :param resource_name: name of resource
-    :param url: url of resource
-    :param image_url: url of image
-    :param source_platform: platform of resource, ["YouTube", "Udemy", ...]
-    :param resource_type: type of resource, ["video", "open course", "pay course", "book", ...]
-    :param score: score of resource
-    :param num_of_purchases: number of purchases
-    :param price: price of resource
-    :param status: status of resource, ["under_review", "publish", "delete""]
-    :return: user_upload_resource id or -1 if resource exist or -2 if fail
+    :param user_id: id of user who update post' body
+    :param post_id: post' id
+    :param old_body: old body of post
+    :param new_body: new body of post
+    :return: post_body_update_history id or -1 if fail
     """
-    resource_upload_id = create_resource(
-        db,
-        resource_name,
-        url,
-        image_url,
-        source_platform,
-        resource_type,
-        score,
-        num_of_purchases,
-        price,
-        status,
+    post_body_update_history = db_cls.PostBodyUpdateHistory(
+        user_id=user_id, post_id=post_id, old_body=old_body, new_body=new_body
     )
 
-    if resource_upload_id != -1:  # if successfully create new resource
-        user_resource_upload = db_cls.UserResourceUploadHistory(
-            user_id=user_id, resource_id=resource_upload_id
+    db.session.add(post_body_update_history)
+
+    try:
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        print(f"Failed to update post's body history '{post_body_update_history}': {e}")
+        return -1
+    return post_body_update_history.id
+
+
+def user_update_post(
+    db,
+    user_id: int,
+    post_id: int,
+    new_title: str = None,
+    new_body: str = None,
+) -> int:  # Fix user id == author
+    """
+    Update post
+    :param db:
+    :param user_id: id of user who update post
+    :param post_id: post's id
+    :param new_title: new title of post or None if stay the same
+    :param new_body: new body of post or None if stay the same
+    :return: post id or -1 if user not exist or -2 if post not exist or -3 if user is not author | admin or -4 if fail
+    """
+    user = db_cls.User.query.filter_by(id=user_id).first()
+    post = db_cls.Post.query.filter_by(id=post_id).first()
+
+    if not user:
+        return -1
+    if not post:
+        return -2
+    else:
+        if user_id != post.user_id or user.role != "admin":
+            return -3
+
+        if new_title:
+            old_value = post.title
+            post.title = new_title
+            res = add_post_update_history(
+                db, user_id, post_id, "title", old_value, new_title
+            )
+            if res < 0:
+                return -4
+        if new_body:
+            old_value = post.body
+            post.body = new_body
+            res = add_post_body_update_history(
+                db, user_id, post_id, old_value, new_body
+            )
+            if res < 0:
+                return -4
+        try:
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            print(f"Failed to update post '{post}': {e}")
+            return -4
+        return post.id
+
+
+def admin_update_post_status(db, user_id: int, post_id: int, new_status: str) -> int:
+    user = db_cls.User.query.filter_by(id=user_id).first()
+    post = db_cls.Post.query.filter_by(id=post_id).first()
+    if not user:
+        return -1
+    if not post:
+        return -2
+    if user.role == "admin":
+        old_status = post.status
+        if old_status == new_status:
+            return -5
+        post.status = new_status
+        post_status_update_history = db_cls.PostStatusUpdateHistory(
+            user_id=user_id,
+            post_id=post_id,
+            old_status=old_status,
+            new_status=new_status,
         )
 
-        db.session.add(user_resource_upload)
+        db.session.add(post_status_update_history)
 
         try:
             db.session.commit()
         except Exception as e:
             db.session.rollback()
-            print(f"Failed to upload resource '{resource_name}': {e}")
-            return -2
-        return user_resource_upload.id
+            print(f"Failed to update post status'{post}': {e}")
+            return -3
+        return post_status_update_history.id
     else:
-        print(f"Failed to upload resource '{resource_name}'")
+        return -4
+
+
+
+
+def admin_update_resource_status(
+    db, user_id: int, resource_id: int, new_status: str
+) -> int:
+    user = db_cls.User.query.filter_by(id=user_id).first()
+    resource = db_cls.Resource.query.filter_by(id=resource_id).first()
+    if not user:
         return -1
+    if not resource:
+        return -2
+    if user.role == "admin":
+        old_status = resource.status
+        if old_status == new_status:
+            return -5
+        resource.status = new_status
+        resource_status_update_history = db_cls.ResourceStatusUpdateHistory(
+            user_id=user_id,
+            resource_id=resource_id,
+            old_status=old_status,
+            new_status=new_status,
+        )
+
+        db.session.add(resource_status_update_history)
+
+        try:
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            print(f"Failed to update resource status'{resource}': {e}")
+            return -3
+        return resource_status_update_history.id
+    else:
+        return -4
+
+
+# Add search context history search resource history
