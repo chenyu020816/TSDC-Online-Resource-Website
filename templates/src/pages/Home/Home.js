@@ -14,8 +14,8 @@ import Profile from 'pages/Home/components/ProfileCard/Profile';
 import BannerCard from 'pages/Home/components/BannerCard';
 import Contact from 'pages/Home/components/Contact';
 import Footer from 'pages/Home/components/Footer';
-import SearchInput from 'pages/Home/components/SearchInput';
-import CourseRecommend from 'pages/Home/components/CourseRecommend';
+import SearchInput from 'pages/Home/components/SearchInputRoadmap';
+//import CourseRecommend from 'pages/Home/components/CourseRecommend';
 
 const palette = 'home';
 
@@ -58,9 +58,9 @@ const Home = () => {
             <div className='feature-section'>
                 <BannerCard />
             </div>
-            <div className='feature-course-recommend'>
+            {/* <div className='feature-course-recommend'>
                 <CourseRecommend courseList={courseList} tabs={tabs} />
-            </div>
+            </div> */}
             {/*             <div className='profile-section' id='about'>
                 <Profile />
             </div> */}

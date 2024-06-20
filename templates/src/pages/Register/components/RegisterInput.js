@@ -42,7 +42,7 @@ const RegisterInput = () => {
                 }}
                 validationSchema={Yup.object().shape({
                     name: Yup.string().required('請輸入使用者名稱').matches(/^\S*$/, '使用者名稱不得含有空格'),
-                    email: Yup.string().email('必須是有效的電子郵件').max(255),
+                    email: Yup.string().required('請輸入 Email').email('必須是有效的電子郵件').max(255),
                     password: Yup.string().max(255).required('請輸入密碼'),
                     confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], '密碼與確認密碼不符').required('密碼與確認密碼不符')
                 })}
@@ -51,11 +51,10 @@ const RegisterInput = () => {
                     setAsyncStatusButton(ASYNC_STATUS_LOADING);
                     userAPIs.userSignUp(user).then((res) => {
                         if (res['data']['success']) {
-                            localStorage.setItem('NOMENU_LOGGED_IN', true);
-                            localStorage.setItem('NOMENU_USER_NAME', res['data']['data']['name']);
-                            localStorage.setItem('NOMENU_USER_ID', res['data']['data']['_id']);
+                            localStorage.setItem('YFCII_LOGGED_IN', true);
+                            localStorage.setItem('YFCII_USER_ID', res['data']['data']);
                         }
-                        window.location.href = './userPlan';
+                        window.location.href = './';
                     }).catch((err) => {
                         setErrors({ submit: err['response']['data']['error'] });
                         setAsyncStatusButton(ASYNC_STATUS_LOADED);
@@ -88,7 +87,7 @@ const RegisterInput = () => {
                             </Grid>
                             <Grid item xs={12} py={1}>
                                 <Stack >
-                                    <InputLabel htmlFor="email-login" style={{ fontSize: "16px" }}>Email</InputLabel>
+                                    <InputLabel htmlFor="email-login" style={{ fontSize: "16px" }}>Email*</InputLabel>
                                     <OutlinedInput
                                         id="email-login"
                                         type="email"

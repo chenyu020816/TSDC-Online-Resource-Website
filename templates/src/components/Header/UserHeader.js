@@ -26,13 +26,12 @@ const UserHeader = (props) => {
   const userSignOut = () => {
     if (!isLogin) return
 
-    localStorage.removeItem('NOMENU_LOGGED_IN')
-    localStorage.removeItem('NOMENU_USER_NAME')
-    localStorage.removeItem('NOMENU_USER_ID')
+    localStorage.removeItem('YFCII_LOGGED_IN')
+    localStorage.removeItem('YFCII_USER_ID')
   }
 
   React.useEffect(() => {
-    setIsLogin(localStorage.getItem('NOMENU_LOGGED_IN'))
+    setIsLogin(localStorage.getItem('YFCII_LOGGED_IN'))
   }, [])
 
   return (
@@ -40,7 +39,7 @@ const UserHeader = (props) => {
       <header className="header">
         <div className="logo">
           <Link href="/" underline="none">
-            <img src={logo} alt='Nomenu' />
+            <img src={logo} alt='YFCII' />
           </Link>
         </div>
         <nav className="navbar">

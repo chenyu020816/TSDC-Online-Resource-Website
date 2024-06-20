@@ -4,6 +4,7 @@ import { SnackbarProvider } from "notistack";
 import { Global, css } from '@emotion/react';
 
 import Home from 'pages/Home/Home';
+import Search from 'pages/Search/Search';
 import Login from 'pages/Login/Login';
 import Register from 'pages/Register/Register';
 import Grow from 'utils/Grow';
@@ -21,8 +22,9 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/login" element={isLogin ? <Navigate to="/userPlan" /> : <Login />}></Route>
-            <Route path="/register" element={isLogin ? <Navigate to="/userPlan" /> : <Register />}></Route>
+            <Route path="/search-course" element={<Search />}></Route>
+            <Route path="/login" element={isLogin ? <Navigate to="/userpage" /> : <Login />}></Route>
+            <Route path="/register" element={isLogin ? <Navigate to="/userpage" /> : <Register />}></Route>
           </Routes>
         </Router>
       </SnackbarProvider>

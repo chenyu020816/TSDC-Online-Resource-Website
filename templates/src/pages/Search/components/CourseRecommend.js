@@ -12,11 +12,11 @@ const CourseRecommend = ({ courseList, tabs }) => {
     const [activeTab, setActiveTab] = React.useState(tabs[0] ? tabs[0].id : "Hahow");
     const courseDataList = Object.values(courseList).filter(item => item.domain === activeTab)[0];
 
-    React.useEffect(() => {
-        console.log(activeTab);
-        console.log(courseList);
-        console.log(Object.values(courseList).filter(item => item.domain === "Hahow")[0]);
-    }, [tabs])
+    /*     React.useEffect(() => {
+            console.log(activeTab);
+            console.log(courseList);
+            console.log(Object.values(courseList).filter(item => item.domain === "Hahow")[0]);
+        }, [tabs]) */
 
     return (
         <div className={style(theme[palette])}>

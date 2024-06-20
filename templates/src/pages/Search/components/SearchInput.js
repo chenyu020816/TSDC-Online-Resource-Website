@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import DirectionsIcon from '@mui/icons-material/Directions';
-import StartButton from 'pages/Home/components/SearchButton';
+import StartButton from 'pages/Search/components/SearchButton';
 import { Box } from '@mui/material';
 import useGetKeywordList from 'hook/useGetSearchKeyword';
 

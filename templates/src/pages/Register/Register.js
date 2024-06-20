@@ -57,10 +57,10 @@ const Register = () => {
                         Created By&nbsp;
                         <Link href="#" underline="none">
                             <Typography component="span" variant="subtitle2" color={theme[palette]['primary']} target="_blank">
-                                Nomenu&nbsp;
+                                YFCII&nbsp;
                             </Typography>
                         </Link>
-                        &copy;2023 All rights reserved.
+                        &copy;2024 All rights reserved.
                     </Typography>
                 </Stack>
             </Grid>
@@ -74,5 +74,5 @@ const container = {
     position: "absolute",
     height: '100vh',
     width: '100vw',
-    backgroundImage: 'linear-gradient(to left bottom, #ffffff, #fff9ff, #fff2f1, #fff3d0, #feffbc)'
+    backgroundImage: 'linear-gradient(to left bottom, #ffffff, #f7faff, #f1f6ff, #d0ddff, #bcccff)'
 }

@@ -1,0 +1,19 @@
+<輸出範例>
+{
+"0": {
+"label": "基礎數學與統計",
+"technologies": ["線性代數", "微積分", "機率論", "統計學"],
+"description": "......"
+},
+"1": {
+"label": "程式語言基礎",
+"technologies": ["Python", "R"],
+"description": "......"
+},
+"2": {
+"label": "資料處理與清洗",
+"technologies": ["Pandas", "Numpy"],
+"description": "......"
+}
+}
+<輸出範例>

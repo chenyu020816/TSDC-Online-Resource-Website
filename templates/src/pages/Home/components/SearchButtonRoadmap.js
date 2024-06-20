@@ -3,26 +3,27 @@ import { useSelector } from "react-redux";
 import { css } from '@emotion/css/macro';
 import { motion } from 'framer-motion';
 import { Link } from '@mui/material';
+import * as generateAPIs from 'apis/generate';
 
 import theme from 'components/theme';
-import useGetCrawlerCourse from 'hook/useGetCrawlerCourse';
+import useGetLLMGenerate from 'hook/useGetLLMGenerate';
 
 const palette = 'home';
 
 const StartButton = () => {
-    const { handleGetHahowList, handleGetCourseraList, handleGetAllCourses } = useGetCrawlerCourse();
+    const { handleGetRoadmapData } = useGetLLMGenerate()
     const { keyword, asyncStatusGetKeyword } = useSelector((store) => store.keyword);
 
-    React.useEffect(() => {
-        console.log(keyword);
-    }, [keyword]);
+    /* React.useEffect(() => {
+        generateAPIs.generateRoadmap({ _keyword: "影像辨識" }).then((res) => {
+            console.log(res['data']);
+        })
+    }, []); */
 
-    const handleClick = async (event) => {
+    const handleClick = (event) => {
         event.preventDefault();
         console.log(keyword);
-        //handleGetHahowList(keyword);
-        //handleGetCourseraList(keyword);
-        await handleGetAllCourses(keyword);
+        handleGetRoadmapData(keyword);
     };
 
     return (

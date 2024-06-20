@@ -1,7 +1,7 @@
 import axios from "axios";
 import baseUrl from "utils/getBaseURL";
 
-const getUserDetail = (_data) => {
+/* const getUserDetail = (_data) => {
     return axios({
         method: "post",
         url: `${baseUrl}/getUserDetail`,
@@ -16,11 +16,11 @@ const updateUserInfo = (_data) => {
         data: _data
     });
 };
-
+ */
 const userSignUp = (_data) => {
     return axios({
         method: "post",
-        url: `${baseUrl}/signup`,
+        url: `${baseUrl}/user_signup`,
         data: _data
     });
 };
@@ -28,12 +28,12 @@ const userSignUp = (_data) => {
 const userLogin = (_data) => {
     return axios({
         method: "post",
-        url: `${baseUrl}/userLogin`,
+        url: `${baseUrl}/user_login`,
         data: _data
     });
 };
 
-const commentSubmit = (_data) => {
+/* const commentSubmit = (_data) => {
     return axios({
         method: "post",
         url: `${baseUrl}/commentSubmit`,
@@ -47,6 +47,6 @@ const getTagHistory = (_data) => {
         url: `${baseUrl}/getTagHistory`,
         data: _data
     });
-};
+}; */
 
-export { getUserDetail, updateUserInfo, userSignUp, userLogin, commentSubmit, getTagHistory };
+export { userSignUp, userLogin };

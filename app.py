@@ -5,9 +5,11 @@ from sqlalchemy import inspect
 from crawler.crawler_ntu_ocw import crawl_ntu_ocw
 from crawler.crawler_coursera import crawl_coursera
 from crawler.crawler_hahow import crawl_hahow
+from utils.roadmapGenerate import generate_roadmap
 import os
 
 import utils.database_class as db_cls
+from user.userLogin import *
 from crawler.crawler_coursera import crawl_coursera
 from crawler.crawler_hahow import crawl_hahow
 from crawler.crawler_ntu_ocw import crawl_ntu_ocw
@@ -44,6 +46,14 @@ def serve(path):
         return send_from_directory(app.static_folder, "index.html")
 
 
+@app.post("/user_login")
+def userLogin():
+    return login()
+
+@app.post("/user_signup")
+def userSignUp():
+    return signup()
+
 @app.post("/crawl_ntu_ocw")
 def crawlNtuOcw():
     return crawl_ntu_ocw()
@@ -58,11 +68,14 @@ def crawlCoursera():
 def crawlHahow():
     return crawl_hahow()
 
+@app.post("/generate_roadmap")
+def generateRoadmap():
+    return generate_roadmap()
 
 if __name__ == "__main__":
     if os.environ.get("WERKZEUG_RUN_MAIN") != "true":
         with app.app_context():
-            db_cls.init_tables(app)
+            # db_cls.init_tables(app)
             user_id = create_user(db, "test0", "test", "test")
             print(login_user("test0", "test"))
             print(login_user("test0efijefsef", "test1"))

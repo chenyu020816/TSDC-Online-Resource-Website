@@ -45,14 +45,12 @@ const LoginInput = () => {
                     userAPIs.userLogin(user).then((res) => {
                         if (res['data']['success']) {
                             // 儲存狀態於用戶localStorage
-                            localStorage.setItem('NOMENU_LOGGED_IN', true);
-                            localStorage.setItem('NOMENU_USER_NAME', res['data']['data']['name']);
-                            localStorage.setItem('NOMENU_USER_ID', res['data']['data']['_id']);
+                            localStorage.setItem('YFCII_LOGGED_IN', true);
+                            localStorage.setItem('YFCII_USER_ID', res['data']['data']);
+                            window.location.href = './';
                         }
                         // 自動跳轉至用戶詳情頁
-                        window.location.href = './userPlan';
-
-
+                        //window.location.href = './userPlan';
                     }).catch((err) => {
                         setErrors({ submit: err['response']['data']['error'] });
                         setAsyncStatusButton(ASYNC_STATUS_LOADED);
