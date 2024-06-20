@@ -38,11 +38,11 @@ class Resource(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     resource_name = db.Column(
-        db.String(255, collation="utf8mb4_unicode_ci"), unique=True, nullable=False
+        db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
     )
     introduction = db.Column(db.Text(collation="utf8mb4_unicode_ci"), nullable=False)
-    url = db.Column(db.String(255), nullable=False)
-    image_url = db.Column(db.String(255), nullable=False)
+    url = db.Column(db.String(255), unique=True, nullable=False)
+    image_url = db.Column(db.String(255), unique=True, nnullable=False)
     source_platform = db.Column(db.String(255), nullable=False)
     type = db.Column(db.String(255), nullable=False)
     public_score = db.Column(db.Float, nullable=False)
