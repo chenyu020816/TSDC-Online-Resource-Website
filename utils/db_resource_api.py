@@ -435,14 +435,17 @@ def check_resource_exists(url: str) -> bool:
 def add_search_roadmap_fields_history(
     db, search_history_id: int, roadmap_fields: list[str]
 ) -> int:
+    search_roadmap_field_ids = []
     for roadmap_field in roadmap_fields:
         search_roadmap_field_id = add_search_roadmap_field(
             db, search_history_id, roadmap_field
         )
+
         if search_roadmap_field_id <= 0:
             return -1
+        search_roadmap_field_ids.append(search_roadmap_field_id)
 
-    return 1
+    return search_roadmap_field_ids
 
 
 def add_search_roadmap_field(db, search_history_id: int, roadmap_field: str):
