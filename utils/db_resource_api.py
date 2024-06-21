@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 # import resource
 
 
-=======
->>>>>>> b51006697f2795a5463634368c630b64cc3da42e
 from numpy import array, float32, mean
 from pandas import DataFrame
 
