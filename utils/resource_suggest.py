@@ -9,12 +9,23 @@ from utils.db_resource_api import *
 
 
 def translate2eng(text):
+    """
+    Translates Chinese text to English
+    :param text: Chinese text
+    :return: translated text
+    """
     translator = Translator(from_lang="zh", to_lang="en")
     result = translator.translate(text)
     return result
 
 
 def compute_distance(query: str, keywords: list[str]) -> list[int]:
+    """
+    Computes distance between query and keywords
+    :param query: query text
+    :param keywords: keywords list
+    :return: a list of distance of each keyword with query
+    """
     result = map(lambda keyword: Levenshtein.distance(query, keyword), keywords)
     return list(result)
 

@@ -46,7 +46,7 @@ class Resource(db.Model):
     source_platform = db.Column(db.String(255), nullable=False)
     type = db.Column(db.String(255), nullable=False)
     public_score = db.Column(db.Float, nullable=False)
-    user_score = db.Column(db.Float, nullable=False)
+    user_score = db.Column(db.Float, nullable=False, default=-1.0)
     num_of_purchases = db.Column(db.Integer, nullable=False)
     price = db.Column(db.Float, nullable=False)
     status = db.Column(db.String(255), nullable=False)
@@ -63,7 +63,6 @@ class Resource(db.Model):
         source_platform,
         resource_type,
         public_score,
-        user_score,
         num_of_purchases,
         price: float = 0.0,
         status: str = "under_review",
@@ -75,7 +74,6 @@ class Resource(db.Model):
         self.source_platform = source_platform
         self.type = resource_type
         self.public_score = public_score
-        self.user_score = user_score
         self.num_of_purchases = num_of_purchases
         self.price = price
         self.status = status
@@ -527,14 +525,14 @@ class UserResourceViewHistory(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    search_resource_id = db.Column(
+    search_resource_history_id = db.Column(
         db.Integer, db.ForeignKey("search_resource_history.id"), nullable=False
     )
     view_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
-    def __init__(self, user_id, search_resource_id):
+    def __init__(self, user_id, search_resource_history_id):
         self.user_id = user_id
-        self.search_resource_id = search_resource_id
+        self.search_resource_history_id = search_resource_history_id
 
     def __repr__(self):
         return "<UserResourceViewHistory %r>" % self.id
@@ -631,7 +629,6 @@ def init_default_data(file_path="./database-default-data.yaml"):
             source_platform=resource[4],
             resource_type=resource[5],
             public_score=resource[6],
-            user_score=resource[7],
             num_of_purchases=resource[8],
             price=resource[9],
             status=resource[10],
