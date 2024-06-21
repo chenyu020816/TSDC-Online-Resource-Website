@@ -361,6 +361,46 @@ def search_resource_by_id_list(resource_id_list: list) -> dict:
     return resources
 
 
+def search_resource_by_id_list_with_rating_score(user_id: int, resource_id_list: list) -> dict:
+    """
+    Search resources by a list of ids
+    :param user_id: id of user
+    :param resource_id_list: List of resource ids
+    :return: List of resources, each resource is a dictionary containing:
+             {
+                resource_id, resource_name, introduction, url, image_url, source_platform,
+                resource_type, score, num_of_purchases, price, status, view_count
+             }
+             or {"error": -1} if resource_id not exist
+    """
+    resources = []
+    resources_db = db_cls.Resource.query.filter(db_cls.Resource.id.in_(resource_id_list)).all()
+
+    for resource in resources_db:
+        if not resource:
+            continue
+        else:
+            rating_score = search_user_resource_rating_score(user_id=user_id, resource_id=resource)
+            resources.append({
+                "resource_id": resource.id,
+                "resource_name": resource.resource_name,
+                "introduction": resource.introduction,
+                "url": resource.url,
+                "image_url": resource.image_url,
+                "source_platform": resource.source_platform,
+                "type": resource.type,
+                "user_score": resource.user_score,
+                "public_score": resource.public_score,
+                "num_of_purchases": resource.num_of_purchases,
+                "price": resource.price,
+                "status": resource.status,
+                "view_count": resource.view_count,
+                "rating_score": rating_score
+            })
+
+    return resources
+
+
 def search_resource_by_name(resource_name: int) -> dict:
     """
     Search resource by name
@@ -681,3 +721,11 @@ def add_user_rating_history(db, user_id: int, resource_id: int, score: int):
             return -1
         _update_resource_score(db, resource_id)
         return rating_history.id
+
+
+def search_user_resource_rating_score(user_id: int, resource_id: int) -> int:
+    rating_histories = db_cls.RatingHistory.query.filter_by(user_id=user_id, resource_id=resource_id).first()
+    if rating_histories:
+        return rating_histories.score
+    else:
+        return -1
