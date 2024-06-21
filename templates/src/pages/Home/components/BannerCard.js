@@ -175,7 +175,6 @@ const UserTagHistoryCard = () => {
     React.useEffect(() => {
         if (asyncStatusRoadmap.loading) return;
 
-        console.log(roadmap);
         setNodes(roadmap['nodes'])
         setEdges(roadmap['edges'])
     }, [roadmap])

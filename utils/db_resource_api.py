@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 # import resource
 
 
+=======
+>>>>>>> b51006697f2795a5463634368c630b64cc3da42e
 from numpy import array, float32, mean
 from pandas import DataFrame
 
@@ -471,7 +474,7 @@ def check_resource_exists(url: str) -> bool:
 
 def add_search_roadmap_fields_history(
     db, search_history_id: int, roadmap_fields: list[str]
-) -> int:
+) -> list[int]:
     search_roadmap_field_ids = []
     for roadmap_field in roadmap_fields:
         search_roadmap_field_id = _add_search_roadmap_field(
@@ -479,7 +482,7 @@ def add_search_roadmap_fields_history(
         )
 
         if search_roadmap_field_id <= 0:
-            return -1
+            return [-1]
         search_roadmap_field_ids.append(search_roadmap_field_id)
 
     return search_roadmap_field_ids
@@ -500,7 +503,7 @@ def _add_search_roadmap_field(db, search_history_id: int, roadmap_field: str) ->
 
 def add_roadmap_fields_keywords(
     db, search_roadmap_field_id: int, keywords: list[str]
-) -> int:
+) -> list[int]:
     roadmap_fields_keyword_ids = []
     for keyword in keywords:
         roadmap_field_keyword_id = _add_roadmap_field_keyword(
@@ -508,7 +511,7 @@ def add_roadmap_fields_keywords(
         )
 
         if roadmap_field_keyword_id <= 0:
-            return -1
+            return [-1]
         roadmap_fields_keyword_ids.append(roadmap_field_keyword_id)
 
     return roadmap_fields_keyword_ids
@@ -663,7 +666,7 @@ def add_user_rating_history(db, user_id: int, resource_id: int, score: int):
             db.session.commit()
         except Exception as e:
             db.session.rollback()
-            print(f"Failed to update resource '{resource} user_rating_history': {e}")
+            print(f"Failed to update rating history '{old_rating_history}' for user '{user_id}': {e}")
             return -1
         _update_resource_score(db, resource_id)
         return old_rating_history.id
@@ -677,7 +680,7 @@ def add_user_rating_history(db, user_id: int, resource_id: int, score: int):
             db.session.commit()
         except Exception as e:
             db.session.rollback()
-            print(f"Failed to add resource '{resource} user_rating_history': {e}")
+            print(f"Failed to add rating history '{rating_history}' for user '{user_id}': {e}")
             return -1
-        update_resource_score(db, resource_id)
+        _update_resource_score(db, resource_id)
         return rating_history.id
