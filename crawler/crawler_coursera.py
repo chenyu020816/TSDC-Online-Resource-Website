@@ -53,7 +53,7 @@ def crawl_coursera():
             "courses": []
         }
         
-        for element in elements[:10]:
+        for element in elements:
             try:
                 img = element.select_one('.cds-CommonCard-previewImage img')
                 img_url = clean_url(img.get('src')) if img else None

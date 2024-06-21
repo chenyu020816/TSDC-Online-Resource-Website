@@ -551,12 +551,14 @@ TABLES = (
 def init_tables(app, table_classes=TABLES):
     with app.app_context():
         insp = inspect(db.engine)
+        with_data = True
         for table_class in table_classes:
             if not insp.has_table(table_class.__tablename__):
+                with_data = False
                 table_class.__table__.create(db.engine)
-
+        if with_data: return
         default_data = init_default_data()
-        print("Complete table creation")
+        
         for table in default_data:
             for data in table:
                 db.session.add(data)

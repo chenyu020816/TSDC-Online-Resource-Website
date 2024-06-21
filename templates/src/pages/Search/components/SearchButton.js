@@ -16,11 +16,9 @@ const StartButton = () => {
   const { handleGetRoadmapData } = useGetLLMGenerate()
   const { keyword, asyncStatusGetKeyword } = useSelector((store) => store.keyword);
 
-  /* React.useEffect(() => {
-      generateAPIs.generateRoadmap({ _keyword: "影像辨識" }).then((res) => {
-          console.log(res['data']);
-      })
-  }, []); */
+  React.useEffect(() => {
+    handleGetAllCourses('資料分析');
+  }, []);
 
   const handleClick = (event) => {
     event.preventDefault();

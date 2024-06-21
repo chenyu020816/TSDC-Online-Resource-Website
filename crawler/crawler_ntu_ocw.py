@@ -29,7 +29,7 @@ def crawl_ntu_ocw():
             "courses": []
         }
         
-        for element in elements[:5]:
+        for element in elements[:10]:
             try:
                 img = element.select_one('.coursepic img')
                 img_url = img.get('src') if img else None
