@@ -325,6 +325,42 @@ def search_resource_by_id(resource_id: int) -> dict:
         "view_count": resource.view_count,
     }
 
+def search_resource_by_id_list(resource_id_list: list) -> dict:
+    """
+    Search resources by a list of ids
+    :param resource_id_list: List of resource ids
+    :return: List of resources, each resource is a dictionary containing:
+             {
+                resource_id, resource_name, introduction, url, image_url, source_platform,
+                resource_type, score, num_of_purchases, price, status, view_count
+             }
+             or {"error": -1} if resource_id not exist
+    """
+    resources = []
+
+    for resource_id in resource_id_list:
+        resource = db_cls.Resource.query.filter_by(id=resource_id).first()
+
+        if not resource:
+            continue
+        else:
+            resources.append({
+                "resource_id": resource.id,
+                "resource_name": resource.resource_name,
+                "introduction": resource.introduction,
+                "url": resource.url,
+                "image_url": resource.image_url,
+                "source_platform": resource.source_platform,
+                "type": resource.type,
+                "score": resource.public_score,
+                "num_of_purchases": resource.num_of_purchases,
+                "price": resource.price,
+                "status": resource.status,
+                "view_count": resource.view_count,
+            })
+
+    return resources
+
 
 def search_resource_by_name(resource_name: int) -> dict:
     """

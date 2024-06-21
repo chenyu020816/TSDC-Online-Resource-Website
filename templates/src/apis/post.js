@@ -9,4 +9,25 @@ const getRelatedPost = (_data) => {
     });
 };
 
-export { getRelatedPost };
+const getPostKeyword = (_data) => {
+    return axios({
+        method: "post",
+        url: `${baseUrl}/get_post_keyword`,
+        data: _data
+    });
+};
+
+
+const createUserPost = (_data) => {
+    return axios({
+        method: "post",
+        url: `${baseUrl}/create_user_post`,
+        data: _data
+    });
+};
+
+export {
+    getRelatedPost,
+    getPostKeyword,
+    createUserPost
+};

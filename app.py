@@ -13,6 +13,7 @@ import os
 
 import utils.database_class as db_cls
 from user.post import *
+from user.recommand import *
 from user.userLogin import *
 from crawler.crawler_coursera import crawl_coursera
 from crawler.crawler_hahow import crawl_hahow
@@ -83,6 +84,21 @@ def generateRoadmap():
 @app.post("/get_related_post")
 def getRelatedPost():
     return get_related_post()
+
+@app.post("/get_post_keyword")
+def getPostKeyword():
+    return get_post_keyword()
+
+@app.post("/create_user_post")
+def createUserPost():
+    return create_user_post()
+
+@app.post("/course_suggest_list")
+def courseSuggestList():
+    return course_suggest_list()
+@app.post("/search_resource")
+def searchResource():
+    return search_resource()
 
 if __name__ == "__main__":
     if os.environ.get("WERKZEUG_RUN_MAIN") != "true":

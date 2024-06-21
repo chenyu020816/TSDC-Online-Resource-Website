@@ -1,27 +1,22 @@
 import React from 'react';
 import { css } from '@emotion/css/macro';
 import { Box, Grid, Typography } from '@mui/material';
-import { useSelector } from "react-redux";
 
 import theme from 'components/theme';
 import Header from 'components/Header/UserHeader';
 import Background from 'pages/Home/components/Background';
-import StartButton from 'pages/Home/components/StartButton';
 import homepage from 'dist/image/illustrator_homepage.png';
-import SpotsShow from 'pages/Home/components/SpotsShow';
-import Feature from 'pages/Home/components/Feature/Feature';
-import Profile from 'pages/Home/components/ProfileCard/Profile';
 import BannerCard from 'pages/Home/components/BannerCard';
-import Contact from 'pages/Home/components/Contact';
 import Footer from 'pages/Home/components/Footer';
 import SearchInput from 'pages/Home/components/SearchInputRoadmap';
 import RoadmapTimeLine from 'pages/Home/components/RoadmapTimeLine';
+
 //import CourseRecommend from 'pages/Home/components/CourseRecommend';
 
 const palette = 'home';
 
 const Home = () => {
-    const { courseList, asyncStatusGetCourse } = useSelector((store) => store.course);
+    /* const { courseList, asyncStatusGetCourse } = useSelector((store) => store.course);
     const courseArray = Object.values(courseList);
     const tabs = courseArray.map((courseData, index) => {
         return { id: courseData.domain, label: courseData.domain };
@@ -30,7 +25,7 @@ const Home = () => {
     React.useEffect(() => {
         console.log(courseList);
         console.log(tabs);
-    }, [courseList])
+    }, [courseList]) */
 
     return (
         <div className={style(theme[palette])}>

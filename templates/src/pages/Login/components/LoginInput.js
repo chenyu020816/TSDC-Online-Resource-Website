@@ -45,8 +45,11 @@ const LoginInput = () => {
                     userAPIs.userLogin(user).then((res) => {
                         if (res['data']['success']) {
                             // 儲存狀態於用戶localStorage
+                            console.log(res['data']['data']);
+
                             localStorage.setItem('YFCII_LOGGED_IN', true);
-                            localStorage.setItem('YFCII_USER_ID', res['data']['data']);
+                            localStorage.setItem('YFCII_USER_ID', res['data']['data']['user_id']);
+                            localStorage.setItem('YFCII_USER_NAME', res['data']['data']['username']);
                             window.location.href = './';
                         }
                         // 自動跳轉至用戶詳情頁

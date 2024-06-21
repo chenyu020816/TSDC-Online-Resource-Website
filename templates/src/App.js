@@ -48,6 +48,10 @@ const globalStyles = css`
     width: 4px;
   }
 
+  ::-webkit-scrollbar {
+    height: 6px; /* 修改為水平滾動條 */
+  }
+
   /* 修改滾動條滑塊的樣式 */
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;

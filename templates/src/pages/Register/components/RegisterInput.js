@@ -52,9 +52,10 @@ const RegisterInput = () => {
                     userAPIs.userSignUp(user).then((res) => {
                         if (res['data']['success']) {
                             localStorage.setItem('YFCII_LOGGED_IN', true);
-                            localStorage.setItem('YFCII_USER_ID', res['data']['data']);
+                            localStorage.setItem('YFCII_USER_ID', res['data']['data']['user_id']);
+                            localStorage.setItem('YFCII_USER_NAME', res['data']['data']['username']);
+                            window.location.href = './';
                         }
-                        window.location.href = './';
                     }).catch((err) => {
                         setErrors({ submit: err['response']['data']['error'] });
                         setAsyncStatusButton(ASYNC_STATUS_LOADED);

@@ -11,28 +11,27 @@ import useGetLLMGenerate from 'hook/useGetLLMGenerate';
 const palette = 'home';
 
 const StartButton = () => {
-    const { handleGetRoadmapData } = useGetLLMGenerate()
-    const { keyword, asyncStatusGetKeyword } = useSelector((store) => store.keyword);
+  const { handleGetRoadmapData } = useGetLLMGenerate()
+  const { keyword, asyncStatusGetKeyword } = useSelector((store) => store.keyword);
 
-    /* React.useEffect(() => {
-        generateAPIs.generateRoadmap({ _keyword: "影像辨識" }).then((res) => {
-            console.log(res['data']);
-        })
-    }, []); */
+  /* React.useEffect(() => {
+      generateAPIs.generateRoadmap({ _keyword: "影像辨識" }).then((res) => {
+          console.log(res['data']);
+      })
+  }, []); */
 
-    const handleClick = (event) => {
-        event.preventDefault();
-        console.log(keyword);
-        handleGetRoadmapData(keyword);
-    };
+  const handleClick = (event) => {
+    event.preventDefault();
+    handleGetRoadmapData(keyword);
+  };
 
-    return (
-        <motion.div whileHover={{ scale: 1 }} whileTap={{ scale: 0.9 }}>
-            <button className={buttonStyle(theme[palette])} onClick={handleClick}>
-                Search
-            </button>
-        </motion.div>
-    )
+  return (
+    <motion.div whileHover={{ scale: 1 }} whileTap={{ scale: 0.9 }}>
+      <button className={buttonStyle(theme[palette])} onClick={handleClick}>
+        Search
+      </button>
+    </motion.div>
+  )
 }
 
 export default StartButton

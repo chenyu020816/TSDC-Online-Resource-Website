@@ -1,6 +1,6 @@
 from flask import jsonify, request
 from utils.database_class import db
-from utils.database import *
+from utils.database_api import *
 import requests
 import json
 
@@ -12,7 +12,8 @@ def login():
     elif return_code == -1:
         return jsonify({"error":"密碼錯誤"}), 400
     else:
-        return jsonify({"success":True, "data":return_code}), 200
+        user_info = search_user_by_id(return_code)
+        return jsonify({"success":True, "data":user_info}), 200
     
 
 
@@ -31,4 +32,5 @@ def signup():
     elif return_code == -3:
         return jsonify({"error":"註冊失敗，請聯繫官方處理"}), 400
     else:
-        return jsonify({"success":True, "data":return_code}), 200
+        user_info = search_user_by_id(return_code)
+        return jsonify({"success":True, "data":user_info}), 200

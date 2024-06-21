@@ -11,21 +11,25 @@ import Footer from 'pages/Home/components/Footer';
 import MultiTagSelector from 'pages/Blog/components/MultiTagSelector';
 import BlogSearchInput from 'pages/Blog/components/BlogSearchInput';
 import PostCard from 'pages/Blog/components/PostCard';
+import useBlogGetPost from 'hook/useBlogGetPost';
 
 import * as postAPIs from "apis/post";
 
 const palette = 'home';
 
 const Blog = () => {
-    const [posts, setPosts] = React.useState([]);
+    const { postList, asyncStatusPostList } = useSelector((store) => store.blogPost);
+
+    const { handleGetPostDataInit } = useBlogGetPost();
 
     React.useEffect(() => {
-        postAPIs.getRelatedPost({ _keyword: '統計系' }).then((res) => {
+        handleGetPostDataInit();
+        /* postAPIs.getRelatedPost({ _keyword: '統計系' }).then((res) => {
             if (res['data']['success']) {
                 console.log(res['data']['data']);
                 setPosts(res['data']['data']);
             }
-        })
+        }) */
     }, [])
 
     return (
@@ -53,12 +57,14 @@ const Blog = () => {
                     </Grid>
                     <Background />
                 </Grid>
-                <Grid container px={5} pt={3}>
-                    {posts.map((post, index) => (
-                        <Grid item sm={6} pt={3} key={index}>
+                <Grid container px={20} pt={3}>
+                    {!asyncStatusPostList.loading ? (postList.map((post, index) => (
+                        <Grid item sm={12} pt={3} key={index} px={2}>
                             <PostCard data={post} />
                         </Grid>
-                    ))}
+                    ))) : (
+                        ""
+                    )}
                 </Grid>
             </div>
             <div className='footer-section'>

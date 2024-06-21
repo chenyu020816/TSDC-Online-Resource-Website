@@ -1,5 +1,5 @@
 from sqlalchemy.orm import joinedload
-
+from utils.database_class import db
 import utils.database_class as db_cls
 
 
@@ -128,7 +128,10 @@ def add_resource_keywords(db, resource_id: int, keywords: list[str]) -> int:
 def get_all_keywords(db):
     try:
         resource_keywords = db.session.query(db_cls.Keyword).all()
-        return [key.keyword_name_eng for key in resource_keywords]
+        return {
+            'eng': [key.keyword_name_eng for key in resource_keywords],
+            'chi': [key.keyword_name_chi for key in resource_keywords]
+        }
     except Exception as e:
         print(f"An error occurred: {e}")
         return None

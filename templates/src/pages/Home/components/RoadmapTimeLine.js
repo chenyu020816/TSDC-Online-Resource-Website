@@ -1,15 +1,18 @@
 import React from 'react';
 import { useSelector } from "react-redux";
 import Timeline from '@mui/lab/Timeline';
-import { Grid, Card, Stack, Skeleton, Typography } from '@mui/material';
+import { Grid, Box, Stack, Skeleton, Typography } from '@mui/material';
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import theme from 'components/theme';
+import CourseCardRoadMap from 'pages/Home/components/Course/CourseCardRoadMap';
+import useGetCrawlerCourse from 'hook/useGetCrawlerCourse';
 
 import TagChip from 'components/TagChip';
+import RecommendResourseSlide from 'pages/Home/components/Roadmap/RecommendResourseSlide';
 
 const palette = 'home';
 
@@ -107,12 +110,17 @@ const initialNodes = [
 ];
 
 const RoadmapTimeLine = () => {
+    const { handleGetHahowList, handleGetCourseraList, handleGetAllCourses } = useGetCrawlerCourse();
+
+    const { courseList, asyncStatusGetCourse } = useSelector((store) => store.course);
     const { roadmap, asyncStatusRoadmap } = useSelector((store) => store.roadmap);
     const [nodes, setNodes] = React.useState(initialNodes);
+    const courseDataList = Object.values(courseList).filter(item => item.domain === "Hahow")[0];
+
 
     React.useEffect(() => {
         if (asyncStatusRoadmap.loading) return;
-
+        console.log(roadmap['nodes']);
         setNodes(roadmap['nodes'])
     }, [roadmap])
 
@@ -131,28 +139,40 @@ const RoadmapTimeLine = () => {
                         <TimelineDot sx={{ bgcolor: theme[palette]['primary'] }} />
                         <TimelineConnector sx={{ bgcolor: theme[palette]['primary'] }} />
                     </TimelineSeparator>
-                    <TimelineContent>
+                    <TimelineContent style={{ width: '100%' }}>
                         <Stack direction="row" justifyContent="left" alignItems="center" gap={3}>
-                            <Typography variant="h5" fontWeight="bolder" component="div">
-                                {node.data.label}
-                            </Typography>
+                            {!asyncStatusRoadmap.loading ? (
+                                <Typography variant="h5" fontWeight="bolder" component="div">
+                                    {node.data.label}
+                                </Typography>
+                            ) : (
+                                <Skeleton variant="rounded" className='button' width={300} height={30} />
+                            )}
                             <Stack direction="row" justifyContent="left" alignItems="center" gap={2}>
-                                {node.data.technologies.split("、").map((technique, index) => (
-                                    <TagChip content={technique} key={index} />
-                                ))}
+                                {!asyncStatusRoadmap.loading ? (
+                                    node.data.technologies.split("、").map((technique, index) => (
+                                        <TagChip content={technique} key={index} />
+                                    ))
+                                ) : (
+                                    [1, 2, 3].map((index) => (
+                                        <Grid item key={index} >
+                                            <Skeleton variant="rounded" className='button' width={80} height={30} />
+                                        </Grid>
+                                    ))
+                                )}
                             </Stack>
                         </Stack>
-                        <Typography pt={2}>{node.data.description}</Typography>
+                        {!asyncStatusRoadmap.loading ? (
+                            <Typography pt={2}>{node.data.description}</Typography>
+                        ) : (
+                            <Grid item pt={2}>
+                                <Skeleton variant="rounded" className='button' width="100%" height={50} />
+                            </Grid>
+                        )}
+                        <RecommendResourseSlide data={node.data.technologies.split("、")} />
                     </TimelineContent>
                 </TimelineItem>
             ))}
-            {/* <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineDot sx={{ bgcolor: theme[palette]['primary'] }} />
-                    <TimelineConnector sx={{ bgcolor: theme[palette]['primary'] }} />
-                </TimelineSeparator>
-                <TimelineContent>Code</TimelineContent>
-            </TimelineItem> */}
         </Timeline>
     )
 }

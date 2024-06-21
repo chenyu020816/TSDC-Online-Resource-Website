@@ -1,9 +1,12 @@
 import React from 'react';
+import { useSelector } from "react-redux";
+import { styled } from '@mui/material/styles';
 import { HiMenu } from 'react-icons/hi';
 import { IoClose } from 'react-icons/io5';
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
 import { cx, css } from '@emotion/css/macro';
-import { Button, Link } from '@mui/material';
+import { Button, Link, Box } from '@mui/material';
+import DialogCreatePost from 'components/DialogCreatePost';
 import logo from 'dist/image/logo.png';
 import 'dist/scss/navbar.scss';
 
@@ -22,9 +25,33 @@ const page = [
   }
 ];
 
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: "white",
+  height: "2rem",
+  width: "100%",
+  backgroundColor: 'rgb(66, 89, 137)',
+  '&:hover': {
+    backgroundColor: 'rgb(98, 119, 165)',
+  },
+}));
+
 const UserHeader = (props) => {
   const [barClass, setBarClass] = React.useState(false);
-  const [isLogin, setIsLogin] = React.useState(false)
+  const [isLogin, setIsLogin] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+  const { userInfo, asyncStatusUserInfo } = useSelector((store) => store.userInfo);
+
+  React.useEffect(() => {
+    console.log(userInfo);
+  }, [userInfo])
+
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleChangeBar = (index) => () => setBarClass(index);
 
@@ -33,6 +60,7 @@ const UserHeader = (props) => {
 
     localStorage.removeItem('YFCII_LOGGED_IN')
     localStorage.removeItem('YFCII_USER_ID')
+    localStorage.removeItem('YFCII_USER_NAME')
   }
 
   React.useEffect(() => {
@@ -40,7 +68,7 @@ const UserHeader = (props) => {
   }, [])
 
   return (
-    <div className={style(props.palette)}>
+    <div className={style(props.palette, isLogin)}>
       <header className="header">
         <div className="logo">
           <Link href="/" underline="none">
@@ -72,11 +100,19 @@ const UserHeader = (props) => {
           </ul>
         </nav>
         <nav className="login">
-          <Button className={cx(barClass ? 'active' : '')} variant="contained" onClick={userSignOut}>
-            <Link href={isLogin ? "./" : "./login"} underline="none">
+          {isLogin ? (
+            <Box pr={1}>
+              <ColorButton variant="outlined" startIcon={<DriveFileRenameOutlineIcon />} onClick={handleClickOpen}>
+                Write
+              </ColorButton>
+            </Box>
+          ) : ("")}
+
+          <ColorButton className={cx(barClass ? 'active' : '')} variant="contained" onClick={userSignOut}>
+            <Link href={isLogin ? "./" : "./login"} underline="none" sx={{ color: "white" }}>
               {isLogin ? "登出" : "登入"}
             </Link>
-          </Button>
+          </ColorButton>
         </nav>
         <div className="menu-btn">
           {!barClass ? (
@@ -89,13 +125,14 @@ const UserHeader = (props) => {
           )}
         </div>
       </header>
+      <DialogCreatePost open={open} setOpen={setOpen} handleClose={handleClose} />
     </div>
   );
 };
 
 export default UserHeader;
 
-const style = (palette) => css`
+const style = (palette, isLogin) => css`
   .header {
     position: fixed;
     display: flex;
@@ -144,11 +181,11 @@ const style = (palette) => css`
     }
 
     .login{
-        width:5rem;
-        padding: 10px 25px ;
+        width:${isLogin ? `12rem` : `5rem`};
+        padding: 10px 18px ;
         display: flex;
         align-items: center;
-         .MuiButtonBase-root {
+         /* .MuiButtonBase-root.button {
           height: 2rem;
           font-size: 16px;
           text-align: center;
@@ -168,7 +205,7 @@ const style = (palette) => css`
             ,inset 3.5em 0 0 0 ${palette.navbar.text.secondary}; 
              
           }
-        } 
+        }  */
     }
   }
 

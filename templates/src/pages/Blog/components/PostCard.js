@@ -120,7 +120,6 @@ const PostCard = ({ data }) => {
     const [urls, setUrls] = React.useState([]);
 
     const handleGiveRating = (event) => {
-        console.log(event.target.value);
         setRatingValue(Number(event.target.value))
     }
 
@@ -163,7 +162,7 @@ const PostCard = ({ data }) => {
                 <CardContent>
                     <Typography variant="body2" color="text.secondary" dangerouslySetInnerHTML={{ __html: customCardContent(data['body']) }} />
                 </CardContent>
-                <Microlink url={urls[0]} direction="rtl" />
+                <Microlink url={urls ? urls[0] : ""} direction="rtl" />
                 <CardActions disableSpacing>
                     <IconButton aria-label="add to favorites">
                         <Typography variant="body1" fontWeight={600}>
