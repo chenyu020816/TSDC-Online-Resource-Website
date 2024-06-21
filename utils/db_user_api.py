@@ -97,7 +97,7 @@ def search_user_by_name(user_name: int) -> dict:
     }
 
 
-def add_user_search_history(db, user_id: int, search_context) -> int:
+def add_user_search_history(db, user_id: int, search_context: str) -> int:
 
     search_history = db_cls.SearchHistory(
         user_id=user_id, search_context=search_context

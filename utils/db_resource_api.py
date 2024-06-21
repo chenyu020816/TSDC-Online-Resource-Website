@@ -437,7 +437,7 @@ def add_search_roadmap_fields_history(
 ) -> int:
     search_roadmap_field_ids = []
     for roadmap_field in roadmap_fields:
-        search_roadmap_field_id = add_search_roadmap_field(
+        search_roadmap_field_id = _add_search_roadmap_field(
             db, search_history_id, roadmap_field
         )
 
@@ -448,7 +448,7 @@ def add_search_roadmap_fields_history(
     return search_roadmap_field_ids
 
 
-def add_search_roadmap_field(db, search_history_id: int, roadmap_field: str):
+def _add_search_roadmap_field(db, search_history_id: int, roadmap_field: str) -> int:
     search_roadmap_field = db_cls.SearchRoadmapFields(search_history_id, roadmap_field)
     db.session.add(search_roadmap_field)
 
@@ -461,8 +461,55 @@ def add_search_roadmap_field(db, search_history_id: int, roadmap_field: str):
     return search_roadmap_field.id
 
 
-def add_search_resource_history(db, search_roadmap_fields_id: int, resource_id: int):
+def add_roadmap_fields_keywords(
+    db, search_roadmap_field_id: int, keywords: list[str]
+) -> int:
+    roadmap_fields_keyword_ids = []
+    for keyword in keywords:
+        roadmap_field_keyword_id = _add_roadmap_field_keyword(
+            db, search_roadmap_field_id, keyword
+        )
 
+        if roadmap_field_keyword_id <= 0:
+            return -1
+        roadmap_fields_keyword_ids.append(roadmap_field_keyword_id)
+
+    return roadmap_fields_keyword_ids
+
+
+def _add_roadmap_field_keyword(db, search_roadmap_field_id: int, keyword: str) -> int:
+    roadmap_field_keyword = db_cls.RoadMapFieldKeywords(
+        search_roadmap_field_id, keyword
+    )
+
+    db.session.add(roadmap_field_keyword)
+
+    try:
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        print(f"An error occurred: {e}")
+        return -1
+    return roadmap_field_keyword.id
+
+
+def add_search_resources_history(
+    db, search_roadmap_fields_id: int, resource_ids: list[int]
+):
+    search_resource_history_ids = []
+    for resource_id in resource_ids:
+        search_resource_history_id = _add_search_resource_history(
+            db, search_roadmap_fields_id, resource_id
+        )
+
+        if search_resource_history_id <= 0:
+            return -1
+        search_resource_history_ids.append(search_resource_history_id)
+
+    return search_resource_history_ids
+
+
+def _add_search_resource_history(db, search_roadmap_fields_id: int, resource_id: int):
     search_resource_history = db_cls.SearchResourceHistory(
         search_roadmap_fields_id, resource_id
     )
@@ -527,7 +574,7 @@ def add_resource_view_count(db, resource_id: int) -> int:
     return resource.id
 
 
-def update_user_score(db, resource_id: int):
+def _update_resource_score(db, resource_id: int):
     """
     Update user score of resource
     :param db:
@@ -581,7 +628,9 @@ def add_user_rating_history(db, user_id: int, resource_id: int, score: int):
             db.session.rollback()
             print(f"Failed to update resource '{resource} user_rating_history': {e}")
             return -1
+        _update_resource_score(db, resource_id)
         return old_rating_history.id
+
     else:  # else create new rating history
         rating_history = db_cls.RatingHistory(user_id, resource_id, score)
 
@@ -593,4 +642,5 @@ def add_user_rating_history(db, user_id: int, resource_id: int, score: int):
             db.session.rollback()
             print(f"Failed to add resource '{resource} user_rating_history': {e}")
             return -1
+        update_resource_score(db, resource_id)
         return rating_history.id
