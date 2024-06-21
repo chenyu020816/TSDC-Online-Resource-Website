@@ -23,7 +23,7 @@ def create_user(
     if existing_email:
         print(f"Email '{email}' already exists.")
         return -2
-    photo_path = os.path.join("./user_photos", "default.png")
+    photo_path = os.path.join("./user_photos", f"{username}.png")
     user = db_cls.User(
         username=username,
         email=email,

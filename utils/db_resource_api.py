@@ -315,7 +315,8 @@ def search_resource_by_id(resource_id: int) -> dict:
         "image_url": resource.image_url,
         "source_platform": resource.source_platform,
         "resource_type": resource.resource_type,
-        "score": resource.public_score,
+        "user_score": resource.user_score,
+        "public_score": resource.public_score,
         "num_of_purchases": resource.num_of_purchases,
         "price": resource.price,
         "status": resource.status,
@@ -335,10 +336,9 @@ def search_resource_by_id_list(resource_id_list: list) -> dict:
              or {"error": -1} if resource_id not exist
     """
     resources = []
+    resources_db = db_cls.Resource.query.filter(db_cls.Resource.id.in_(resource_id_list)).all()
 
-    for resource_id in resource_id_list:
-        resource = db_cls.Resource.query.filter_by(id=resource_id).first()
-
+    for resource in resources_db:
         if not resource:
             continue
         else:
@@ -350,7 +350,8 @@ def search_resource_by_id_list(resource_id_list: list) -> dict:
                 "image_url": resource.image_url,
                 "source_platform": resource.source_platform,
                 "type": resource.type,
-                "score": resource.public_score,
+                "user_score": resource.user_score,
+                "public_score": resource.public_score,
                 "num_of_purchases": resource.num_of_purchases,
                 "price": resource.price,
                 "status": resource.status,
@@ -381,7 +382,8 @@ def search_resource_by_name(resource_name: int) -> dict:
         "image_url": resource.image_url,
         "source_platform": resource.source_platform,
         "resource_type": resource.resource_type,
-        "score": resource.public_score,
+        "user_score": resource.user_score,
+        "public_score": resource.public_score,
         "num_of_purchases": resource.num_of_purchases,
         "price": resource.price,
         "status": resource.status,
