@@ -14,7 +14,7 @@ const Footer = () => {
                     <Typography className='footer-content' variant="subtitle2" color={theme[palette]['light']} component="span" style={{ letterSpacing: "2px" }}>
                         Created By&nbsp;
                         <Link href="#" underline="none">
-                            <Typography component="span" variant="subtitle2" color={theme[palette]['primary']} target="_blank">
+                            <Typography component="span" variant="subtitle2" color={theme[palette]['light']} target="_blank">
                                 YFCII&nbsp;
                             </Typography>
                         </Link>

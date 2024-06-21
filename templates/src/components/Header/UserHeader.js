@@ -1,6 +1,7 @@
 import React from 'react';
 import { HiMenu } from 'react-icons/hi';
 import { IoClose } from 'react-icons/io5';
+import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
 import { cx, css } from '@emotion/css/macro';
 import { Button, Link } from '@mui/material';
 import logo from 'dist/image/logo.png';
@@ -16,7 +17,7 @@ const page = [
     url: '/search-course',
   },
   {
-    name: '討論',
+    name: '部落格',
     url: '/blog',
   }
 ];

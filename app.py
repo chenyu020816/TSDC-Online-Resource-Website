@@ -9,6 +9,7 @@ from utils.roadmapGenerate import generate_roadmap
 import os
 
 import utils.database_class as db_cls
+from user.post import *
 from user.userLogin import *
 from crawler.crawler_coursera import crawl_coursera
 from crawler.crawler_hahow import crawl_hahow
@@ -76,12 +77,17 @@ def crawlHahow():
 def generateRoadmap():
     return generate_roadmap()
 
+@app.post("/get_related_post")
+def getRelatedPost():
+    return get_related_post()
+
 if __name__ == "__main__":
     if os.environ.get("WERKZEUG_RUN_MAIN") != "true":
         with app.app_context():
             #db_cls.init_tables(app)
             #user_id = create_user(db, "test0", "test", "test")
             print(login_user("test0", "test"))
+            print(search_related_post_by_title('統計'))
             #print(login_user("test0e", "test1"))
             #print(search_user_by_id(user_id))
             # ['機器學習', '推薦系統', '網路爬蟲' ,'資料分析', '資料科學', '資料庫', 'R', '深度學習', '資料視覺化']
