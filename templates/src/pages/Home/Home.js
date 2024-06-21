@@ -15,6 +15,7 @@ import BannerCard from 'pages/Home/components/BannerCard';
 import Contact from 'pages/Home/components/Contact';
 import Footer from 'pages/Home/components/Footer';
 import SearchInput from 'pages/Home/components/SearchInputRoadmap';
+import RoadmapTimeLine from 'pages/Home/components/RoadmapTimeLine';
 //import CourseRecommend from 'pages/Home/components/CourseRecommend';
 
 const palette = 'home';
@@ -58,9 +59,13 @@ const Home = () => {
             <div className='feature-section'>
                 <BannerCard />
             </div>
-            {/* <div className='feature-course-recommend'>
-                <CourseRecommend courseList={courseList} tabs={tabs} />
-            </div> */}
+            <div className='feature-course-recommend'>
+                <Grid container direction="column" alignItems="center">
+                    <Grid item sm={12} pt={7} width="80%" >
+                        <RoadmapTimeLine />
+                    </Grid>
+                </Grid>
+            </div>
             {/*             <div className='profile-section' id='about'>
                 <Profile />
             </div> */}

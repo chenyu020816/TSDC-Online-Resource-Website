@@ -26,7 +26,7 @@ def crawl_hahow():
                 "courses": []
             }
             
-            for course in course_data['data']['courseData']['products'][:10]:
+            for course in course_data['data']['courseData']['products']:
                 try:
                     new_course = {
                         "img": course['coverImage']['url'] if 'coverImage' in course and 'url' in course['coverImage'] else None,

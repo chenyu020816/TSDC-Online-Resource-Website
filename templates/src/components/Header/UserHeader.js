@@ -12,8 +12,8 @@ const page = [
     url: '/',
   },
   {
-    name: '關於我們',
-    url: '/#about',
+    name: '搜課程',
+    url: '/search-course',
   }
 ];
 
@@ -121,7 +121,7 @@ const style = (palette) => css`
         li a {
           text-decoration: none;
           white-space: nowrap;
-          letter-spacing: 5px;
+          letter-spacing: 3px;
           color: ${palette.navbar.text.primary};
           margin: 1rem 1rem;
           font-size: 18px;

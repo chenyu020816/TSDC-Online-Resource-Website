@@ -1,12 +1,4 @@
-users: # ["User's Name", "User's Email", "Users' Password", "User's Role"]
-  - ['admin01', 'admin01@', 'I3aIO0GapcxfT7WP', 'admin']
-  - ['admin02', 'admin02@', 'IpJ9CH6BVkFy6T4', 'admin']
-  - ['user_test', 'user_test@', 'T5Do9EAtQAqTtfR4O', 'user']
-  - ['teacher_test', 'teacher_test@', 'f9emWS3Qa9NmVKQ', 'teacher']
-  - ['student_test', 'student_test@', 'ZFCS0RrpaVW3kHx', 'student']
-
-keywords: # ["Keyword English", "Keyword Chinese"]
-  - ['Undefined', 'Undefined']
+關鍵字檢索表:
   - ['Data Science', '資料科學']
   - ['Python', 'Python']
   - ['R', 'R']
@@ -80,6 +72,3 @@ keywords: # ["Keyword English", "Keyword Chinese"]
   - ['Experimental Design', '實驗設計']
   - ['Stochastic Processes', '隨機過程']
   - ['Mathematical Statistics', '數理統計']
-
-Resources:
-  - []

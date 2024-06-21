@@ -42,7 +42,7 @@ class Resource(db.Model):
     )
     introduction = db.Column(db.Text(collation="utf8mb4_unicode_ci"), nullable=False)
     url = db.Column(db.String(255), unique=True, nullable=False)
-    image_url = db.Column(db.String(255), unique=True, nnullable=False)
+    image_url = db.Column(db.String(255), unique=True, nullable=False)
     source_platform = db.Column(db.String(255), nullable=False)
     type = db.Column(db.String(255), nullable=False)
     public_score = db.Column(db.Float, nullable=False)
@@ -551,12 +551,14 @@ TABLES = (
 def init_tables(app, table_classes=TABLES):
     with app.app_context():
         insp = inspect(db.engine)
+        with_data = True
         for table_class in table_classes:
             if not insp.has_table(table_class.__tablename__):
+                with_data = False
                 table_class.__table__.create(db.engine)
-
+        if with_data: return
         default_data = init_default_data()
-        print("Complete table creation")
+        
         for table in default_data:
             for data in table:
                 db.session.add(data)
