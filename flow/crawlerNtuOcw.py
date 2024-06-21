@@ -11,7 +11,7 @@ import ast
 
 load_dotenv(find_dotenv())
 
-client = OpenAI(api_key = os.environ.get("OPEN_AI_API"))
+client = OpenAI(api_key = os.environ.get("OPEN_AI_GPT_API"))
 
 with open('./flow/prompt/memory.txt', 'r', encoding='utf-8') as file:
     document = file.read()

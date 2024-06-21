@@ -14,6 +14,10 @@ const page = [
   {
     name: '搜課程',
     url: '/search-course',
+  },
+  {
+    name: '討論',
+    url: '/blog',
   }
 ];
 

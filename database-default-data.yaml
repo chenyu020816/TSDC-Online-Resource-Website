@@ -80,6 +80,9 @@ keywords: # ["Keyword English", "Keyword Chinese"]
   - ['Experimental Design', '實驗設計']
   - ['Stochastic Processes', '隨機過程']
   - ['Mathematical Statistics', '數理統計']
+  - ['Google Cloud', 'Google Cloud']
+  - ['AWS', 'AWS']
+  - ['GA4', 'GA4']
 
 Resources:
   - []

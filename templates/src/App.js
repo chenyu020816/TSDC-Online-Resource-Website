@@ -5,6 +5,7 @@ import { Global, css } from '@emotion/react';
 
 import Home from 'pages/Home/Home';
 import Search from 'pages/Search/Search';
+import Blog from 'pages/Blog/Blog';
 import Login from 'pages/Login/Login';
 import Register from 'pages/Register/Register';
 import Grow from 'utils/Grow';
@@ -23,6 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/search-course" element={<Search />}></Route>
+            <Route path="/blog" element={<Blog />}></Route>
             <Route path="/login" element={isLogin ? <Navigate to="/userpage" /> : <Login />}></Route>
             <Route path="/register" element={isLogin ? <Navigate to="/userpage" /> : <Register />}></Route>
           </Routes>

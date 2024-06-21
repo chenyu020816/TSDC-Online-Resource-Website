@@ -19,6 +19,7 @@ from flow.crawlerHahow import *
 from flow.crawlerNtuOcw import *
 from flow.crawlerCoursera import *
 
+
 app = Flask(__name__, static_folder="templates/build")
 
 # CORS

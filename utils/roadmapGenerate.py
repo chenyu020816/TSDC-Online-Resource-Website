@@ -7,6 +7,11 @@ import os
 
 load_dotenv(find_dotenv())
 
+api_key = os.environ.get("OPEN_AI_GPT_API")
+
+with open('flow/prompt/memory.txt', 'r', encoding='utf-8') as file:
+    document = file.read()
+
 def clean_llm_output(text):
     match = re.search(r'```json\n(.*?)\n```', text, re.DOTALL)
     if match:
@@ -23,8 +28,8 @@ def clean_llm_output(text):
         return f"JSON解碼錯誤: {e}"
 
 def generate_position(index):
-    row = index // 4
-    col = index % 4
+    row = index // 3
+    col = index % 3
     y_position = row * 250
     if row % 2 == 0:  # 偶數行，從左到右
         x_position = col * 400
@@ -35,7 +40,6 @@ def generate_position(index):
 def generate_roadmap():
     input_data = request.get_json()
     keyword = input_data['_keyword']
-    print(keyword)
 
     with open('utils/prompt/roadmap_output_example.txt', 'r', encoding='utf-8') as file:
         prompt_template_sample = file.read()
@@ -46,12 +50,12 @@ def generate_roadmap():
 
     prompt = prompt_template + prompt_template_sample
 
-    api_key = os.environ.get("OPEN_AI_API")
     client = OpenAI(api_key = api_key)
 
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=[
+            {"role": "system", "content": document},
             {"role": "user", "content": prompt},
         ]
     )
