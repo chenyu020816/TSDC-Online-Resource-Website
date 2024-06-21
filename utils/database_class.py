@@ -42,7 +42,7 @@ class Resource(db.Model):
     )
     introduction = db.Column(db.Text(collation="utf8mb4_unicode_ci"), nullable=True)
     url = db.Column(db.String(255), unique=True, nullable=False)
-    image_url = db.Column(db.String(255), unique=True, nnullable=False)
+    image_url = db.Column(db.String(255), unique=True, nullable=False)
     source_platform = db.Column(db.String(255), nullable=False)
     type = db.Column(db.String(255), nullable=False)
     public_score = db.Column(db.Float, nullable=False)
