@@ -1,6 +1,3 @@
-# import resource
-
-
 from numpy import array, float32, mean
 from pandas import DataFrame
 
@@ -152,7 +149,7 @@ def user_update_resource(
     new_public_score: float = None,
     new_num_of_purchases: int = None,
     new_price: float = None,
-) -> int:  # Fix user id
+) -> int:
     """
     Update resource data
     :param db:
@@ -318,12 +315,14 @@ def search_resource_by_id(resource_id: int) -> dict:
         "image_url": resource.image_url,
         "source_platform": resource.source_platform,
         "resource_type": resource.resource_type,
-        "score": resource.public_score,
+        "user_score": resource.user_score,
+        "public_score": resource.public_score,
         "num_of_purchases": resource.num_of_purchases,
         "price": resource.price,
         "status": resource.status,
         "view_count": resource.view_count,
     }
+
 
 def search_resource_by_id_list(resource_id_list: list) -> dict:
     """
@@ -337,10 +336,9 @@ def search_resource_by_id_list(resource_id_list: list) -> dict:
              or {"error": -1} if resource_id not exist
     """
     resources = []
+    resources_db = db_cls.Resource.query.filter(db_cls.Resource.id.in_(resource_id_list)).all()
 
-    for resource_id in resource_id_list:
-        resource = db_cls.Resource.query.filter_by(id=resource_id).first()
-
+    for resource in resources_db:
         if not resource:
             continue
         else:
@@ -352,7 +350,8 @@ def search_resource_by_id_list(resource_id_list: list) -> dict:
                 "image_url": resource.image_url,
                 "source_platform": resource.source_platform,
                 "type": resource.type,
-                "score": resource.public_score,
+                "user_score": resource.user_score,
+                "public_score": resource.public_score,
                 "num_of_purchases": resource.num_of_purchases,
                 "price": resource.price,
                 "status": resource.status,
@@ -383,7 +382,8 @@ def search_resource_by_name(resource_name: int) -> dict:
         "image_url": resource.image_url,
         "source_platform": resource.source_platform,
         "resource_type": resource.resource_type,
-        "score": resource.public_score,
+        "user_score": resource.user_score,
+        "public_score": resource.public_score,
         "num_of_purchases": resource.num_of_purchases,
         "price": resource.price,
         "status": resource.status,
@@ -618,8 +618,8 @@ def _update_resource_score(db, resource_id: int):
     :param resource_id: id of resource
     :return: resource id if successfully update resource's score or -1 if fail
     """
-    resource_score_histories = db_cls.RatingHistory.query.filter(
-        db_cls.RatingHistory.resource_id.in_(resource_id)
+    resource_score_histories = db_cls.RatingHistory.query.filter_by(
+        resource_id=resource_id
     ).all()
     scores = array(
         [
