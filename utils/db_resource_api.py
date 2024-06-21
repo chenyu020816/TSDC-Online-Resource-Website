@@ -1,6 +1,3 @@
-# import resource
-
-
 from numpy import array, float32, mean
 from pandas import DataFrame
 
@@ -152,7 +149,7 @@ def user_update_resource(
     new_public_score: float = None,
     new_num_of_purchases: int = None,
     new_price: float = None,
-) -> int:  # Fix user id
+) -> int:
     """
     Update resource data
     :param db:
@@ -324,6 +321,7 @@ def search_resource_by_id(resource_id: int) -> dict:
         "status": resource.status,
         "view_count": resource.view_count,
     }
+
 
 def search_resource_by_id_list(resource_id_list: list) -> dict:
     """
@@ -618,8 +616,8 @@ def _update_resource_score(db, resource_id: int):
     :param resource_id: id of resource
     :return: resource id if successfully update resource's score or -1 if fail
     """
-    resource_score_histories = db_cls.RatingHistory.query.filter(
-        db_cls.RatingHistory.resource_id.in_(resource_id)
+    resource_score_histories = db_cls.RatingHistory.query.filter_by(
+        resource_id=resource_id
     ).all()
     scores = array(
         [
