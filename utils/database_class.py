@@ -42,7 +42,7 @@ class Resource(db.Model):
     )
     introduction = db.Column(db.Text(collation="utf8mb4_unicode_ci"), nullable=True)
     url = db.Column(db.String(255), unique=True, nullable=False)
-    image_url = db.Column(db.String(255), unique=True, nnullable=False)
+    image_url = db.Column(db.String(255), unique=True, nullable=False)
     source_platform = db.Column(db.String(255), nullable=False)
     type = db.Column(db.String(255), nullable=False)
     public_score = db.Column(db.Float, nullable=False)
@@ -183,12 +183,22 @@ class ResourceKeywords(db.Model):
     __tablename__ = "resource_keywords"
 
     id = db.Column(db.Integer, primary_key=True)
-    resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), unique = True, nullable=False)
-    first_keyword_id = db.Column(db.Integer, db.ForeignKey("keywords.id"), nullable=False)
-    second_keyword_id = db.Column(db.Integer, db.ForeignKey("keywords.id"), nullable=False)
-    third_keyword_id = db.Column(db.Integer, db.ForeignKey("keywords.id"), nullable=False)
+    resource_id = db.Column(
+        db.Integer, db.ForeignKey("resources.id"), unique=True, nullable=False
+    )
+    first_keyword_id = db.Column(
+        db.Integer, db.ForeignKey("keywords.id"), nullable=False
+    )
+    second_keyword_id = db.Column(
+        db.Integer, db.ForeignKey("keywords.id"), nullable=False
+    )
+    third_keyword_id = db.Column(
+        db.Integer, db.ForeignKey("keywords.id"), nullable=False
+    )
 
-    def __init__(self, resource_id, first_keyword_id, second_keyword_id, third_keyword_id):
+    def __init__(
+        self, resource_id, first_keyword_id, second_keyword_id, third_keyword_id
+    ):
         self.resource_id = resource_id
         self.first_keyword_id = first_keyword_id
         self.second_keyword_id = second_keyword_id
@@ -463,8 +473,12 @@ class SearchRoadmapFields(db.Model):
     __tablename__ = "search_roadmap_fields"
 
     id = db.Column(db.Integer, primary_key=True)
-    search_history_id = db.Column(db.Integer, db.ForeignKey("search_history.id"), nullable=False)
-    roadmap_field_name = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), nullable=False)
+    search_history_id = db.Column(
+        db.Integer, db.ForeignKey("search_history.id"), nullable=False
+    )
+    roadmap_field_name = db.Column(
+        db.String(255, collation="utf8mb4_unicode_ci"), nullable=False
+    )
 
     def __init__(self, search_history_id, roadmap_field_name):
         self.search_history_id = search_history_id
@@ -478,7 +492,9 @@ class SearchResourceHistory(db.Model):
     __tablename__ = "search_resource_history"
 
     id = db.Column(db.Integer, primary_key=True)
-    search_roadmap_fields_id = db.Column(db.Integer, db.ForeignKey("search_roadmap_fields.id"), nullable=False)
+    search_roadmap_fields_id = db.Column(
+        db.Integer, db.ForeignKey("search_roadmap_fields.id"), nullable=False
+    )
     resource_id = db.Column(db.Integer, db.ForeignKey("resources.id"), nullable=False)
 
     def __init__(self, search_roadmap_fields_id, resource_id):
@@ -493,7 +509,9 @@ class RoadMapFieldKeywords(db.Model):
     __tablename__ = "roadmap_field_keywords"
 
     id = db.Column(db.Integer, primary_key=True)
-    search_roadmap_fields_id = db.Column(db.Integer, db.ForeignKey("search_roadmap_fields.id"), nullable=False)
+    search_roadmap_fields_id = db.Column(
+        db.Integer, db.ForeignKey("search_roadmap_fields.id"), nullable=False
+    )
     keywords = db.Column(db.String(255, collation="utf8mb4_unicode_ci"), nullable=False)
 
     def __init__(self, search_roadmap_fields_id, keywords):
@@ -509,7 +527,9 @@ class UserResourceViewHistory(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    search_resource_id = db.Column(db.Integer, db.ForeignKey("search_resource_history.id"), nullable=False)
+    search_resource_id = db.Column(
+        db.Integer, db.ForeignKey("search_resource_history.id"), nullable=False
+    )
     view_at = db.Column(db.DateTime, default=datetime.now, nullable=False)
 
     def __init__(self, user_id, search_resource_id):
@@ -544,30 +564,34 @@ TABLES = (
     RoadMapFieldKeywords,
     UserSaveResources,
     # ResourceViewCount,
-    UserResourceViewHistory
+    UserResourceViewHistory,
 )
 
 
 def init_tables(app, table_classes=TABLES):
     with app.app_context():
         insp = inspect(db.engine)
+        with_data = True
         for table_class in table_classes:
             if not insp.has_table(table_class.__tablename__):
+                with_data = False
                 table_class.__table__.create(db.engine)
 
-        default_data = init_default_data()
-        print("Complete table creation")
-        for table in default_data:
-            for data in table:
-                db.session.add(data)
-        db.session.commit()
+        if not with_data:
+            print("Creating tables...")
+            default_data = init_default_data()
 
-        user_id = 1
-        title = "測試文章Title"
-        body = "這是測試文章內容"
-        post = Post(user_id=user_id, title=title, body=body)
-        db.session.add(post)
-        db.session.commit()
+            for table in default_data:
+                for data in table:
+                    db.session.add(data)
+            db.session.commit()
+
+            user_id = 1
+            title = "測試文章Title"
+            body = "這是測試文章內容"
+            post = Post(user_id=user_id, title=title, body=body)
+            db.session.add(post)
+            db.session.commit()
 
 
 def read_default_data(file_path):
@@ -581,6 +605,8 @@ def init_default_data(file_path="./database-default-data.yaml"):
 
     users = data.get("users", [])
     keywords = data.get("keywords", [])
+    resources = data.get("resources", [])
+    resources_keywords = data.get("resources_keywords", [])
 
     user_objects = [
         User(
@@ -596,6 +622,31 @@ def init_default_data(file_path="./database-default-data.yaml"):
         Keyword(keyword_name_eng=keyword[0], keyword_name_chi=keyword[1])
         for keyword in keywords
     ]
+    resource_objects = [
+        Resource(
+            resource_name=resource[0],
+            introduction=resource[1],
+            url=resource[2],
+            image_url=resource[3],
+            source_platform=resource[4],
+            resource_type=resource[5],
+            public_score=resource[6],
+            user_score=resource[7],
+            num_of_purchases=resource[8],
+            price=resource[9],
+            status=resource[10],
+        )
+        for resource in resources
+    ]
+    resource_objects_keywords = [
+        ResourceKeywords(
+            resource_id=int(resource_keyword[0]),
+            first_keyword_id=int(resource_keyword[1]),
+            second_keyword_id=int(resource_keyword[2]),
+            third_keyword_id=int(resource_keyword[3]),
+        )
+        for resource_keyword in resources_keywords
+    ]
 
-    datas = [user_objects, keyword_objects]
+    datas = [user_objects, keyword_objects, resource_objects, resource_objects_keywords]
     return datas

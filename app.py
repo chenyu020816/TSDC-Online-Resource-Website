@@ -1,11 +1,10 @@
+import os
+
+import pandas as pd
+from flask import Flask, render_template, request, send_file, send_from_directory
 from flask_cors import CORS
-from flask import Flask, send_from_directory, render_template, request, send_file
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
-from crawler.crawler_ntu_ocw import crawl_ntu_ocw
-from crawler.crawler_coursera import crawl_coursera
-from crawler.crawler_hahow import crawl_hahow
-import os
 
 import utils.database_class as db_cls
 from crawler.crawler_coursera import crawl_coursera
@@ -62,9 +61,14 @@ def crawlHahow():
 if __name__ == "__main__":
     if os.environ.get("WERKZEUG_RUN_MAIN") != "true":
         with app.app_context():
-            db_cls.init_tables(app)
-            user_id = create_user(db, "test0", "test", "test")
-            print(login_user("test0", "test"))
-            print(login_user("test0e", "test1"))
-            print(search_user_by_id(user_id))
+            # db_cls.init_tables(app)
+            # user_id = create_user(db, "test0", "test", "test")
+            # print(login_user("test0", "test"))
+            # print(login_user("test0e", "test1"))
+            # print(search_user_by_id(user_id))
+            best_n_id = get_best_n_resources(
+                db, ["Data Science", "Data Engineering"], 1500, 5
+            )
+            print(best_n_id)
+
     app.run(host="0.0.0.0", port=8000, debug=True)

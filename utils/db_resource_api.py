@@ -1,3 +1,6 @@
+from numpy import array, float32
+from pandas import DataFrame
+
 import utils.database_class as db_cls
 from utils.db_keyword_api import *
 
@@ -118,7 +121,7 @@ def user_upload_resource(
         num_of_purchases,
         price,
         status,
-        keywords=keywords
+        keywords=keywords,
     )
 
     if resource_upload_id >= 0:  # if successfully create new resource
@@ -366,6 +369,79 @@ def search_resource_by_name(resource_name: int) -> dict:
         "price": resource.price,
         "status": resource.status,
     }
+
+
+def search_resource_view_count(resource_id: int) -> int:
+    resource_view_count = db_cls.ResourceViewCount.query.filter_by(
+        resource_id=resource_id
+    ).first()
+
+    if resource_view_count:
+        return resource_view_count.count
+    else:
+        return -1
+
+
+def search_resources_scores(resource_ids: list[int]) -> dict:
+    resources = db_cls.Resource.query.filter(db_cls.Resource.id.in_(resource_ids)).all()
+
+    resources_scores = {
+        "user_score": [],
+        "public_score": [],
+        "num_of_purchases": [],
+        "view_count": [],
+    }
+
+    for resource in resources:
+        resources_scores["user_score"].append(resource.user_score)
+        resources_scores["public_score"].append(resource.public_score)
+        resources_scores["num_of_purchases"].append(resource.num_of_purchases)
+        resources_scores["view_count"].append(resource.view_count)
+
+    resources_scores["user_score"] = array(
+        resources_scores["user_score"], dtype=float32
+    )
+    resources_scores["public_score"] = array(
+        resources_scores["public_score"], dtype=float32
+    )
+    resources_scores["num_of_purchases"] = array(
+        resources_scores["num_of_purchases"], dtype=float32
+    )
+    resources_scores["view_count"] = array(
+        resources_scores["view_count"], dtype=float32
+    )
+
+    return resources_scores
+
+
+def get_resource_keywords_table(db) -> DataFrame:
+    try:
+        resource_keywords = db.session.query(db_cls.ResourceKeywords).all()
+        resource_id = []
+        first_keyword_id = []
+        second_keyword_id = []
+        third_keyword_id = []
+
+        for resource_keyword in resource_keywords:
+            resource_id.append(resource_keyword.resource_id)
+            first_keyword_id.append(resource_keyword.first_keyword_id)
+            second_keyword_id.append(resource_keyword.second_keyword_id)
+            third_keyword_id.append(resource_keyword.third_keyword_id)
+
+        resource_keywords_table = DataFrame(
+            {
+                "resource_id": resource_id,
+                "first_keyword_id": first_keyword_id,
+                "second_keyword_id": second_keyword_id,
+                "third_keyword_id": third_keyword_id,
+            }
+        )
+
+        return resource_keywords_table
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
 
 
 def check_resource_exists(url: str) -> bool:

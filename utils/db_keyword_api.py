@@ -1,3 +1,5 @@
+from sqlalchemy.orm import joinedload
+
 import utils.database_class as db_cls
 
 
@@ -55,7 +57,7 @@ def search_keyword_by_name_eng(keyword_name_eng: str) -> dict:
         keyword_id, keyword_name_eng, keyword_name_chi
     } or {"error": -1} if keyword not exist
     """
-    keyword = db_cls.Keyword.query.filter_by(name=keyword_name_eng).first()
+    keyword = db_cls.Keyword.query.filter_by(keyword_name_eng=keyword_name_eng).first()
     if not keyword:
         return {"error": -1}
     return {
@@ -73,7 +75,7 @@ def search_keyword_by_name_chi(keyword_name_chi: str) -> dict:
         keyword_id, keyword_name_eng, keyword_name_chi
     } or {"error": -1} if keyword not exist
     """
-    keyword = db_cls.Keyword.query.filter_by(name=keyword_name_chi).first()
+    keyword = db_cls.Keyword.query.filter_by(keyword_name_chi=keyword_name_chi).first()
     if not keyword:
         return {"error": -1}
     return {
@@ -95,7 +97,7 @@ def add_resource_keywords(db, resource_id: int, keywords: list[str]) -> int:
         """
         return s.isalpha() and s.isascii() and s.islower()
 
-    keyword_ids = [0, 0, 0]
+    keyword_ids = [1, 1, 1]
     i = 0
     for keyword_name in keywords:
         if is_all_english(keyword_name):
@@ -109,7 +111,9 @@ def add_resource_keywords(db, resource_id: int, keywords: list[str]) -> int:
             keyword_ids[i] = keyword["keyword_id"]
             i += 1
 
-    resource_keywords = db_cls.ResourceKeywords(resource_id, keyword_ids[0], keyword_ids[1], keyword_ids[2])
+    resource_keywords = db_cls.ResourceKeywords(
+        resource_id, keyword_ids[0], keyword_ids[1], keyword_ids[2]
+    )
 
     db.session.add(resource_keywords)
     try:
@@ -119,3 +123,12 @@ def add_resource_keywords(db, resource_id: int, keywords: list[str]) -> int:
         print(f"Failed to add resource's keywords '{resource_keywords}': {e}")
         return -2
     return resource_keywords.id
+
+
+def get_all_keywords(db):
+    try:
+        resource_keywords = db.session.query(db_cls.Keyword).all()
+        return [key.keyword_name_eng for key in resource_keywords]
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
