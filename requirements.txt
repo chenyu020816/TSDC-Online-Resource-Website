@@ -10,3 +10,6 @@ Werkzeug~=3.0.3
 translate~=3.6.1
 requests~=2.32.3
 beautifulsoup4~=4.12.3
+Levenshtein~=0.25.1
+pandas~=2.2.2
+numpy~=1.26.4

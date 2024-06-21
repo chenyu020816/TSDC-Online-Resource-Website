@@ -1,5 +1,8 @@
+import os
+
+import pandas as pd
+from flask import Flask, render_template, request, send_file, send_from_directory
 from flask_cors import CORS
-from flask import Flask, send_from_directory, render_template, request, send_file
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
 from crawler.crawler_ntu_ocw import crawl_ntu_ocw
@@ -96,4 +99,9 @@ if __name__ == "__main__":
             #     crawl_coursera_resourse(keyword)
             #for keyword in ['微積分', '線性代數']:
             #    crawl_ntu_ocw_resourse(keyword)
+            best_n_id = get_best_n_resources(
+                db, ["Data Science", "Data Engineering"], 1500, 5
+            )
+            print(best_n_id)
+
     app.run(host="0.0.0.0", port=8000, debug=True)

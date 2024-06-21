@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled as muiStyled } from '@mui/material/styles';
-import styled from 'styled-components';
+//import styled from 'styled-components';
 import { ThemeProvider, createTheme } from '@mui/material';
 
 import Card from '@mui/material/Card';
@@ -12,7 +12,6 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

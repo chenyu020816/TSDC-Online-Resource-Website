@@ -4,7 +4,7 @@ import utils.database_class as db_cls
 
 
 def create_user(
-        db, username: str, email: str, password: str, role: str = "user"
+    db, username: str, email: str, password: str, role: str = "user"
 ) -> int:
     """
     Create a new user
@@ -95,3 +95,20 @@ def search_user_by_name(user_name: int) -> dict:
         "photo_path": user.photo_path,
         "role": user.role,
     }
+
+
+def add_user_search_history(db, user_id: int, search_context: str) -> int:
+
+    search_history = db_cls.SearchHistory(
+        user_id=user_id, search_context=search_context
+    )
+
+    db.session.add(search_history)
+
+    try:
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        print(f"Failed to add search history for user '{user_id}': {e}")
+        return -1
+    return search_history.id

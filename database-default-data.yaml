@@ -86,3 +86,2076 @@ keywords: # ["Keyword English", "Keyword Chinese"]
 
 Resources:
   - []
+
+resources:
+  - [
+      '用 Python 理財：打造自己的 AI 股票理專',
+      '',
+      'https://hahow.in/courses/finlab-ml',
+      'https://images.hahow.in/images/5c8e69c88d1cc80020953710',
+      'Hahow',
+      'pay course',
+      '4.95',
+      '0',
+      '5087',
+      '3999',
+      'publish',
+      '0',
+    ]
+  - [
+      'Python 資料分析＆機器學習入門',
+      '',
+      'https://hahow.in/courses/pydataml',
+      'https://images.hahow.in/images/597dfde0acc13707000701a8',
+      'Hahow',
+      'pay course',
+      '4.89',
+      '0',
+      '2307',
+      '2500',
+      'publish',
+      '0',
+    ]
+  - [
+      'Python 資料分析：AI 機器學習入門到應用',
+      '',
+      'https://hahow.in/courses/csf-data-analysis-ai',
+      'https://images.hahow.in/images/5f8d584e11eb8d43e01ce3e1',
+      'Hahow',
+      'pay course',
+      '4.45',
+      '0',
+      '865',
+      '2180',
+      'publish',
+      '0',
+    ]
+  - [
+      '學習 AI 一把抓：點亮人工智慧技能樹',
+      '',
+      'https://hahow.in/courses/slashie-ai-free-team',
+      'https://images.hahow.in/images/614eca15a39712000619b672',
+      'Hahow',
+      'pay course',
+      '5',
+      '0',
+      '492',
+      '2799',
+      'publish',
+      '0',
+    ]
+  - [
+      'AI 行銷學：用 Python 機器學習創造商業新價值',
+      '',
+      'https://hahow.in/courses/python-ml',
+      'https://images.hahow.in/images/5d941d44a7e8fe0020d8b5c8',
+      'Hahow',
+      'pay course',
+      '4.44',
+      '0',
+      '347',
+      '3888',
+      'publish',
+      '0',
+    ]
+  - [
+      '資料科學：Azure 機器學習工作室入門',
+      '',
+      'https://hahow.in/courses/azuremlstudio',
+      'https://images.hahow.in/images/5e66027e1c9665002390d35d',
+      'Hahow',
+      'pay course',
+      '4.75',
+      '0',
+      '236',
+      '890',
+      'publish',
+      '0',
+    ]
+  - [
+      'Python 的 50+ 練習：資料科學學習手冊',
+      '',
+      'https://hahow.in/courses/pythonfiftyplus',
+      'https://images.hahow.in/images/61b300275e64070006f15e7d',
+      'Hahow',
+      'pay course',
+      '4.96',
+      '0',
+      '812',
+      '3980',
+      'publish',
+      '0',
+    ]
+  - [
+      '【AI 深度學習】新手入門應用篇',
+      '',
+      'https://hahow.in/courses/94aidl01',
+      'https://images.hahow.in/images/5e38c42d833af10023b35922',
+      'Hahow',
+      'pay course',
+      '4.62',
+      '0',
+      '543',
+      '2500',
+      'publish',
+      '0',
+    ]
+  - [
+      '開啟你的 AI 技能 —— 無痛入門 NLP',
+      '',
+      'https://hahow.in/courses/flipai-nlp1',
+      'https://images.hahow.in/images/5d8ece01a7e8fe0020d796cd',
+      'Hahow',
+      'pay course',
+      '4.23',
+      '0',
+      '323',
+      '2600',
+      'publish',
+      '0',
+    ]
+  - [
+      '撰股機器人：打造 Python 股票機器人',
+      '',
+      'https://hahow.in/courses/write-share-robots',
+      'https://images.hahow.in/images/6445835b25efb5b4244c75d8',
+      'Hahow',
+      'pay course',
+      '0',
+      '0',
+      '246',
+      '7990',
+      'publish',
+      '0',
+    ]
+  - [
+      'SQL的五十道練習：初學者友善的資料庫入門',
+      '',
+      'https://hahow.in/courses/sqlfifty',
+      'https://images.hahow.in/images/60483437d7488a598ca884a1',
+      'Hahow',
+      'pay course',
+      '4.98',
+      '0',
+      '2373',
+      '2980',
+      'publish',
+      '0',
+    ]
+  - [
+      'Python 推薦系統入門: 打造令人上癮的產品',
+      '',
+      'https://hahow.in/courses/pythonrec',
+      'https://images.hahow.in/images/5fda2c4d21f01232f6c9490e',
+      'Hahow',
+      'pay course',
+      '4.5',
+      '0',
+      '245',
+      '2500',
+      'publish',
+      '0',
+    ]
+  - [
+      '跟著 PyPy 熊學 Python - 輕鬆入門篇',
+      '',
+      'https://hahow.in/courses/pypybear',
+      'https://images.hahow.in/images/638dca7228bd7fe8980265c2',
+      'Hahow',
+      'pay course',
+      '5',
+      '0',
+      '186',
+      '999',
+      'publish',
+      '0',
+    ]
+  - [
+      'R語言和商業分析-洞悉商業世界中的資料科學',
+      '',
+      'https://hahow.in/courses/ranalytics',
+      'https://images.hahow.in/images/5b0c144e2ea496001e2387da',
+      'Hahow',
+      'pay course',
+      '4.9',
+      '0',
+      '1882',
+      '3000',
+      'publish',
+      '0',
+    ]
+  - [
+      '資料庫設計 - 有效的使用系統資料',
+      '',
+      'https://hahow.in/courses/database',
+      'https://images.hahow.in/images/63105316250a4e0007efa1b9',
+      'Hahow',
+      'pay course',
+      '4.94',
+      '0',
+      '1823',
+      '2300',
+      'publish',
+      '0',
+    ]
+  - [
+      '開啟程式設計之門 - C++ 核心課程',
+      '',
+      'https://hahow.in/courses/kevin-lu-cplusplus',
+      'https://images.hahow.in/images/5db84e6021050f00219bdfb5',
+      'Hahow',
+      'pay course',
+      '4.94',
+      '0',
+      '1447',
+      '1490',
+      'publish',
+      '0',
+    ]
+  - [
+      ' Streamlit x ChatGPT 快速打造資料分析網頁',
+      '',
+      'https://hahow.in/courses/python-web-app',
+      'https://images.hahow.in/images/641aa241b6cc5de8c68255cc',
+      'Hahow',
+      'pay course',
+      '4.5',
+      '0',
+      '206',
+      '2888',
+      'publish',
+      '0',
+    ]
+  - [
+      '超快速 iOS 實用開發入門～學會6個APP',
+      '',
+      'https://hahow.in/courses/iosproject6',
+      'https://images.hahow.in/images/5a5665f05863ae001eccd09a',
+      'Hahow',
+      'pay course',
+      '4.74',
+      '0',
+      '415',
+      '2200',
+      'publish',
+      '0',
+    ]
+  - [
+      '進階 SQL 的五十道練習：資料庫功力再提升',
+      '',
+      'https://hahow.in/courses/sqlfiftyplus',
+      'https://images.hahow.in/images/64e076e3a2c8ec95a105b4fd',
+      'Hahow',
+      'pay course',
+      '5',
+      '0',
+      '361',
+      '2980',
+      'publish',
+      '0',
+    ]
+  - [
+      'Python 進階課程：觀念、語法、專案、爬蟲',
+      '',
+      'https://hahow.in/courses/python-advanced',
+      'https://images.hahow.in/images/5f99af09f506d3716bf91b53',
+      'Hahow',
+      'pay course',
+      '4.97',
+      '0',
+      '1077',
+      '3990',
+      'publish',
+      '0',
+    ]
+  - [
+      'Python 網頁爬蟲入門實戰',
+      '',
+      'https://hahow.in/courses/python-web-crawler',
+      'https://images.hahow.in/images/5abac5768a3b9a001e3a010f',
+      'Hahow',
+      'pay course',
+      '4.9',
+      '0',
+      '1303',
+      '1890',
+      'publish',
+      '0',
+    ]
+  - [
+      '打造動態報表！雲端 Python 爬蟲資料流',
+      '',
+      'https://hahow.in/courses/data-pipeline',
+      'https://images.hahow.in/images/5ee1f8c31bd3cfbc4e5e1a07',
+      'Hahow',
+      'pay course',
+      '4.86',
+      '0',
+      '702',
+      '2488',
+      'publish',
+      '0',
+    ]
+  - [
+      'Excel VBA 金融資料抓取 | 打造股票研究系統',
+      '',
+      'https://hahow.in/courses/excel-invest',
+      'https://images.hahow.in/images/5d7f58e945639e00212d3108',
+      'Hahow',
+      'pay course',
+      '4.99',
+      '0',
+      '1550',
+      '3450',
+      'publish',
+      '0',
+    ]
+  - [
+      'Python 資料分析 - 網頁爬蟲與視覺呈現',
+      '',
+      'https://hahow.in/courses/csf-data-analysis',
+      'https://images.hahow.in/images/5e02de331b68d20020e23197',
+      'Hahow',
+      'pay course',
+      '4.81',
+      '0',
+      '756',
+      '1880',
+      'publish',
+      '0',
+    ]
+  - [
+      'Python 輿情應用趣：顧客樣貌分析攻略',
+      '',
+      'https://hahow.in/courses/crawler-analysis',
+      'https://images.hahow.in/images/614162f4a31e770006060c3a',
+      'Hahow',
+      'pay course',
+      '4.83',
+      '0',
+      '225',
+      '2388',
+      'publish',
+      '0',
+    ]
+  - [
+      '資料應用：Excel VBA 爬蟲與 IE 操控入門',
+      '',
+      'https://hahow.in/courses/x38517489-1',
+      'https://images.hahow.in/images/5e21625d786ca00024d1df61',
+      'Hahow',
+      'pay course',
+      '4.92',
+      '0',
+      '274',
+      '2400',
+      'publish',
+      '0',
+    ]
+  - [
+      'JavaScript 程式設計新手村',
+      '',
+      'https://hahow.in/courses/javascript101',
+      'https://images.hahow.in/images/57d619eaed63880700da23c7',
+      'Hahow',
+      'pay course',
+      '4.18',
+      '0',
+      '1615',
+      '1980',
+      'publish',
+      '0',
+    ]
+  - [
+      '開啟資料科學的學習大門 - R入門教學',
+      '',
+      'https://hahow.in/courses/r-hands-on',
+      'https://images.hahow.in/images/58da1e786e5d500700c83e0e',
+      'Hahow',
+      'pay course',
+      '4.92',
+      '0',
+      '1728',
+      '500',
+      'publish',
+      '0',
+    ]
+  - [
+      'Python 行銷資料科學 ：基礎語法入門最前線',
+      '',
+      'https://hahow.in/courses/basic-python',
+      'https://images.hahow.in/images/5f9fd2dff506d369edfe8c2d',
+      'Hahow',
+      'pay course',
+      '4.79',
+      '0',
+      '372',
+      '1480',
+      'publish',
+      '0',
+    ]
+  - [
+      '如何成為資料分析師：從問題解決到行動方案',
+      '',
+      'https://hahow.in/courses/dajourney',
+      'https://images.hahow.in/images/5e0183ec1b68d20020e1bdc7',
+      'Hahow',
+      'pay course',
+      '4.87',
+      '0',
+      '1370',
+      '1980',
+      'publish',
+      '0',
+    ]
+  - [
+      '資料變決策！從零上手 Tableau 大數據視覺化',
+      '',
+      'https://hahow.in/courses/data-tableau',
+      'https://images.hahow.in/images/5e7c5a3231e8dd0029db4251',
+      'Hahow',
+      'pay course',
+      '4.94',
+      '0',
+      '1528',
+      '2580',
+      'publish',
+      '0',
+    ]
+  - [
+      'Python 爬蟲入門特訓 ─ 資料抓取與處理應用',
+      '',
+      'https://hahow.in/courses/csf-web-crawler',
+      'https://images.hahow.in/images/60dbefd691602a5264cc5faf',
+      'Hahow',
+      'pay course',
+      '4.97',
+      '0',
+      '779',
+      '1880',
+      'publish',
+      '0',
+    ]
+  - [
+      'Power BI數據分析實戰-邏輯與資料視覺化',
+      '',
+      'https://hahow.in/courses/daxpowerbi',
+      'https://images.hahow.in/images/5b192083567cc1001e4063bd',
+      'Hahow',
+      'pay course',
+      '4.81',
+      '0',
+      '2765',
+      '2500',
+      'publish',
+      '0',
+    ]
+  - [
+      '超圖解資料結構演算法：Leetcode 實戰基礎',
+      '',
+      'https://hahow.in/courses/leetcodeking',
+      'https://images.hahow.in/images/64673580bd560335d6e08f94',
+      'Hahow',
+      'pay course',
+      '5',
+      '0',
+      '224',
+      '2450',
+      'publish',
+      '0',
+    ]
+  - [
+      '資料變決策！商業圖表製作與視覺化分析的技術',
+      '',
+      'https://hahow.in/courses/data-viz',
+      'https://images.hahow.in/images/640ae70d57e793ed9c5037ec',
+      'Hahow',
+      'pay course',
+      '5',
+      '0',
+      '540',
+      '2580',
+      'publish',
+      '0',
+    ]
+  - [
+      'R語言和文字探勘 - 洞悉巨量文字的商業價值',
+      '',
+      'https://hahow.in/courses/rtextmining',
+      'https://images.hahow.in/images/5d1a17870d5f3b0021db5e57',
+      'Hahow',
+      'pay course',
+      '4.59',
+      '0',
+      '525',
+      '2790',
+      'publish',
+      '0',
+    ]
+  - [
+      'R 語言的 50+ 練習：統計分析的前哨站',
+      '',
+      'https://hahow.in/courses/rfiftyplus',
+      'https://images.hahow.in/images/630df165620da100065756e8',
+      'Hahow',
+      'pay course',
+      '5',
+      '0',
+      '295',
+      '3980',
+      'publish',
+      '0',
+    ]
+  - [
+      'AutoCAD 電腦繪圖2D基礎篇－紮實入門',
+      '',
+      'https://hahow.in/courses/autocad-2d',
+      'https://images.hahow.in/images/580252f9da04300700fe0b9a',
+      'Hahow',
+      'pay course',
+      '4.96',
+      '0',
+      '3871',
+      '2500',
+      'publish',
+      '0',
+    ]
+  - [
+      '產品數據分析 - 打造網路產品的決策引擎',
+      '',
+      'https://hahow.in/courses/productanalytics',
+      'https://images.hahow.in/images/5f195c5b098dbf3716aaf43a',
+      'Hahow',
+      'pay course',
+      '4.88',
+      '0',
+      '2134',
+      '3500',
+      'publish',
+      '0',
+    ]
+  - [
+      '數位轉型敲門磚，產業必學 AI 思維通識課',
+      '',
+      'https://hahow.in/courses/yvchen-ai101',
+      'https://images.hahow.in/images/5f8528dae4a0b4b6ceb98975',
+      'Hahow',
+      'pay course',
+      '4.7',
+      '0',
+      '408',
+      '1200',
+      'publish',
+      '0',
+    ]
+  - [
+      '聰明主管的正向領導學',
+      '',
+      'https://hahow.in/courses/biz-school01',
+      'https://images.hahow.in/images/64367b28c4fe855fae4772c3',
+      'Hahow',
+      'pay course',
+      '4.9',
+      '0',
+      '97',
+      '4200',
+      'publish',
+      '0',
+    ]
+  - [
+      'Python 資料視覺化入門：讓圖說出好故事',
+      '',
+      'https://hahow.in/courses/pythonvis',
+      'https://images.hahow.in/images/625105e8d14ce2000775e32b',
+      'Hahow',
+      'pay course',
+      '5',
+      '0',
+      '237',
+      '3200',
+      'publish',
+      '0',
+    ]
+  - [
+      '資料視覺化入門：玩轉 Excel 職場商用圖表',
+      '',
+      'https://hahow.in/courses/excel-visualization',
+      'https://images.hahow.in/images/6400dd065f41fc7fdb541eb8',
+      'Hahow',
+      'pay course',
+      '5',
+      '0',
+      '309',
+      '1000',
+      'publish',
+      '0',
+    ]
+  - [
+      'Excel Power BI 購物籃分析及視覺化實戰',
+      '',
+      'https://hahow.in/courses/excel-powerbi',
+      'https://images.hahow.in/images/61bc0996fbb1610006ee6e31',
+      'Hahow',
+      'pay course',
+      '5',
+      '0',
+      '127',
+      '2888',
+      'publish',
+      '0',
+    ]
+  - [
+      '統計學',
+      '',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/102S113',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/files/110px/102S113.webp',
+      'NTU OpenCourseWare',
+      'open course',
+      '0',
+      '0',
+      '0',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      '生物統計學一',
+      '',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/108S101',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/files/110px/108S101.webp',
+      'NTU OpenCourseWare',
+      'open course',
+      '0',
+      '0',
+      '0',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      '微積分',
+      '',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/100S111',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/files/110px/100S111.webp',
+      'NTU OpenCourseWare',
+      'open course',
+      '0',
+      '0',
+      '0',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      '高等微積分',
+      '',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S130',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/files/110px/101S130.webp',
+      'NTU OpenCourseWare',
+      'open course',
+      '0',
+      '0',
+      '0',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      '微積分 (非理工科)',
+      '',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/103S121',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/files/110px/103S121.webp',
+      'NTU OpenCourseWare',
+      'open course',
+      '0',
+      '0',
+      '0',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      '微積分一',
+      '',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/104S115',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/files/110px/104S115.webp',
+      'NTU OpenCourseWare',
+      'open course',
+      '0',
+      '0',
+      '0',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      '微積分二',
+      '',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/104S210',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/files/110px/104S210.webp',
+      'NTU OpenCourseWare',
+      'open course',
+      '0',
+      '0',
+      '0',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      '線性代數',
+      '',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/102S207',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/files/110px/102S207.webp',
+      'NTU OpenCourseWare',
+      'open course',
+      '0',
+      '0',
+      '0',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      '線性代數與行列生活算計',
+      '',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/103S117',
+      'https://ocw.aca.ntu.edu.tw/ntu-ocw/files/110px/103S117.webp',
+      'NTU OpenCourseWare',
+      'open course',
+      '0',
+      '0',
+      '0',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Machine Learning',
+      '',
+      'https://www.coursera.org/specializations/machine-learning-introduction',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/3a/9d2a7af297483a845340bcfbac6f1e/MLS.course-banners-01_Course-Logo-.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.9',
+      '0',
+      '23000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Supervised Machine Learning: Regression and Classification',
+      '',
+      'https://www.coursera.org/learn/machine-learning',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/9c/90ae67ecdb4185a4ae79ec9a5ae0b6/Course-Logo--1.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.9',
+      '0',
+      '20000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Mathematics for Machine Learning and Data Science',
+      '',
+      'https://www.coursera.org/specializations/mathematics-for-machine-learning-and-data-science',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/8c/b75571d8ad4d24bddff436beab0bad/DL_Square_Banner_Coursera_800x800.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '1900',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Linear Algebra for Machine Learning and Data Science',
+      '',
+      'https://www.coursera.org/learn/machine-learning-linear-algebra',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/f5/50193edade4c4a9e48e60f8a6dd4e4/LA-DL_Square_Banner_Coursera_800x800.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '1400',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'IBM Machine Learning',
+      '',
+      'https://www.coursera.org/professional-certificates/ibm-machine-learning',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/collections/product-images/ibm-machine-learning.jpeg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '2300',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Mathematics for Machine Learning',
+      '',
+      'https://www.coursera.org/specializations/mathematics-machine-learning',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/3e/3974e00aa311e8840ea7bed5c70ad0/Specialization-logo.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '14000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Preparing for Google Cloud Certification: Machine Learning Engineer',
+      '',
+      'https://www.coursera.org/professional-certificates/preparing-for-google-cloud-machine-learning-engineer-professional-certificate',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/30/642985a29449dba4ed46240a482e3a/new-ml-on-gcp-logo.jpeg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '6700',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'IBM Introduction to Machine Learning',
+      '',
+      'https://www.coursera.org/specializations/ibm-intro-machine-learning',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/8d/bb77a93c14433cb346ef97f5425c0a/ML_Graphic.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '2200',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Machine Learning in Production',
+      '',
+      'https://www.coursera.org/learn/introduction-to-machine-learning-in-production',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/a0/e380b37497433f8357a7a6953ee3cc/DeepLearning_MLEP_Banner_1000x1000.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.8',
+      '0',
+      '2900',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Engineering, Big Data, and Machine Learning on GCP',
+      '',
+      'https://www.coursera.org/specializations/gcp-data-machine-learning',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/95/77558056d811e79f95119f98b3ba96/visite-google-datacenter-14.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '18000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Structuring Machine Learning Projects',
+      '',
+      'https://www.coursera.org/learn/machine-learning-projects',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/64/396db0843a456b8af3748b81aaa298/Course-logo-3.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.8',
+      '0',
+      '50000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Machine Learning on Google Cloud',
+      '',
+      'https://www.coursera.org/specializations/machine-learning-tensorflow-gcp',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/bc/9e1a60378b11e8a4cfb59484b7aff8/new-ml-on-gcp-logo.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '9600',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Recommender Systems',
+      '',
+      'https://www.coursera.org/specializations/recommender-systems',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/7d/e0fe705a8b11e6a17cf572cb0ff9c2/twenty20_d152e808-3478-4ebd-9f92-0088c6afa41a.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.3',
+      '0',
+      '809',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Unsupervised Learning, Recommenders, Reinforcement Learning',
+      '',
+      'https://www.coursera.org/learn/unsupervised-learning-recommenders-reinforcement-learning',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/9d/94b73964644f83be145d935af64acc/Course-Logo--3.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.9',
+      '0',
+      '2900',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Basic Recommender Systems',
+      '',
+      'https://www.coursera.org/learn/basic-recommender-systems',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/20/52853bda2c49d0be9e73010af76c31/Basic-Recommender-Systems.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.3',
+      '0',
+      '41',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Introduction to Recommender Systems:  Non-Personalized and Content-Based',
+      '',
+      'https://www.coursera.org/learn/recommender-systems-introduction',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/5b/9b3cb0663c11e6b4b79d5b3c95a6b9/thumbs-up-logo.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.4',
+      '0',
+      '638',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Recommender Systems',
+      '',
+      'https://www.coursera.org/learn/recommender-systems-ml',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/87/67d9cc4d66428f8776ef9de28bb145/Recommender-Systems.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '0',
+      '0',
+      '0',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Advanced Recommender Systems',
+      '',
+      'https://www.coursera.org/learn/advanced-recommender-systems',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/0a/b77546bd3d4b14b8d12c20692aadbe/Advanced-Recommender-Systems.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '3.8',
+      '0',
+      '23',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Recommendation Systems on Google Cloud',
+      '',
+      'https://www.coursera.org/learn/recommendation-models-gcp',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/ab/8c0ea0bc6d11e8bb1fbf678b061c16/adv-ml-gcp-3x.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '473',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Recommender Systems:  Evaluation and Metrics',
+      '',
+      'https://www.coursera.org/learn/recommender-metrics',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/ae/ae2ca0663c11e6928b1dc2f7c0b3d8/yes-no-thumb.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.4',
+      '0',
+      '232',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Understanding and Applying Text Embeddings',
+      '',
+      'https://www.coursera.org/projects/understanding-and-applying-text-embeddings-project',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/b3/4ed28dc3a54dbdbd879ddf214a7f1d/Screenshot-2023-09-15-at-9.24.24-AM.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.8',
+      '0',
+      '39',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Visualization with R',
+      '',
+      'https://www.coursera.org/learn/data-visualization-r',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/3f/88b1a17f4f47898300f060f8bcf83b/Data-Visualization-with-R.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '210',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Java Programming: Build a Recommendation System',
+      '',
+      'https://www.coursera.org/learn/java-programming-recommender',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/18/a302e04daf11e59c90d5d1f3c33638/tree-200795_1280.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '636',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Using Databases with Python',
+      '',
+      'https://www.coursera.org/learn/python-databases',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/9d/172890502911e5827cbbcae1b894c9/pythondatabases_thumbnail_1x1.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.8',
+      '0',
+      '21000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Google SEO Fundamentals',
+      '',
+      'https://www.coursera.org/learn/seo-fundamentals',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/20/da8970b31b11e59c073f4e17a26e01/Course-2--464402693.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.8',
+      '0',
+      '3500',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Introduction to Designing Data Lakes on AWS',
+      '',
+      'https://www.coursera.org/learn/introduction-to-designing-data-lakes-in-aws',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/dd/500085c7d241e4945f5734bd021292/Artboard-2-copy.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '228',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Text Retrieval and Search Engines',
+      '',
+      'https://www.coursera.org/learn/text-retrieval',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/15/ced260533711e4a50e27ce928f81ce/Mining_Text_Data_1.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '945',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Google Data Analytics',
+      '',
+      'https://www.coursera.org/professional-certificates/google-data-analytics',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/41/4d3d7c05fb42729c9d90352e072ca3/1060x596_GCC-photos_Karrim.png?auto=format%2Ccompress%2C+enhance&w=320&h=180&fit=crop&q=50&crop=faces',
+      'Coursera',
+      'open course',
+      '4.8',
+      '0',
+      '146000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Analysis with Python',
+      '',
+      'https://www.coursera.org/learn/data-analysis-with-python',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/1e/bccef0386611e889ebf7c982548ca6/Screen-Shot-2018-04-04-at-8.13.17-PM.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '18000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'IBM Data Analyst',
+      '',
+      'https://www.coursera.org/professional-certificates/ibm-data-analyst',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/63/baf9bea98641aeb8fd36a7b1291791/DA-PC_Image.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '77000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Introduction to Data Analysis using Microsoft Excel',
+      '',
+      'https://www.coursera.org/projects/introduction-data-analysis-microsoft-excel',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/bc/dd4f095a8c426fa8fe044d1a756344/Diseno-sin-titulo-6-.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '2700',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Excel Basics for Data Analysis',
+      '',
+      'https://www.coursera.org/learn/excel-basics-data-analysis-ibm',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/d3/1b8035aa844596a652515a08db8a42/IBM-DA-Course-2_New-Option-3.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.8',
+      '0',
+      '7600',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Analysis with R Programming',
+      '',
+      'https://www.coursera.org/learn/data-analysis-r',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/8f/d818b92890422fb742307e1dd0290a/Data-Analysis-with-R-Programing.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.8',
+      '0',
+      '9800',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Microsoft Power BI Data Analyst',
+      '',
+      'https://www.coursera.org/professional-certificates/microsoft-power-bi-data-analyst',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/8c/e0f2fd124b441fa8d9aa68fdab2167/Marketing-Image.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '3100',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Business Analytics with Excel: Elementary to Advanced',
+      '',
+      'https://www.coursera.org/learn/business-analytics-excel',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/66/e2793ae80742ccac9bdebe7f538a1c/excel-g9ac6b342d_1920.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.8',
+      '0',
+      '2000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Google Advanced Data Analytics',
+      '',
+      'https://www.coursera.org/professional-certificates/google-advanced-data-analytics',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/5d/8175a2dc034bc48e8fe31b6d6f7a2c/1060x596_GCC-photos_Nick.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '3600',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Analysis with R',
+      '',
+      'https://www.coursera.org/specializations/statistics',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/01/eb2cd0fb6011e58f3fed869dcf948d/unspecified.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '7200',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Analysis and Visualization Foundations',
+      '',
+      'https://www.coursera.org/specializations/data-analysis-visualization-foundations',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/6d/6fb8cc58064b8d85eae4cc5ed61448/Data-Analysis-Foundations-1200X1200.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '22000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'IBM Data Science',
+      '',
+      'https://www.coursera.org/professional-certificates/ibm-data-science',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/23/22bc54f77f45a2b057f4ff518d272f/iStock-1169539468.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '126000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Introduction to Data Science',
+      '',
+      'https://www.coursera.org/specializations/introduction-data-science',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/collections/product-images/introduction-data-science.jpeg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '89000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Science Fundamentals with Python and SQL',
+      '',
+      'https://www.coursera.org/specializations/data-science-fundamentals-python-sql',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/collections/product-images/data-science-fundamentals-python-sql.jpeg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '63000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Applied Data Science',
+      '',
+      'https://www.coursera.org/specializations/applied-data-science',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/collections/product-images/applied-data-science.jpeg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '51000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Learn SQL Basics for Data Science',
+      '',
+      'https://www.coursera.org/specializations/learn-sql-basics-data-science',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/1f/09b6d03b7a11e98afdfdc3ec76e998/Specialization_Nav_Build_IMAGE2_600x600.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '17000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Python for Data Science, AI & Development',
+      '',
+      'https://www.coursera.org/learn/python-for-applied-data-science-ai',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/fc/c1b8dfbac740999b6256aca490de43/Python-Image.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '36000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Genomic Data Science',
+      '',
+      'https://www.coursera.org/specializations/genomic-data-science',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/17/4df3b0a98411e591c0b9c70a6d8700/GBDS.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '6300',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Science',
+      '',
+      'https://www.coursera.org/specializations/jhu-data-science',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/eb/8e18e0a4f111e59ae9c776a3dd0526/jhu-logo-thumb.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '50000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Science: Foundations using R',
+      '',
+      'https://www.coursera.org/specializations/data-science-foundations-r',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/b6/e4931fd75a409c9a6dfae9ad95f903/Data-Science-Fundementals-in-Research.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '48000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Applied Data Science with Python',
+      '',
+      'https://www.coursera.org/specializations/data-science-python',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/c8/8d6df01eb311e6b5f5f786b289d8ba/pythondatascience_specialization_final.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '34000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Databases and SQL for Data Science with Python',
+      '',
+      'https://www.coursera.org/learn/sql-data-science',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/bb/f59850318b11e88de79f6e54d6a7e2/184x184-SQL-for-DataScience.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '20000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Meta Database Engineer',
+      '',
+      'https://www.coursera.org/professional-certificates/meta-database-engineer',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/83/c9a3279c4247529775d5f41cb1d3a0/DBA-ProCert.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '5700',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Introduction to Databases',
+      '',
+      'https://www.coursera.org/learn/introduction-to-databases',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/67/9cee867f7344c59909b39ffcaf4021/DBA1.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '1000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'PostgreSQL for Everybody',
+      '',
+      'https://www.coursera.org/specializations/postgresql-for-everybody',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/ff/6a611523634fa0b4c2905d267670de/pg4e_thumbnail_specializationimage_resized.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '1100',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Introduction to Relational Databases (RDBMS)',
+      '',
+      'https://www.coursera.org/learn/introduction-to-relational-databases',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/7c/410745fcfe437daa59b7e43c5b8dfb/RDBMS.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '535',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'IBM Data Engineering',
+      '',
+      'https://www.coursera.org/professional-certificates/ibm-data-engineer',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/collections/product-images/ibm-data-engineer.jpeg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '50000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Oracle SQL Databases',
+      '',
+      'https://www.coursera.org/specializations/oracle-sql-databases',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/6c/4d7d0569a3403187a746eca4115ebb/OracleSQL800x800.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '653',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Databases for Data Scientists',
+      '',
+      'https://www.coursera.org/specializations/databases-for-data-scientists',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/18/062e97ab494d10b7aea4c7751c2422/databases_spec_logo.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '777',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Relational Database Administration (DBA)',
+      '',
+      'https://www.coursera.org/learn/relational-database-administration',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/9c/e99a2cc09045faa2272c8aec469b95/Database-Administration.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.4',
+      '0',
+      '180',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Google Cloud Database Engineer',
+      '',
+      'https://www.coursera.org/specializations/google-cloud-database-engineer',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/ee/ab61e2b9f9418c9ea7aa0d26044599/super-cloud-coursera-logo.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '48000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Database Structures and Management with MySQL',
+      '',
+      'https://www.coursera.org/learn/database-structures-and-management-with-mysql',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/5b/29787d7f8d490387dc88f0902509ca/DBA2.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.8',
+      '0',
+      '378',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Introduction to R Programming for Data Science',
+      '',
+      'https://www.coursera.org/learn/introducton-r-programming-data-science',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/a9/76d2b0ced54f76b50bde6e4d16c6b5/Introduction-to-R.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '430',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'IntroducciÃ³n a Data Science: ProgramaciÃ³n EstadÃ\xadstica con R',
+      '',
+      'https://www.coursera.org/learn/intro-data-science-programacion-estadistica-r',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/94/f9e087fa7f4ccfb35c6c1363761522/ProgramacionConR_FINAL.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '8100',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'R Programming',
+      '',
+      'https://www.coursera.org/learn/r-programming',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/5e/b4ef8069b511e3ae92c39913bb30e0/Rprogramming.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '22000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Visualization & Dashboarding with R',
+      '',
+      'https://www.coursera.org/specializations/jhu-data-visualization-dashboarding-with-r',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-university-assets.s3.amazonaws.com/74/7ae340ec6911e5b395490a2a565172/JHU-Logo-Square-Mini_180px.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.8',
+      '0',
+      '372',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'IBM Data Analytics with Excel and R',
+      '',
+      'https://www.coursera.org/professional-certificates/ibm-data-analyst-r-excel',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/a0/6bda7e8f7245b3ada2915a88e5ad65/DataAnalyticswith-ExcelandR-PC.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '22000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Getting Started with R',
+      '',
+      'https://www.coursera.org/projects/getting-started-with-r',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/c0/08b8ef18e742c8b608cdcbd1fd8e05/getting-started-with-r-logo.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.3',
+      '0',
+      '348',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Applied Data Science with R',
+      '',
+      'https://www.coursera.org/specializations/applied-data-science-r',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/a4/931c0cbff843738141776101c5120a/DataSciencewithR-Specialization.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '922',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Statistical Analysis with R for Public Health',
+      '',
+      'https://www.coursera.org/specializations/statistical-analysis-r-public-health',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/39/72000891b046aa94677d96009a2bee/Statistics-for-Public-Health.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '1900',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Deep Learning',
+      '',
+      'https://www.coursera.org/specializations/deep-learning',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/a4/079d5e7c7b45ac9107f22bfcfeab91/Specialization-logo.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.8',
+      '0',
+      '143000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Neural Networks and Deep Learning',
+      '',
+      'https://www.coursera.org/learn/neural-networks-deep-learning',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/c1/16a2fa16b943038f07cd0e4064a25e/Course-logo-1.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.9',
+      '0',
+      '121000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Deep Neural Networks with PyTorch',
+      '',
+      'https://www.coursera.org/learn/deep-neural-networks-with-pytorch',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/93/768c25074142cf801a8a4b62e3cfeb/PyTorch.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.4',
+      '0',
+      '1600',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'DeepLearning.AI TensorFlow Developer',
+      '',
+      'https://www.coursera.org/professional-certificates/tensorflow-in-practice',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/ab/8699caa15e413a812e1257b6027f07/Specialization-Logo.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '25000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Convolutional Neural Networks',
+      '',
+      'https://www.coursera.org/learn/convolutional-neural-networks',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/b4/e71e72f2e8417895f9cd2433cc69af/Course-logo-4.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.9',
+      '0',
+      '42000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Natural Language Processing',
+      '',
+      'https://www.coursera.org/specializations/natural-language-processing',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/e2/299c6a9c8b40c4be6cf83454e38a49/Specialization-Logo.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '5700',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Introduction to Deep Learning & Neural Networks with Keras',
+      '',
+      'https://www.coursera.org/learn/introduction-to-deep-learning-with-keras',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/25/015d50594c4e74b6e2099114a37905/Brain-under-layers-of-circuit-boards.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '1500',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Deep Learning and Reinforcement Learning',
+      '',
+      'https://www.coursera.org/learn/deep-learning-reinforcement-learning',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/04/7c13b3f6174c9fa7f625b36da2b798/ML_Graphic.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '191',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Deep Learning for Business',
+      '',
+      'https://www.coursera.org/learn/deep-learning-business',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/cb/1cc110653911e7b20e776f9e77a64f/jmc_thum_DeepLearning.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.4',
+      '0',
+      '660',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'IBM AI Engineering',
+      '',
+      'https://www.coursera.org/professional-certificates/ai-engineer',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera_assets.s3.amazonaws.com/collections/product-images/ai-engineer.jpeg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '18000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Visualization with Python',
+      '',
+      'https://www.coursera.org/learn/python-for-data-visualization',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/62/5322b0381e11e8b10fefac82942bd7/Data-Visualization-with-Python.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '12000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Visualization with Tableau',
+      '',
+      'https://www.coursera.org/specializations/data-visualization',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/41/d326f0af5b11e5ada4195d312ad6aa/davis_data_thumb.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '8000',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Visualization',
+      '',
+      'https://www.coursera.org/learn/datavisualization',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/f6/4bce20533611e4bc4cff5931b60ef1/Viz_for_Data_Mining.jpg?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.5',
+      '0',
+      '1400',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Overview of Data Visualization',
+      '',
+      'https://www.coursera.org/projects/overview-data-visualization',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/32/5e981c579c412ba6804358b8589ccd/Logo.png?auto=format%2Ccompress%2C+enhance&w=265&h=216&fit=crop&q=50',
+      'Coursera',
+      'open course',
+      '4.6',
+      '0',
+      '293',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Visualization and Dashboards with Excel and Cognos',
+      '',
+      'https://www.coursera.org/learn/data-visualization-dashboards-excel-cognos',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/dd/07890d9c634904be95462782ddaf96/IBM-DA-Course-3.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.7',
+      '0',
+      '3500',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Visualization with Advanced Excel',
+      '',
+      'https://www.coursera.org/learn/advanced-excel',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/9b/f563c0325811e6934e51e473556593/PwC_fl_c.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.8',
+      '0',
+      '2900',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Visualization in Excel',
+      '',
+      'https://www.coursera.org/learn/excel-data-visualization',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/77/58d64e512944db92cf35b0f5fb5d84/04-Visualisation.jpg?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '4.9',
+      '0',
+      '1100',
+      '0',
+      'publish',
+      '0',
+    ]
+  - [
+      'Data Visualization',
+      '',
+      'https://www.coursera.org/learn/ball-state-university-data-visualization-open',
+      'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera-course-photos/75/09d0fb5a98496596677aa6b1575207/BSU-logo-vert-RGB-2-.png?auto=format%2Ccompress',
+      'Coursera',
+      'open course',
+      '0',
+      '0',
+      '0',
+      '0',
+      'publish',
+      '0',
+    ]
+
+resources_keywords:
+  - ['1', '2', '1', '1']
+  - ['2', '2', '1', '1']
+  - ['3', '2', '1', '1']
+  - ['4', '1', '1', '1']
+  - ['5', '2', '1', '1']
+  - ['6', '1', '1', '1']
+  - ['7', '2', '1', '1']
+  - ['8', '2', '1', '1']
+  - ['9', '1', '1', '1']
+  - ['10', '2', '1', '1']
+  - ['11', '38', '1', '1']
+  - ['12', '2', '1', '1']
+  - ['13', '2', '1', '1']
+  - ['14', '3', '1', '1']
+  - ['15', '38', '1', '1']
+  - ['16', '1', '1', '1']
+  - ['17', '1', '1', '1']
+  - ['18', '2', '1', '1']
+  - ['19', '38', '1', '1']
+  - ['20', '2', '58', '1']
+  - ['21', '2', '58', '1']
+  - ['22', '2', '1', '1']
+  - ['23', '38', '1', '1']
+  - ['24', '2', '1', '1']
+  - ['25', '2', '1', '1']
+  - ['26', '60', '1', '1']
+  - ['27', '1', '1', '1']
+  - ['28', '3', '1', '1']
+  - ['29', '2', '1', '1']
+  - ['30', '1', '1', '1']
+  - ['31', '1', '1', '1']
+  - ['32', '58', '61', '1']
+  - ['33', '1', '1', '1']
+  - ['34', '63', '1', '1']
+  - ['35', '1', '1', '1']
+  - ['36', '3', '1', '1']
+  - ['37', '3', '1', '1']
+  - ['39', '1', '1', '1']
+  - ['40', '1', '1', '1']
+  - ['41', '1', '1', '1']
+  - ['42', '2', '47', '1']
+  - ['43', '1', '1', '1']
+  - ['44', '1', '1', '1']
+  - ['45', '1', '1', '1']
+  - ['46', '1', '1', '1']
+  - ['47', '1', '1', '1']
+  - ['48', '1', '1', '1']
+  - ['49', '1', '1', '1']
+  - ['50', '1', '1', '1']
+  - ['51', '1', '1', '1']
+  - ['52', '1', '1', '1']
+  - ['53', '1', '1', '1']
+  - ['54', '1', '1', '1']
+  - ['55', '23', '1', '1']
+  - ['56', '1', '1', '1']
+  - ['57', '1', '1', '1']
+  - ['58', '2', '1', '1']
+  - ['59', '1', '1', '1']
+  - ['60', '1', '1', '1']
+  - ['61', '1', '1', '1']
+  - ['62', '1', '1', '1']
+  - ['63', '1', '1', '1']
+  - ['64', '1', '1', '1']
+  - ['65', '1', '1', '1']
+  - ['66', '1', '1', '1']
+  - ['67', '1', '1', '1']
+  - ['68', '1', '1', '1']
+  - ['69', '1', '1', '1']
+  - ['70', '1', '1', '1']
+  - ['71', '1', '1', '1']
+  - ['72', '1', '1', '1']
+  - ['73', '1', '1', '1']
+  - ['74', '1', '1', '1']
+  - ['75', '3', '49', '1']
+  - ['76', '1', '1', '1']
+  - ['77', '38', '2', '1']
+  - ['78', '1', '1', '1']
+  - ['79', '1', '1', '1']
+  - ['80', '1', '1', '1']
+  - ['81', '1', '1', '1']
+  - ['82', '2', '45', '1']
+  - ['83', '38', '1', '1']
+  - ['84', '1', '1', '1']
+  - ['85', '1', '1', '1']
+  - ['86', '3', '1', '1']
+  - ['87', '1', '1', '1']
+  - ['88', '1', '1', '1']
+  - ['89', '1', '1', '1']
+  - ['90', '3', '1', '1']
+  - ['91', '1', '1', '1']
+  - ['92', '2', '1', '1']
+  - ['93', '1', '1', '1']
+  - ['94', '2', '38', '1']
+  - ['95', '1', '1', '1']
+  - ['96', '38', '1', '1']
+  - ['97', '2', '1', '1']
+  - ['98', '1', '1', '1']
+  - ['99', '1', '1', '1']
+  - ['100', '3', '1', '1']
+  - ['101', '2', '1', '1']
+  - ['102', '38', '2', '1']
+  - ['103', '38', '1', '1']
+  - ['104', '38', '1', '1']
+  - ['105', '38', '1', '1']
+  - ['106', '38', '1', '1']
+  - ['107', '38', '1', '1']
+  - ['108', '38', '1', '1']
+  - ['109', '38', '1', '1']
+  - ['110', '38', '1', '1']
+  - ['111', '38', '1', '1']
+  - ['112', '38', '1', '1']
+  - ['113', '3', '1', '1']
+  - ['114', '3', '1', '1']
+  - ['115', '3', '1', '1']
+  - ['116', '3', '1', '1']
+  - ['117', '3', '1', '1']
+  - ['118', '3', '1', '1']
+  - ['119', '3', '1', '1']
+  - ['120', '3', '1', '1']
+  - ['121', '1', '1', '1']
+  - ['122', '1', '1', '1']
+  - ['123', '43', '1', '1']
+  - ['124', '42', '1', '1']
+  - ['125', '1', '1', '1']
+  - ['126', '1', '1', '1']
+  - ['127', '1', '1', '1']
+  - ['128', '1', '1', '1']
+  - ['129', '1', '1', '1']
+  - ['130', '1', '1', '1']
+  - ['131', '2', '47', '1']
+  - ['132', '1', '1', '1']
+  - ['133', '2', '1', '1']
+  - ['134', '47', '48', '1']
+  - ['135', '1', '1', '1']
+  - ['136', '1', '1', '1']
+  - ['137', '1', '1', '1']
+  - ['138', '47', '1', '1']
