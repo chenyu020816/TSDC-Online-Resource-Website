@@ -17,4 +17,12 @@ const searchResource = (_data) => {
     });
 };
 
-export { courseSuggestList, searchResource };
+const giveRating = (_data) => {
+    return axios({
+        method: "post",
+        url: `${baseUrl}/give_rating`,
+        data: _data
+    });
+};
+
+export { courseSuggestList, searchResource, giveRating };

@@ -100,6 +100,11 @@ def courseSuggestList():
 def searchResource():
     return search_resource()
 
+
+@app.post("/give_rating")
+def giveRating():
+    return give_rating()
+
 if __name__ == "__main__":
     if os.environ.get("WERKZEUG_RUN_MAIN") != "true":
         with app.app_context():

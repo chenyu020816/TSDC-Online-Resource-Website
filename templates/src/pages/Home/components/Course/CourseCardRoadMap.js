@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/css/macro';
+import { useSnackbar } from 'notistack';
 import { styled } from '@mui/material/styles';
 import { Box, Grid, Stack, Typography, Card, CardContent, Chip, Skeleton, Button } from '@mui/material';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
@@ -13,6 +14,8 @@ import theme from 'components/theme';
 import { hover } from '@testing-library/user-event/dist/hover';
 import { transform } from 'framer-motion';
 import transitions from '@material-ui/core/styles/transitions';
+import { storeData } from 'utils/snackbar.constants';
+import * as resourceAPIs from 'apis/resource';
 
 const palette = 'home';
 
@@ -28,11 +31,28 @@ const StyledRating = styled(Rating)({
 
 
 const CourseCardRoadMap = ({ data }) => {
+    const user_id = localStorage.getItem('YFCII_USER_ID');
     const [ratingValue, setRatingValue] = React.useState(null);
+    const { enqueueSnackbar } = useSnackbar();
 
     const handleGiveRating = (event) => {
         setRatingValue(Number(event.target.value))
+        resourceAPIs.giveRating({
+            "user_id": user_id,
+            "resource_id": data.resource_id,
+            "score": event.target.value
+        }).then((res) => {
+            if (res['data']['data']) {
+                console.log(res['data']['data']);
+                enqueueSnackbar(`已完成評分！`, storeData);
+            }
+        })
     }
+
+    React.useEffect(() => {
+        console.log(data);
+        console.log(user_id);
+    }, [data])
 
     return (
         <ThemeProvider theme={cardTheme}>

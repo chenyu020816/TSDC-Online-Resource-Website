@@ -34,3 +34,20 @@ def search_resource():
             "success":False, 
             "message":e
             }), 500
+    
+def give_rating():
+    try:
+        input_value = request.get_json()
+        return_id = add_user_rating_history(
+            db,
+            input_value['user_id'],
+            input_value['resource_id'],
+            input_value['score']
+        )
+        return jsonify({"success":True, "data": return_id}), 200
+    except Exception as e:
+        return jsonify({
+            "success":False, 
+            "message":e
+            }), 500
+    
