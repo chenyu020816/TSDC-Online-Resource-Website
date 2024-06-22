@@ -28,6 +28,7 @@ const RecommendResourseSlide = ({ data, index }) => {
 
     React.useEffect(() => {
         setAsyncStatusRecommend(ASYNC_STATUS_LOADING)
+        console.log(data);
         resourceAPIs.courseSuggestList({ keyword: data }).then((res) => {
             let parameter;
             if (user_id) {

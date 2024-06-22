@@ -13,11 +13,12 @@ def translate_keyword(keyword):
 def course_suggest_list():
     try:
         input_value = request.get_json()
-        print(input_value)
         keyword_list = [translate_keyword(keyword) for keyword in input_value['keyword']]
+        print(keyword_list)
         best_n_id = get_best_n_resources(
             db, keyword_list, 1500, 5
         )
+        print(best_n_id)
         return jsonify({"success":True, "data":best_n_id.tolist()}), 200
     except Exception as e:
         return jsonify({
