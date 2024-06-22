@@ -25,4 +25,21 @@ const giveRating = (_data) => {
     });
 };
 
-export { courseSuggestList, searchResource, giveRating };
+const recordUserKeyword = (_data) => {
+    return axios({
+        method: "post",
+        url: `${baseUrl}/record_user_keyword`,
+        data: _data
+    });
+};
+
+
+const recordResourceView = (_data) => {
+    return axios({
+        method: "post",
+        url: `${baseUrl}/record_resource_view`,
+        data: _data
+    });
+};
+
+export { courseSuggestList, searchResource, giveRating, recordUserKeyword, recordResourceView };

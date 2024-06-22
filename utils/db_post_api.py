@@ -151,5 +151,7 @@ def search_related_post_by_title(post_title: str = None) -> list:
                 "status": post.status,
                 "post_at": post.post_at
             })
-    
+            
+    result.sort(key=lambda x: x['post_at'], reverse=True)
+
     return result

@@ -37,6 +37,7 @@ function App() {
 export default App;
 
 const globalStyles = css`
+
   /* 全域滾動條樣式 */
   /* 修改滾動條軌道的背景色 */
   ::-webkit-scrollbar-track {

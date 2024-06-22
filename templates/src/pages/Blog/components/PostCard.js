@@ -164,7 +164,7 @@ const PostCard = ({ data }) => {
                 </CardContent>
                 <Microlink url={urls ? urls[0] : ""} direction="rtl" />
                 <CardActions disableSpacing>
-                    <IconButton aria-label="add to favorites">
+                    <IconButton aria-label="add to favorites" disabled>
                         <Typography variant="body1" fontWeight={600}>
                             查看全文👉
                         </Typography>

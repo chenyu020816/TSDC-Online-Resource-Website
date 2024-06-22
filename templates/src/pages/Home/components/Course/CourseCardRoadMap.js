@@ -14,7 +14,7 @@ import theme from 'components/theme';
 import { hover } from '@testing-library/user-event/dist/hover';
 import { transform } from 'framer-motion';
 import transitions from '@material-ui/core/styles/transitions';
-import { storeData } from 'utils/snackbar.constants';
+import { storeData, warningData } from 'utils/snackbar.constants';
 import * as resourceAPIs from 'apis/resource';
 
 const palette = 'home';
@@ -32,10 +32,22 @@ const StyledRating = styled(Rating)({
 
 const CourseCardRoadMap = ({ data }) => {
     const user_id = localStorage.getItem('YFCII_USER_ID');
-    const [ratingValue, setRatingValue] = React.useState(null);
+    const [ratingValue, setRatingValue] = React.useState(data.rating_score ? data.rating_score : null);
     const { enqueueSnackbar } = useSnackbar();
 
+
+    const handleClickResource = () => {
+        console.log({ user_id: user_id, search_id: data['search_id'] });
+        resourceAPIs.recordResourceView({ user_id: user_id, search_id: data['search_id'] }).then((res) => {
+            console.log(res);
+        })
+    }
+
     const handleGiveRating = (event) => {
+        if (!user_id) {
+            enqueueSnackbar(`請先登入！`, warningData);
+            return
+        };
         setRatingValue(Number(event.target.value))
         resourceAPIs.giveRating({
             "user_id": user_id,
@@ -49,11 +61,6 @@ const CourseCardRoadMap = ({ data }) => {
         })
     }
 
-    React.useEffect(() => {
-        console.log(data);
-        console.log(user_id);
-    }, [data])
-
     return (
         <ThemeProvider theme={cardTheme}>
             <Grid item pt={0.75} pb={0.75} sx={{ height: '100%' }}>
@@ -65,7 +72,7 @@ const CourseCardRoadMap = ({ data }) => {
                     />
                     <CardContent sx={{ flexGrow: 1 }}>
                         <Stack direction="row" justifyContent="left">
-                            <a href={data.url ? data.url : "#"} style={{ textDecoration: 'none', height: '100%' }}>
+                            <a href={data.url ? data.url : "#"} target="_blank" style={{ textDecoration: 'none', height: '100%' }} onClick={handleClickResource}>
                                 <Typography pr={2} sx={{ typography: { sm: 'h6', xs: 'body1' } }} variant="h5" component="div" >
                                     <Box fontWeight="fontWeightBold" color={theme[palette]['dark']}>
                                         {data.resource_name ? data.resource_name : "--"}
@@ -76,7 +83,7 @@ const CourseCardRoadMap = ({ data }) => {
                         <Stack direction="row" justifyContent="left" alignItems="center" gap={2}>
                             <Stack direction="row" justifyContent="left" alignItems="center" py={1}>
                                 <AiFillStar style={iconStarStyle} />
-                                <Typography variant="subtitle1" component="div" pl={0.5}>{data.score ? data.score : "--"}</Typography>
+                                <Typography variant="subtitle1" component="div" pl={0.5}>{data.public_score ? data.public_score : "--"}</Typography>
                             </Stack>
                             <Stack direction="row" justifyContent="left" alignItems="center" py={1}>
                                 <SupervisorAccountIcon style={iconPeopleStyle} />

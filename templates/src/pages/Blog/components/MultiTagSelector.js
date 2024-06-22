@@ -31,14 +31,13 @@ const names = [
     'Kelly Snyder',
 ];
 
-export default function MultipleSelectCheckmarks() {
-    const [tagName, setTagName] = React.useState([]);
+export default function MultipleSelectCheckmarks({ data, selectedKeywordList, setSelectedKeywordList }) {
 
     const handleChange = (event) => {
         const {
             target: { value },
         } = event;
-        setTagName(
+        setSelectedKeywordList(
             // On autofill we get a stringified value.
             typeof value === 'string' ? value.split(',') : value,
         );
@@ -47,23 +46,23 @@ export default function MultipleSelectCheckmarks() {
     return (
         <div>
             <FormControl sx={{ m: 1, width: "100%" }}>
-                <InputLabel id="demo-multiple-checkbox-label">Tag</InputLabel>
+                <InputLabel id="demo-multiple-checkbox-label">標籤</InputLabel>
                 <Select
                     labelId="demo-multiple-checkbox-label"
                     id="demo-multiple-checkbox"
                     multiple
-                    value={tagName}
+                    value={selectedKeywordList}
                     onChange={handleChange}
                     input={<OutlinedInput label="Tag" />}
                     renderValue={(selected) => selected.join(', ')}
                     MenuProps={MenuProps}
                 >
-                    {names.map((name) => (
+                    {data ? data.map((name) => (
                         <MenuItem key={name} value={name}>
-                            <Checkbox checked={tagName.indexOf(name) > -1} />
+                            <Checkbox checked={selectedKeywordList.indexOf(name) > -1} />
                             <ListItemText primary={name} />
                         </MenuItem>
-                    ))}
+                    )) : ("")}
                 </Select>
             </FormControl>
         </div>

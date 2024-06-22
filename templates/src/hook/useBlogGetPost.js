@@ -15,8 +15,19 @@ const useBlogGetPost = () => {
         }
     }, [])
 
+    const handleGetPostData = React.useCallback(async (keyword) => {
+        store.dispatch({ type: "GET_POST_LOADING" })
+        try {
+            const result = await postAPIs.getRelatedPost({ _keyword: keyword })
+            store.dispatch({ type: "GET_POST_LOADED", payload: result['data']['data'] })
+        } catch (error) {
+            store.dispatch({ type: "GET_POST_ERROR", payload: error.message })
+        }
+    }, [])
+
     const methods = {
         handleGetPostDataInit,
+        handleGetPostData
     };
     return methods;
 }

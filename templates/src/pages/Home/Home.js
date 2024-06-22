@@ -1,7 +1,8 @@
 import React from 'react';
+import { useSelector } from "react-redux";
 import { css } from '@emotion/css/macro';
-import { Box, Grid, Typography } from '@mui/material';
-
+import { Box, Grid, Typography, Skeleton } from '@mui/material';
+import LinearProgress from '@mui/material/LinearProgress';
 import theme from 'components/theme';
 import Header from 'components/Header/UserHeader';
 import Background from 'pages/Home/components/Background';
@@ -16,16 +17,45 @@ import RoadmapTimeLine from 'pages/Home/components/RoadmapTimeLine';
 const palette = 'home';
 
 const Home = () => {
-    /* const { courseList, asyncStatusGetCourse } = useSelector((store) => store.course);
-    const courseArray = Object.values(courseList);
-    const tabs = courseArray.map((courseData, index) => {
-        return { id: courseData.domain, label: courseData.domain };
-    });
+    const { roadmap, asyncStatusRoadmap } = useSelector((store) => store.roadmap);
+    const [progress, setProgress] = React.useState(100);
+    const [buffer, setBuffer] = React.useState(100);
+
+    const progressRef = React.useRef(() => { });
 
     React.useEffect(() => {
-        console.log(courseList);
-        console.log(tabs);
-    }, [courseList]) */
+        progressRef.current = () => {
+            if (progress >= 90) {
+                setBuffer(progress);
+            } else {
+                const diff = Math.random() * 10;
+                const diff2 = Math.random() * 10;
+                setProgress((prevProgress) => Math.min(prevProgress + diff, 90));
+                setBuffer((prevProgress) => Math.min(prevProgress + diff + diff2, 100));
+            }
+        };
+    }, [progress]);
+
+    React.useEffect(() => {
+        if (!asyncStatusRoadmap.loading) {
+            setProgress(100);
+            setBuffer(100);
+        } else {
+            setProgress(0);
+            setBuffer(10);
+        }
+    }, [roadmap]);
+
+
+    React.useEffect(() => {
+        const timer = setInterval(() => {
+            progressRef.current();
+        }, 500);
+
+        return () => {
+            clearInterval(timer);
+        };
+    }, []);
 
     return (
         <div className={style(theme[palette])}>
@@ -51,8 +81,27 @@ const Home = () => {
                 </Grid>
                 <Background />
             </div>
+            <Grid container px={8} pt={3} direction="column" alignItems="center">
+                <Typography className='title' component="div" sx={{ typography: { xs: 'h5', sm: 'h4', md: 'h3', lg: "h2" } }}>
+                    <Box fontWeight="fontWeightBold" color={theme[palette]['text']['dark']}>
+                        Roadmap
+                    </Box>
+                </Typography>
+                <Typography className='subtitle2' variant="body1" component="div" fontWeight={600} letterSpacing={3} color={theme[palette]['text']['lightdark']} pt={2}>
+                    搜尋感興趣的領域，自動化幫助您生成學習路徑
+                    <Box sx={{ width: '100%' }} pt={1}>
+                        <LinearProgress variant="buffer" value={progress} valueBuffer={buffer} />
+                    </Box>
+                </Typography>
+            </Grid>
             <div className='feature-section'>
-                <BannerCard />
+                {!asyncStatusRoadmap.loading ? (
+                    <BannerCard />
+                ) : (
+                    <Grid container pt={3}>
+                        <Skeleton variant="rounded" width="100%" height={400} />
+                    </Grid>
+                )}
             </div>
             <div className='feature-course-recommend'>
                 <Grid container direction="column" alignItems="center">
@@ -99,7 +148,7 @@ const style = (palette) => css`
 `
 
 const homeStyle = (palette) => css`
-height: 80vh;
+height: 100vh;
 .home-photo{
     display: block;
     margin: 0 auto;

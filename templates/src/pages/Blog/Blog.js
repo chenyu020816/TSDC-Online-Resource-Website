@@ -19,17 +19,23 @@ const palette = 'home';
 
 const Blog = () => {
     const { postList, asyncStatusPostList } = useSelector((store) => store.blogPost);
+    const { handleGetPostDataInit, handleGetPostData } = useBlogGetPost();
+    /* const [keywordList, setKeywordList] = React.useState([]); */
+    /* const [selectedKeywordList, setSelectedKeywordList] = React.useState([]); */
+    const [inputKeyword, setInputKeyword] = React.useState("");
 
-    const { handleGetPostDataInit } = useBlogGetPost();
+    React.useEffect(() => {
+        handleGetPostData(inputKeyword)
+    }, [inputKeyword])
+
+    /* React.useEffect(() => {
+        postAPIs.getPostKeyword().then((res) => {
+            setKeywordList(res['data']['data']['chi'])
+        })
+    }, []) */
 
     React.useEffect(() => {
         handleGetPostDataInit();
-        /* postAPIs.getRelatedPost({ _keyword: '統計系' }).then((res) => {
-            if (res['data']['success']) {
-                console.log(res['data']['data']);
-                setPosts(res['data']['data']);
-            }
-        }) */
     }, [])
 
     return (
@@ -37,20 +43,20 @@ const Blog = () => {
             <div className={homeStyle(theme[palette])}>
                 <Header palette={theme[palette]} typr="home" />
                 <Grid container className='home-section' >
-                    <Grid item sm={4} pl={8}>
+                    <Grid item sm={6} pl={8}>
                         <Typography className='title' component="div" sx={{ typography: { xs: 'h5', sm: 'h5', md: 'h4', lg: "h3" } }}>
                             <Box fontWeight="fontWeightBold" color={theme[palette]['text']['primary']}>
                                 專欄文章
                             </Box>
                         </Typography>
                     </Grid>
-                    <Grid item sm={8} pr={8}>
+                    <Grid item sm={6} pr={8}>
                         <Grid container>
-                            <Grid item sm={6} px={1}>
-                                <MultiTagSelector />
-                            </Grid>
-                            <Grid item sm={6} px={1}>
-                                <BlogSearchInput />
+                            {/* <Grid item sm={6} px={1}>
+                                <MultiTagSelector data={keywordList} selectedKeywordList={selectedKeywordList} setSelectedKeywordList={setSelectedKeywordList} />
+                            </Grid> */}
+                            <Grid item sm={12} px={1}>
+                                <BlogSearchInput inputKeyword={inputKeyword} setInputKeyword={setInputKeyword} />
                             </Grid>
                         </Grid>
                         {/* <img className='home-photo' src={homepage} alt='home' /> */}

@@ -104,6 +104,13 @@ def searchResource():
 @app.post("/give_rating")
 def giveRating():
     return give_rating()
+@app.post("/record_user_keyword")
+def recordUserKeyword():
+    return record_user_keyword()
+
+@app.post("/record_resource_view")
+def recordResourceView():
+    return record_resource_view()
 
 if __name__ == "__main__":
     if os.environ.get("WERKZEUG_RUN_MAIN") != "true":

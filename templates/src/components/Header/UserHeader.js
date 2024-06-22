@@ -84,13 +84,13 @@ const UserHeader = (props) => {
                 </a>
               </li>
             ))}
-            {isLogin ? (
+            {/* {isLogin ? (
               <li href="#">
                 <a href="./userPlan" >
                   個人資訊
                 </a>
               </li>
-            ) : ("")}
+            ) : ("")} */}
             <li className="sm-login" >
               <a href={isLogin ? "./" : "./login"}
                 onClick={userSignOut}>

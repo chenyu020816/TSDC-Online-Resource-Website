@@ -380,7 +380,7 @@ def search_resource_by_id_list_with_rating_score(user_id: int, resource_id_list:
         if not resource:
             continue
         else:
-            rating_score = search_user_resource_rating_score(user_id=user_id, resource_id=resource)
+            rating_score = search_user_resource_rating_score(user_id=user_id, resource_id=resource.id)
             resources.append({
                 "resource_id": resource.id,
                 "resource_name": resource.resource_name,
@@ -399,7 +399,6 @@ def search_resource_by_id_list_with_rating_score(user_id: int, resource_id_list:
             })
 
     return resources
-
 
 def search_resource_by_name(resource_name: int) -> dict:
     """
