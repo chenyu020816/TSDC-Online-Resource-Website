@@ -626,11 +626,11 @@ def add_resource_view_history(db, user_id: int, search_resource_history_id: int)
         id=search_resource_history_id
     ).first()
     viewed_resource_id = search_resource_history.resource_id
-    add_resource_view_count(db, viewed_resource_id)
+    _add_resource_view_count(db, viewed_resource_id)
     return resource_view_history.id
 
 
-def add_resource_view_count(db, resource_id: int) -> int:
+def _add_resource_view_count(db, resource_id: int) -> int:
     """
     Adds the number of views count of resource
     :param db:
@@ -723,8 +723,8 @@ def add_user_rating_history(db, user_id: int, resource_id: int, score: int):
 
 
 def search_user_resource_rating_score(user_id: int, resource_id: int) -> int:
-    rating_histories = db_cls.RatingHistory.query.filter_by(user_id=user_id, resource_id=resource_id).first()
-    if rating_histories:
-        return rating_histories.score
+    rating_history = db_cls.RatingHistory.query.filter_by(user_id=user_id, resource_id=resource_id).first()
+    if rating_history:
+        return rating_history.score
     else:
         return -1

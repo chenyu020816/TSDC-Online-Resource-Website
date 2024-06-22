@@ -521,7 +521,7 @@ class RoadMapFieldKeywords(db.Model):
 
 
 class UserResourceViewHistory(db.Model):
-    __tablename__ = "user_view_history"
+    __tablename__ = "user_resource_view_history"
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
