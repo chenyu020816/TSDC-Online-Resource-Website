@@ -95,11 +95,6 @@ def filter_resource_by_queries_distance(
     return [filtered_resource_id.to_list(), filtered_query_distances]
 
 
-def softmax(x):
-    e_x = np.exp(x - np.max(x))  # Subtracting np.max(x) for numerical stability
-    return e_x / e_x.sum(axis=0)
-
-
 def get_filtered_resources_rank(
     filtered_resource_ids: list[int],
     filtered_query_distances: np.array,
@@ -108,7 +103,7 @@ def get_filtered_resources_rank(
     scores_weights: list[float] = SCORES_WEIGHTS,
 ) -> list[int]:
 
-    filtered_query_distances = softmax(distance_threshold - filtered_query_distances)
+    filtered_query_distances = 1 - (filtered_query_distances / distance_threshold)
     scores = (
         scores_weights[0] * filtered_resources_scores["view_count"]
         + scores_weights[1] * filtered_resources_scores["user_score"]
