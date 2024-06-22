@@ -58,13 +58,12 @@ const DialogCreatePost = ({ open, setOpen, handleClose }) => {
     const handlePublishPost = () => {
         postAPIs.createUserPost({ "user_id": userId, "title": articleTitle, "body": articleBody, "keywords": selectedKeywordList }).then((res) => {
             handleClose();
-            console.log(res);
             if (res['data']['success']) {
                 enqueueSnackbar(`文章已成功發布`, storeData);
                 setArticleTitle("");
                 setArticleBody("");
                 setSelectedKeywordList([]);
-                /* [TODO] */
+                window.location.href = './blog';
             }
         })
     }

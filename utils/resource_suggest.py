@@ -1,22 +1,44 @@
 import Levenshtein
 import numpy as np
 import pandas as pd
-from translate import Translator
+#from translate import Translator
 
 import utils.database_class as db_cls
 from utils.constants import *
 from utils.db_resource_api import *
 
 
-def translate2eng(text):
-    """
-    Translates Chinese text to English
-    :param text: Chinese text
-    :return: translated text
-    """
-    translator = Translator(from_lang="zh", to_lang="en")
-    result = translator.translate(text)
-    return result
+from dotenv import load_dotenv,find_dotenv
+from openai import OpenAI
+import os
+
+load_dotenv(find_dotenv())
+
+api_key = os.environ.get("OPEN_AI_GPT_API")
+
+with open('flow/prompt/memory.txt', 'r', encoding='utf-8') as file:
+    document = file.read()
+
+client = OpenAI(api_key = api_key)
+
+def translate_keyword(keyword):
+    try:
+        prompt = f"""
+            關鍵字：{keyword}
+            若該關鍵字為英文則直接回傳該關鍵字。若關鍵字為中文，請翻譯成英文，回傳單字即可。不要回傳任何不相關的內容或補充。
+            """
+        response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+                {"role": "system", "content": document},
+                {"role": "user", "content": prompt},
+            ]
+        )
+        text = response.choices[0].message.content
+        return text
+    except:
+        return keyword
+
 
 
 def compute_distance(query: str, keywords: list[str]) -> list[int]:

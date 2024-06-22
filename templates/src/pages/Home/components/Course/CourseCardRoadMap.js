@@ -37,6 +37,9 @@ const CourseCardRoadMap = ({ data }) => {
 
 
     const handleClickResource = () => {
+        if (!user_id) {
+            return
+        };
         console.log({ user_id: user_id, search_id: data['search_id'] });
         resourceAPIs.recordResourceView({ user_id: user_id, search_id: data['search_id'] }).then((res) => {
             console.log(res);

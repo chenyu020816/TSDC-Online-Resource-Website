@@ -2,14 +2,40 @@ from flask import jsonify, request
 from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode
 from fake_useragent import UserAgent
 from bs4 import BeautifulSoup
-from translate import Translator
+#from translate import Translator
 import requests
 import json
 
+from dotenv import load_dotenv,find_dotenv
+from openai import OpenAI
+import os
+
+load_dotenv(find_dotenv())
+
+api_key = os.environ.get("OPEN_AI_GPT_API")
+
+with open('flow/prompt/memory.txt', 'r', encoding='utf-8') as file:
+    document = file.read()
+
+client = OpenAI(api_key = api_key)
+
 def translate_keyword(keyword):
-    translator = Translator(from_lang='zh', to_lang='en')
-    result = translator.translate(keyword)
-    return result
+    try:
+        prompt = f"""
+            關鍵字：{keyword}
+            若該關鍵字為英文則直接回傳該關鍵字。若關鍵字為中文，請翻譯成英文，回傳單字即可。不要回傳任何不相關的內容或補充。
+            """
+        response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+                {"role": "system", "content": document},
+                {"role": "user", "content": prompt},
+            ]
+        )
+        text = response.choices[0].message.content
+        return text
+    except:
+        return keyword
 
 def clean_url(url):
     parsed_url = urlparse(url)
