@@ -54,8 +54,9 @@ def course_suggest_list():
 def search_resource():
     try:
         input_value = request.get_json()
-        if input_value['user_id']:
-            resource_list = search_resource_by_id_list_with_rating_score(input_value['user_id'], input_value['resource_list'])
+        user_id = input_value.get('user_id')
+        if user_id:
+            resource_list = search_resource_by_id_list_with_rating_score(user_id, input_value['resource_list'])
         else:
             resource_list = search_resource_by_id_list(input_value['resource_list'])
         return jsonify({"success":True, "data": resource_list}), 200
