@@ -1,4 +1,5 @@
 from sqlalchemy import func
+
 import utils.database_class as db_cls
 from utils.db_keyword_api import *
 from utils.db_user_api import *
@@ -116,6 +117,7 @@ def search_post_by_title(post_title: str) -> dict:
                 "status": post.status,
             }
 
+
 def search_related_post_by_title(post_title: str = None) -> list:
     """
     Search related posts by title and body
@@ -124,34 +126,44 @@ def search_related_post_by_title(post_title: str = None) -> list:
     """
     if post_title:
         # Search for posts matching the title and body with fuzzy search
-        posts = db_cls.Post.query.filter(
-            db_cls.Post.title.ilike(f'%{post_title}%') | db_cls.Post.body.ilike(f'%{post_title}%')
-        ).order_by(
-            func.char_length(db_cls.Post.title) - func.char_length(func.replace(db_cls.Post.title, post_title, '')),
-            func.char_length(db_cls.Post.body) - func.char_length(func.replace(db_cls.Post.body, post_title, ''))
-        ).limit(30).all()
+        posts = (
+            db_cls.Post.query.filter(
+                db_cls.Post.title.ilike(f"%{post_title}%")
+                | db_cls.Post.body.ilike(f"%{post_title}%")
+            )
+            .order_by(
+                func.char_length(db_cls.Post.title)
+                - func.char_length(func.replace(db_cls.Post.title, post_title, "")),
+                func.char_length(db_cls.Post.body)
+                - func.char_length(func.replace(db_cls.Post.body, post_title, "")),
+            )
+            .limit(30)
+            .all()
+        )
     else:
         # Return 30 random posts if no title is provided
         posts = db_cls.Post.query.order_by(func.random()).limit(30).all()
 
     if not posts:
         posts = db_cls.Post.query.order_by(func.random()).limit(30).all()
-    
+
     result = []
     for post in posts:
 
         author = search_user_by_id(post.user_id)
         if "username" in author.keys():
             author_name = author["username"]
-            result.append({
-                "post_id": post.id,
-                "title": post.title,
-                "body": post.body,
-                "user_name": author_name,
-                "status": post.status,
-                "post_at": post.post_at
-            })
-            
-    result.sort(key=lambda x: x['post_at'], reverse=True)
+            result.append(
+                {
+                    "post_id": post.id,
+                    "title": post.title,
+                    "body": post.body,
+                    "user_name": author_name,
+                    "status": post.status,
+                    "post_at": post.post_at,
+                }
+            )
+
+    result.sort(key=lambda x: x["post_at"], reverse=True)
 
     return result

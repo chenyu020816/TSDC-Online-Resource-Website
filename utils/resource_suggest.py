@@ -1,25 +1,29 @@
+import os
+
 import Levenshtein
 import numpy as np
 import pandas as pd
-#from translate import Translator
+from dotenv import find_dotenv, load_dotenv
+from openai import OpenAI
 
 import utils.database_class as db_cls
 from utils.constants import *
 from utils.db_resource_api import *
 
+# from translate import Translator
 
-from dotenv import load_dotenv,find_dotenv
-from openai import OpenAI
-import os
+
+
 
 load_dotenv(find_dotenv())
 
 api_key = os.environ.get("OPEN_AI_GPT_API")
 
-with open('flow/prompt/memory.txt', 'r', encoding='utf-8') as file:
+with open("flow/prompt/memory.txt", "r", encoding="utf-8") as file:
     document = file.read()
 
-client = OpenAI(api_key = api_key)
+client = OpenAI(api_key=api_key)
+
 
 def translate_keyword(keyword):
     try:
@@ -28,17 +32,16 @@ def translate_keyword(keyword):
             若該關鍵字為英文則直接回傳該關鍵字。若關鍵字為中文，請翻譯成英文，回傳單字即可。不要回傳任何不相關的內容或補充。
             """
         response = client.chat.completions.create(
-        model="gpt-4o",
-        messages=[
+            model="gpt-4o",
+            messages=[
                 {"role": "system", "content": document},
                 {"role": "user", "content": prompt},
-            ]
+            ],
         )
         text = response.choices[0].message.content
         return text
     except:
         return keyword
-
 
 
 def compute_distance(query: str, keywords: list[str]) -> list[int]:
@@ -125,13 +128,16 @@ def get_filtered_resources_rank(
     scores_weights: list[float] = SCORES_WEIGHTS,
 ) -> list[int]:
 
-    filtered_query_distances = 1 - (filtered_query_distances / distance_threshold)
+    filtered_query_distances = distance_threshold - filtered_query_distances
+
     scores = (
         scores_weights[0] * filtered_resources_scores["view_count"]
         + scores_weights[1] * filtered_resources_scores["user_score"]
         + scores_weights[2] * filtered_resources_scores["public_score"]
         # scores_weights[3] * filtered_resources_scores["num_of_purchases"]
-    ) * filtered_query_distances  # larger is better
+    ) * filtered_query_distances
+
+    scores = filtered_query_distances
 
     sorted_rank = np.argsort(scores)[::-1]
 

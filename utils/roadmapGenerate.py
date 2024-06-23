@@ -1,19 +1,21 @@
-from dotenv import load_dotenv,find_dotenv
+import json
+import os
+import re
+
+from dotenv import find_dotenv, load_dotenv
 from flask import jsonify, request
 from openai import OpenAI
-import json
-import re
-import os
 
 load_dotenv(find_dotenv())
 
 api_key = os.environ.get("OPEN_AI_GPT_API")
 
-with open('flow/prompt/memory.txt', 'r', encoding='utf-8') as file:
+with open("flow/prompt/memory.txt", "r", encoding="utf-8") as file:
     document = file.read()
 
+
 def clean_llm_output(text):
-    match = re.search(r'```json\n(.*?)\n```', text, re.DOTALL)
+    match = re.search(r"```json\n(.*?)\n```", text, re.DOTALL)
     if match:
         json_str = match.group(1)
     else:
@@ -22,10 +24,11 @@ def clean_llm_output(text):
 
     try:
         data = json.loads(json_str)
-        
+
         return data
     except json.JSONDecodeError as e:
         return f"JSON解碼錯誤: {e}"
+
 
 def generate_position(index):
     row = index // 3
@@ -37,27 +40,28 @@ def generate_position(index):
         x_position = 1200 - col * 400
     return x_position, y_position, row
 
+
 def generate_roadmap():
     input_data = request.get_json()
-    keyword = input_data['_keyword']
+    keyword = input_data["_keyword"]
 
-    with open('utils/prompt/roadmap_output_example.txt', 'r', encoding='utf-8') as file:
+    with open("utils/prompt/roadmap_output_example.txt", "r", encoding="utf-8") as file:
         prompt_template_sample = file.read()
 
-    with open('utils/prompt/roadmap_prompt.txt', 'r', encoding='utf-8') as file:
+    with open("utils/prompt/roadmap_prompt.txt", "r", encoding="utf-8") as file:
         prompt_template = file.read()
-        prompt_template = prompt_template.format(keyword = keyword)
+        prompt_template = prompt_template.format(keyword=keyword)
 
     prompt = prompt_template + prompt_template_sample
 
-    client = OpenAI(api_key = api_key)
+    client = OpenAI(api_key=api_key)
 
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=[
             {"role": "system", "content": document},
             {"role": "user", "content": prompt},
-        ]
+        ],
     )
 
     text = response.choices[0].message.content
@@ -71,26 +75,22 @@ def generate_roadmap():
         node = {
             "id": str(idx),
             "type": "custom",
-            "position": { "x": x_position, "y": y_position },
+            "position": {"x": x_position, "y": y_position},
             "data": {
                 "row": row,
                 "label": value["label"],
                 "technologies": "、".join(value["technologies"]),
-                "description": value["description"]
+                "description": value["description"],
             },
-            "connectable": False
+            "connectable": False,
         }
         nodes.append(node)
         if idx > 1:
             edge = {
                 "id": f"e{idx-1}-{idx}",
-                "source": str(idx-1),
+                "source": str(idx - 1),
                 "target": str(idx),
-                "type": "smoothstep"
+                "type": "smoothstep",
             }
             edges.append(edge)
-    return jsonify({
-        "success": True,
-        "nodes": nodes,
-        "edges": edges
-    })
+    return jsonify({"success": True, "nodes": nodes, "edges": edges})

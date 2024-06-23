@@ -336,32 +336,38 @@ def search_resource_by_id_list(resource_id_list: list) -> dict:
              or {"error": -1} if resource_id not exist
     """
     resources = []
-    resources_db = db_cls.Resource.query.filter(db_cls.Resource.id.in_(resource_id_list)).all()
+    resources_db = db_cls.Resource.query.filter(
+        db_cls.Resource.id.in_(resource_id_list)
+    ).all()
 
     for resource in resources_db:
         if not resource:
             continue
         else:
-            resources.append({
-                "resource_id": resource.id,
-                "resource_name": resource.resource_name,
-                "introduction": resource.introduction,
-                "url": resource.url,
-                "image_url": resource.image_url,
-                "source_platform": resource.source_platform,
-                "type": resource.type,
-                "user_score": resource.user_score,
-                "public_score": resource.public_score,
-                "num_of_purchases": resource.num_of_purchases,
-                "price": resource.price,
-                "status": resource.status,
-                "view_count": resource.view_count,
-            })
+            resources.append(
+                {
+                    "resource_id": resource.id,
+                    "resource_name": resource.resource_name,
+                    "introduction": resource.introduction,
+                    "url": resource.url,
+                    "image_url": resource.image_url,
+                    "source_platform": resource.source_platform,
+                    "type": resource.type,
+                    "user_score": resource.user_score,
+                    "public_score": resource.public_score,
+                    "num_of_purchases": resource.num_of_purchases,
+                    "price": resource.price,
+                    "status": resource.status,
+                    "view_count": resource.view_count,
+                }
+            )
 
     return resources
 
 
-def search_resource_by_id_list_with_rating_score(user_id: int, resource_id_list: list) -> dict:
+def search_resource_by_id_list_with_rating_score(
+    user_id: int, resource_id_list: list
+) -> dict:
     """
     Search resources by a list of ids
     :param user_id: id of user
@@ -374,31 +380,38 @@ def search_resource_by_id_list_with_rating_score(user_id: int, resource_id_list:
              or {"error": -1} if resource_id not exist
     """
     resources = []
-    resources_db = db_cls.Resource.query.filter(db_cls.Resource.id.in_(resource_id_list)).all()
+    resources_db = db_cls.Resource.query.filter(
+        db_cls.Resource.id.in_(resource_id_list)
+    ).all()
 
     for resource in resources_db:
         if not resource:
             continue
         else:
-            rating_score = search_user_resource_rating_score(user_id=user_id, resource_id=resource.id)
-            resources.append({
-                "resource_id": resource.id,
-                "resource_name": resource.resource_name,
-                "introduction": resource.introduction,
-                "url": resource.url,
-                "image_url": resource.image_url,
-                "source_platform": resource.source_platform,
-                "type": resource.type,
-                "user_score": resource.user_score,
-                "public_score": resource.public_score,
-                "num_of_purchases": resource.num_of_purchases,
-                "price": resource.price,
-                "status": resource.status,
-                "view_count": resource.view_count,
-                "rating_score": rating_score
-            })
+            rating_score = search_user_resource_rating_score(
+                user_id=user_id, resource_id=resource.id
+            )
+            resources.append(
+                {
+                    "resource_id": resource.id,
+                    "resource_name": resource.resource_name,
+                    "introduction": resource.introduction,
+                    "url": resource.url,
+                    "image_url": resource.image_url,
+                    "source_platform": resource.source_platform,
+                    "type": resource.type,
+                    "user_score": resource.user_score,
+                    "public_score": resource.public_score,
+                    "num_of_purchases": resource.num_of_purchases,
+                    "price": resource.price,
+                    "status": resource.status,
+                    "view_count": resource.view_count,
+                    "rating_score": rating_score,
+                }
+            )
 
     return resources
+
 
 def search_resource_by_name(resource_name: int) -> dict:
     """
@@ -702,7 +715,9 @@ def add_user_rating_history(db, user_id: int, resource_id: int, score: int):
             db.session.commit()
         except Exception as e:
             db.session.rollback()
-            print(f"Failed to update rating history '{old_rating_history}' for user '{user_id}': {e}")
+            print(
+                f"Failed to update rating history '{old_rating_history}' for user '{user_id}': {e}"
+            )
             return -1
         _update_resource_score(db, resource_id)
         return old_rating_history.id
@@ -716,14 +731,18 @@ def add_user_rating_history(db, user_id: int, resource_id: int, score: int):
             db.session.commit()
         except Exception as e:
             db.session.rollback()
-            print(f"Failed to add rating history '{rating_history}' for user '{user_id}': {e}")
+            print(
+                f"Failed to add rating history '{rating_history}' for user '{user_id}': {e}"
+            )
             return -1
         _update_resource_score(db, resource_id)
         return rating_history.id
 
 
 def search_user_resource_rating_score(user_id: int, resource_id: int) -> int:
-    rating_history = db_cls.RatingHistory.query.filter_by(user_id=user_id, resource_id=resource_id).first()
+    rating_history = db_cls.RatingHistory.query.filter_by(
+        user_id=user_id, resource_id=resource_id
+    ).first()
     if rating_history:
         return rating_history.score
     else:
