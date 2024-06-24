@@ -12,9 +12,6 @@ from utils.db_resource_api import *
 
 # from translate import Translator
 
-
-
-
 load_dotenv(find_dotenv())
 
 api_key = os.environ.get("OPEN_AI_GPT_API")
@@ -40,7 +37,7 @@ def translate_keyword(keyword):
         )
         text = response.choices[0].message.content
         return text
-    except:
+    except Exception as e:
         return keyword
 
 
@@ -56,7 +53,7 @@ def compute_distance(query: str, keywords: list[str]) -> list[int]:
 
 
 def get_keyword_distance_table(
-    query: str, keywords: list[str] = KEYWORDS_ENG
+        query: str, keywords: list[str] = KEYWORDS_ENG
 ) -> pd.DataFrame:
     distances = compute_distance(query, keywords)
     distances[0] = 500
@@ -67,10 +64,10 @@ def get_keyword_distance_table(
 
 
 def get_resource_query_weighted_distance(
-    resources_table,
-    query: str,
-    keywords: list[str] = KEYWORDS_ENG,
-    weights: list[int] = DISTANCE_WEIGHTS,
+        resources_table,
+        query: str,
+        keywords: list[str] = KEYWORDS_ENG,
+        weights: list[int] = DISTANCE_WEIGHTS,
 ) -> pd.DataFrame:
     keyword_distances = get_keyword_distance_table(query, keywords)
     resource_table = resources_table.merge(
@@ -106,7 +103,7 @@ def get_resource_query_weighted_distance(
 
 
 def filter_resource_by_queries_distance(
-    resources_table, queries: list[str], threshold: int
+        resources_table, queries: list[str], threshold: int
 ) -> list[int]:
     queries_distances = np.zeros(resources_table.shape[0], dtype=np.float32)
     for query in queries:
@@ -121,23 +118,20 @@ def filter_resource_by_queries_distance(
 
 
 def get_filtered_resources_rank(
-    filtered_resource_ids: list[int],
-    filtered_query_distances: np.array,
-    filtered_resources_scores: dict,
-    distance_threshold: int,
-    scores_weights: list[float] = SCORES_WEIGHTS,
-) -> list[int]:
-
-    filtered_query_distances = distance_threshold - filtered_query_distances
+        filtered_resource_ids: list[int],
+        filtered_query_distances: np.array,
+        filtered_resources_scores: dict,
+        distance_threshold: int,
+        scores_weights: list[float] = SCORES_WEIGHTS,
+) -> np.array:
+    filtered_query_distances = (distance_threshold - filtered_query_distances) / distance_threshold
 
     scores = (
-        scores_weights[0] * filtered_resources_scores["view_count"]
-        + scores_weights[1] * filtered_resources_scores["user_score"]
-        + scores_weights[2] * filtered_resources_scores["public_score"]
-        # scores_weights[3] * filtered_resources_scores["num_of_purchases"]
-    ) * filtered_query_distances
-
-    scores = filtered_query_distances
+                     scores_weights[0] * filtered_resources_scores["view_count"]
+                     + scores_weights[1] * filtered_resources_scores["user_score"]
+                     + scores_weights[2] * filtered_resources_scores["public_score"]
+                     + scores_weights[3] * filtered_resources_scores["num_of_purchases"]
+             ) * filtered_query_distances
 
     sorted_rank = np.argsort(scores)[::-1]
 
@@ -145,7 +139,7 @@ def get_filtered_resources_rank(
 
 
 def get_best_n_resources(
-    db, queries: list[str], distance_threshold: int, filter_num: int
+        db, queries: list[str], distance_threshold: int, filter_num: int
 ):
     resources_table = get_resource_keywords_table(db)
     filtered_resource_ids, filtered_query_distances = (
